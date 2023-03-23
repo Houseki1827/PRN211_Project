@@ -182,11 +182,11 @@ namespace CoffeeShopWinForm {
         }
 
         private void dgvUserList_CellClick(object sender, DataGridViewCellEventArgs e) {
-
+            
         }
 
         private void dgvCategory_CellClick(object sender, DataGridViewCellEventArgs e) {
-
+            tabControl2.SelectedIndex = 0;
         }
 
         private void dgvCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {

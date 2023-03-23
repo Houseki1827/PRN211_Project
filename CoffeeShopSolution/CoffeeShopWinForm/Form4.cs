@@ -134,6 +134,7 @@ namespace CoffeeShopWinForm {
                 dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex) {
+                MessageBox.Show(ex.Message);
                 b.Enabled = false;
             }
         }
