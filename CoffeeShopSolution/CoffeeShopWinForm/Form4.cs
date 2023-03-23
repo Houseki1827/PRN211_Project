@@ -187,7 +187,7 @@ namespace CoffeeShopWinForm {
                         u.Username = txtName.Text;
                         u.Password = txtPass.Text;
                         u.Email = txtEmail.Text;
-                        u.Phone = txtPhone.Text;
+                        u.Phone = phoneNum;
                         context.Users.Update(u);
                         context.SaveChanges();
                         MessageBox.Show("User information updated.");
