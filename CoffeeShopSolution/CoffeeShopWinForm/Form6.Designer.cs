@@ -41,6 +41,9 @@
             lbItemName = new Label();
             picPreview = new PictureBox();
             tpCategory = new TabPage();
+            btnClearCat = new Button();
+            txtCatId = new TextBox();
+            lbCatId = new Label();
             btnDeleteCat = new Button();
             btnSaveCat = new Button();
             btnAddCat = new Button();
@@ -57,16 +60,19 @@
             gbUser = new GroupBox();
             dgvUserList = new DataGridView();
             panel1 = new Panel();
+            btnClearUser = new Button();
+            txtUserId = new TextBox();
+            lbUserId = new Label();
             btnDeleteUser = new Button();
-            txtPhone = new MaskedTextBox();
-            txtMail = new TextBox();
-            txtPass = new TextBox();
-            txtName = new TextBox();
+            txtUserPhone = new MaskedTextBox();
+            txtUserMail = new TextBox();
+            txtUserPass = new TextBox();
+            txtUserName = new TextBox();
             btnSaveUser = new Button();
-            lbPhone = new Label();
-            lbEmail = new Label();
-            lbPass = new Label();
-            lbName = new Label();
+            lbUserPhone = new Label();
+            lbUserEmail = new Label();
+            lbUserPass = new Label();
+            lbUserName = new Label();
             tabControl1.SuspendLayout();
             tpItemAndCat.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -152,7 +158,7 @@
             btnItemClear.TabIndex = 10;
             btnItemClear.Text = "Clear";
             btnItemClear.UseVisualStyleBackColor = true;
-            btnItemClear.Click += btnItemClear_Click;
+            btnItemClear.Click += btnClearItem_Click;
             // 
             // txtItemId
             // 
@@ -256,6 +262,7 @@
             // 
             // picPreview
             // 
+            picPreview.BorderStyle = BorderStyle.FixedSingle;
             picPreview.Location = new Point(81, 16);
             picPreview.Name = "picPreview";
             picPreview.Size = new Size(141, 112);
@@ -264,6 +271,9 @@
             // 
             // tpCategory
             // 
+            tpCategory.Controls.Add(btnClearCat);
+            tpCategory.Controls.Add(txtCatId);
+            tpCategory.Controls.Add(lbCatId);
             tpCategory.Controls.Add(btnDeleteCat);
             tpCategory.Controls.Add(btnSaveCat);
             tpCategory.Controls.Add(btnAddCat);
@@ -276,6 +286,33 @@
             tpCategory.TabIndex = 1;
             tpCategory.Text = "Category";
             tpCategory.UseVisualStyleBackColor = true;
+            // 
+            // btnClearCat
+            // 
+            btnClearCat.Location = new Point(141, 78);
+            btnClearCat.Name = "btnClearCat";
+            btnClearCat.Size = new Size(60, 23);
+            btnClearCat.TabIndex = 7;
+            btnClearCat.Text = "Clear";
+            btnClearCat.UseVisualStyleBackColor = true;
+            btnClearCat.Click += btnClearCat_Click;
+            // 
+            // txtCatId
+            // 
+            txtCatId.Location = new Point(97, 78);
+            txtCatId.Name = "txtCatId";
+            txtCatId.ReadOnly = true;
+            txtCatId.Size = new Size(37, 23);
+            txtCatId.TabIndex = 6;
+            // 
+            // lbCatId
+            // 
+            lbCatId.AutoSize = true;
+            lbCatId.Location = new Point(23, 81);
+            lbCatId.Name = "lbCatId";
+            lbCatId.Size = new Size(71, 15);
+            lbCatId.TabIndex = 5;
+            lbCatId.Text = "Category Id:";
             // 
             // btnDeleteCat
             // 
@@ -309,19 +346,19 @@
             // 
             // txtCatName
             // 
-            txtCatName.Location = new Point(23, 110);
+            txtCatName.Location = new Point(97, 110);
             txtCatName.Name = "txtCatName";
-            txtCatName.Size = new Size(205, 23);
+            txtCatName.Size = new Size(131, 23);
             txtCatName.TabIndex = 1;
             // 
             // lbCatName
             // 
             lbCatName.AutoSize = true;
-            lbCatName.Location = new Point(23, 92);
+            lbCatName.Location = new Point(23, 113);
             lbCatName.Name = "lbCatName";
-            lbCatName.Size = new Size(55, 15);
+            lbCatName.Size = new Size(58, 15);
             lbCatName.TabIndex = 0;
-            lbCatName.Text = "Category";
+            lbCatName.Text = "Category:";
             // 
             // gbItem
             // 
@@ -371,8 +408,8 @@
             // 
             // tpUser
             // 
+            tpUser.Controls.Add(gbOrder);
             tpUser.Controls.Add(panel2);
-            tpUser.Controls.Add(panel1);
             tpUser.Location = new Point(4, 24);
             tpUser.Name = "tpUser";
             tpUser.Padding = new Padding(3);
@@ -383,21 +420,21 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(gbOrder);
+            panel2.Controls.Add(panel1);
             panel2.Controls.Add(gbUser);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(258, 3);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(367, 396);
+            panel2.Size = new Size(622, 229);
             panel2.TabIndex = 1;
             // 
             // gbOrder
             // 
             gbOrder.Controls.Add(dgvOrder);
-            gbOrder.Dock = DockStyle.Fill;
-            gbOrder.Location = new Point(0, 235);
+            gbOrder.Dock = DockStyle.Bottom;
+            gbOrder.Location = new Point(3, 238);
             gbOrder.Name = "gbOrder";
-            gbOrder.Size = new Size(367, 161);
+            gbOrder.Size = new Size(622, 161);
             gbOrder.TabIndex = 1;
             gbOrder.TabStop = false;
             gbOrder.Text = "User's Orders";
@@ -405,20 +442,20 @@
             // dgvOrder
             // 
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrder.Dock = DockStyle.Fill;
+            dgvOrder.Dock = DockStyle.Bottom;
             dgvOrder.Location = new Point(3, 19);
             dgvOrder.Name = "dgvOrder";
             dgvOrder.RowTemplate.Height = 25;
-            dgvOrder.Size = new Size(361, 139);
+            dgvOrder.Size = new Size(616, 139);
             dgvOrder.TabIndex = 0;
             // 
             // gbUser
             // 
             gbUser.Controls.Add(dgvUserList);
-            gbUser.Dock = DockStyle.Top;
-            gbUser.Location = new Point(0, 0);
+            gbUser.Dock = DockStyle.Right;
+            gbUser.Location = new Point(255, 0);
             gbUser.Name = "gbUser";
-            gbUser.Size = new Size(367, 235);
+            gbUser.Size = new Size(367, 229);
             gbUser.TabIndex = 0;
             gbUser.TabStop = false;
             gbUser.Text = "Users";
@@ -430,31 +467,61 @@
             dgvUserList.Location = new Point(3, 19);
             dgvUserList.Name = "dgvUserList";
             dgvUserList.RowTemplate.Height = 25;
-            dgvUserList.Size = new Size(361, 213);
+            dgvUserList.Size = new Size(361, 207);
             dgvUserList.TabIndex = 0;
             dgvUserList.CellClick += dgvUserList_CellClick;
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnClearUser);
+            panel1.Controls.Add(txtUserId);
+            panel1.Controls.Add(lbUserId);
             panel1.Controls.Add(btnDeleteUser);
-            panel1.Controls.Add(txtPhone);
-            panel1.Controls.Add(txtMail);
-            panel1.Controls.Add(txtPass);
-            panel1.Controls.Add(txtName);
+            panel1.Controls.Add(txtUserPhone);
+            panel1.Controls.Add(txtUserMail);
+            panel1.Controls.Add(txtUserPass);
+            panel1.Controls.Add(txtUserName);
             panel1.Controls.Add(btnSaveUser);
-            panel1.Controls.Add(lbPhone);
-            panel1.Controls.Add(lbEmail);
-            panel1.Controls.Add(lbPass);
-            panel1.Controls.Add(lbName);
+            panel1.Controls.Add(lbUserPhone);
+            panel1.Controls.Add(lbUserEmail);
+            panel1.Controls.Add(lbUserPass);
+            panel1.Controls.Add(lbUserName);
             panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(255, 396);
+            panel1.Size = new Size(255, 229);
             panel1.TabIndex = 9;
+            // 
+            // btnClearUser
+            // 
+            btnClearUser.Location = new Point(124, 15);
+            btnClearUser.Name = "btnClearUser";
+            btnClearUser.Size = new Size(54, 23);
+            btnClearUser.TabIndex = 10;
+            btnClearUser.Text = "Clear";
+            btnClearUser.UseVisualStyleBackColor = true;
+            btnClearUser.Click += btnClearUser_Click;
+            // 
+            // txtUserId
+            // 
+            txtUserId.Location = new Point(82, 15);
+            txtUserId.Name = "txtUserId";
+            txtUserId.ReadOnly = true;
+            txtUserId.Size = new Size(36, 23);
+            txtUserId.TabIndex = 9;
+            // 
+            // lbUserId
+            // 
+            lbUserId.AutoSize = true;
+            lbUserId.Location = new Point(13, 18);
+            lbUserId.Name = "lbUserId";
+            lbUserId.Size = new Size(21, 15);
+            lbUserId.TabIndex = 8;
+            lbUserId.Text = "ID:";
             // 
             // btnDeleteUser
             // 
-            btnDeleteUser.Location = new Point(32, 270);
+            btnDeleteUser.Location = new Point(30, 176);
             btnDeleteUser.Name = "btnDeleteUser";
             btnDeleteUser.Size = new Size(75, 23);
             btnDeleteUser.TabIndex = 7;
@@ -462,39 +529,39 @@
             btnDeleteUser.UseVisualStyleBackColor = true;
             btnDeleteUser.Click += btnDeleteUser_Click;
             // 
-            // txtPhone
+            // txtUserPhone
             // 
-            txtPhone.Location = new Point(81, 205);
-            txtPhone.Mask = "(999) 000-0000";
-            txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(138, 23);
-            txtPhone.TabIndex = 4;
+            txtUserPhone.Location = new Point(82, 136);
+            txtUserPhone.Mask = "(999) 000-0000";
+            txtUserPhone.Name = "txtUserPhone";
+            txtUserPhone.Size = new Size(138, 23);
+            txtUserPhone.TabIndex = 4;
             // 
-            // txtMail
+            // txtUserMail
             // 
-            txtMail.Location = new Point(81, 176);
-            txtMail.Name = "txtMail";
-            txtMail.Size = new Size(138, 23);
-            txtMail.TabIndex = 3;
+            txtUserMail.Location = new Point(82, 107);
+            txtUserMail.Name = "txtUserMail";
+            txtUserMail.Size = new Size(138, 23);
+            txtUserMail.TabIndex = 3;
             // 
-            // txtPass
+            // txtUserPass
             // 
-            txtPass.Location = new Point(81, 145);
-            txtPass.Name = "txtPass";
-            txtPass.PasswordChar = '*';
-            txtPass.Size = new Size(138, 23);
-            txtPass.TabIndex = 2;
+            txtUserPass.Location = new Point(82, 76);
+            txtUserPass.Name = "txtUserPass";
+            txtUserPass.PasswordChar = '*';
+            txtUserPass.Size = new Size(138, 23);
+            txtUserPass.TabIndex = 2;
             // 
-            // txtName
+            // txtUserName
             // 
-            txtName.Location = new Point(81, 115);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(138, 23);
-            txtName.TabIndex = 1;
+            txtUserName.Location = new Point(82, 46);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(138, 23);
+            txtUserName.TabIndex = 1;
             // 
             // btnSaveUser
             // 
-            btnSaveUser.Location = new Point(135, 270);
+            btnSaveUser.Location = new Point(133, 176);
             btnSaveUser.Name = "btnSaveUser";
             btnSaveUser.Size = new Size(75, 23);
             btnSaveUser.TabIndex = 6;
@@ -502,41 +569,41 @@
             btnSaveUser.UseVisualStyleBackColor = true;
             btnSaveUser.Click += btnSaveUser_Click;
             // 
-            // lbPhone
+            // lbUserPhone
             // 
-            lbPhone.AutoSize = true;
-            lbPhone.Location = new Point(12, 208);
-            lbPhone.Name = "lbPhone";
-            lbPhone.Size = new Size(44, 15);
-            lbPhone.TabIndex = 3;
-            lbPhone.Text = "Phone:";
+            lbUserPhone.AutoSize = true;
+            lbUserPhone.Location = new Point(13, 139);
+            lbUserPhone.Name = "lbUserPhone";
+            lbUserPhone.Size = new Size(44, 15);
+            lbUserPhone.TabIndex = 3;
+            lbUserPhone.Text = "Phone:";
             // 
-            // lbEmail
+            // lbUserEmail
             // 
-            lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(12, 179);
-            lbEmail.Name = "lbEmail";
-            lbEmail.Size = new Size(47, 15);
-            lbEmail.TabIndex = 2;
-            lbEmail.Text = "E-mail: ";
+            lbUserEmail.AutoSize = true;
+            lbUserEmail.Location = new Point(13, 110);
+            lbUserEmail.Name = "lbUserEmail";
+            lbUserEmail.Size = new Size(47, 15);
+            lbUserEmail.TabIndex = 2;
+            lbUserEmail.Text = "E-mail: ";
             // 
-            // lbPass
+            // lbUserPass
             // 
-            lbPass.AutoSize = true;
-            lbPass.Location = new Point(12, 148);
-            lbPass.Name = "lbPass";
-            lbPass.Size = new Size(60, 15);
-            lbPass.TabIndex = 1;
-            lbPass.Text = "Password:";
+            lbUserPass.AutoSize = true;
+            lbUserPass.Location = new Point(13, 79);
+            lbUserPass.Name = "lbUserPass";
+            lbUserPass.Size = new Size(60, 15);
+            lbUserPass.TabIndex = 1;
+            lbUserPass.Text = "Password:";
             // 
-            // lbName
+            // lbUserName
             // 
-            lbName.AutoSize = true;
-            lbName.Location = new Point(12, 118);
-            lbName.Name = "lbName";
-            lbName.Size = new Size(63, 15);
-            lbName.TabIndex = 0;
-            lbName.Text = "Username:";
+            lbUserName.AutoSize = true;
+            lbUserName.Location = new Point(13, 49);
+            lbUserName.Name = "lbUserName";
+            lbUserName.Size = new Size(63, 15);
+            lbUserName.TabIndex = 0;
+            lbUserName.Text = "Username:";
             // 
             // Form6
             // 
@@ -607,19 +674,24 @@
         private Button btnSaveUser;
         private TextBox textBox3;
         private TextBox textBox2;
-        private TextBox textBox1;
-        private Label lbPhone;
-        private Label lbEmail;
-        private Label lbPass;
-        private Label lbName;
-        private MaskedTextBox txtPhone;
-        private TextBox txtMail;
-        private TextBox txtPass;
-        private TextBox txtName;
+        private TextBox txtCatId;
+        private Label lbUserPhone;
+        private Label lbUserEmail;
+        private Label lbUserPass;
+        private Label lbUserName;
+        private MaskedTextBox txtUserPhone;
+        private TextBox txtUserMail;
+        private TextBox txtUserPass;
+        private TextBox txtUserName;
         private Button btnDeleteUser;
         private ComboBox cbItemCat;
         private Label lbItemCat;
         private Button btnItemClear;
         private TextBox txtItemId;
+        private Label lbCatId;
+        private Button btnClearCat;
+        private Label lbUserId;
+        private Button btnClearUser;
+        private TextBox txtUserId;
     }
 }

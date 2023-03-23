@@ -22,12 +22,19 @@ namespace CoffeeShopWinForm {
             context.Orders.Load();
             context.Items.Load();
             context.Categories.Load();
+            DGVLoad();
+            // ***** Combo box *****
 
-            List<Tuple<string, int, string, decimal>> itemList = new List<Tuple<string, int, string, decimal>>();
+            foreach (var item in context.Categories) cbItemCat.Items.Add(item.CategoryName);
+            cbItemCat.SelectedIndex = 0;
+        }
+
+        private void DGVLoad() {
+            List<Tuple<string, string, string, decimal>> itemList = new List<Tuple<string, string, string, decimal>>();
             List<Tuple<int, string>> catList = new List<Tuple<int, string>>();
             List<Tuple<int, string, string, string, string>> userList = new List<Tuple<int, string, string, string, string>>();
             foreach (var item in context.Items) {
-                Tuple<string, int, string, decimal> t = new Tuple<string, int, string, decimal>(item.ItemId, item.CategoryId, item.ItemName, item.Price);
+                Tuple<string, string, string, decimal> t = new Tuple<string, string, string, decimal>(item.ItemId, item.Category.CategoryName, item.ItemName, item.Price);
                 itemList.Add(t);
             }
             foreach (var item in context.Categories) {
@@ -42,16 +49,12 @@ namespace CoffeeShopWinForm {
             dgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgvItem.DataSource = itemList;
-            dgvItem.Columns[0].HeaderText = "ItemId"; dgvItem.Columns[1].HeaderText = "CategoryId"; dgvItem.Columns[2].HeaderText = "ItemName"; dgvItem.Columns[3].HeaderText = "Price";
+            dgvItem.Columns[0].HeaderText = "ItemId"; dgvItem.Columns[1].HeaderText = "Category"; dgvItem.Columns[2].HeaderText = "ItemName"; dgvItem.Columns[3].HeaderText = "Price";
             dgvCategory.DataSource = catList;
             dgvCategory.Columns[0].HeaderText = "CategoryId"; dgvCategory.Columns[1].HeaderText = "CategoryName";
             dgvUserList.DataSource = userList;
             dgvUserList.Columns[0].HeaderText = "UserId"; dgvUserList.Columns[1].HeaderText = "Username"; dgvUserList.Columns[2].HeaderText = "Password"; dgvUserList.Columns[3].HeaderText = "Email"; dgvUserList.Columns[4].HeaderText = "Phone";
 
-            // ***** Combo box *****
-
-            foreach (var item in context.Categories) cbItemCat.Items.Add(item.CategoryName);
-            cbItemCat.SelectedIndex = 0;
         }
 
         private void Form6_Load(object sender, EventArgs e) {
@@ -91,14 +94,15 @@ namespace CoffeeShopWinForm {
                         context.Items.Add(new Item { ItemName = txtItemName.Text, Price = price, CategoryId = context.Categories.Where(c => c.CategoryName == cbItemCat.SelectedText).FirstOrDefault().CategoryId });
                         context.SaveChanges();
                     }
-                    catch (Exception ex) { MessageBox.Show(ex.Message);}
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
             }
             else MessageBox.Show("Item parameter(s) are not set properly.");
+            DGVLoad();
         }
 
         private void btnSaveItem_Click(object sender, EventArgs e) {
-            if(txtItemId.Text.Length > 0) {
+            if (txtItemId.Text.Length > 0) {
                 if (txtItemName.Text.Length > 0 && txtItemPrice.Text.Length > 0 && cbItemCat.Text.Length > 0) {
                     decimal price = 0;
                     try {
@@ -121,12 +125,12 @@ namespace CoffeeShopWinForm {
                         Item i = context.Items.Find(txtItemId.Text);
                         i.ItemName = txtItemName.Text;
                         i.Price = price;
-                        i.CategoryId = context.Categories.Where(c => c.CategoryName == cbItemCat.SelectedText).FirstOrDefault().CategoryId;
+                        i.CategoryId = context.Categories.Where(c => c.CategoryName == cbItemCat.Text).FirstOrDefault().CategoryId;
                         try {
                             context.Items.Update(i);
                             context.SaveChanges();
                         }
-                        catch (Exception ex) { MessageBox.Show(ex.Message);}
+                        catch (Exception ex) { MessageBox.Show(ex.Message); }
                     }
                 }
                 else MessageBox.Show("Item parameter(s) are not set properly.");
@@ -135,26 +139,28 @@ namespace CoffeeShopWinForm {
             else {
                 MessageBox.Show("Item not selected.");
             }
+            DGVLoad();
         }
 
         private void btnDeleteItem_Click(object sender, EventArgs e) {
-            if(txtItemId.Text.Length > 0) {
+            if (txtItemId.Text.Length > 0) {
                 if (context.Items.Find(txtItemId.Text) == null) {
                     MessageBox.Show("Cannot find item.");
                     return;
                 }
-                DialogResult re = MessageBox.Show("Delete item?","Confirm",MessageBoxButtons.YesNo);
-                if(re == DialogResult.Yes) {
+                DialogResult re = MessageBox.Show("Delete item?", "Confirm", MessageBoxButtons.YesNo);
+                if (re == DialogResult.Yes) {
                     try {
                         context.Items.Remove(context.Items.Find(txtItemId.Text));
                         context.SaveChanges();
                     }
-                    catch (Exception ex) { MessageBox.Show(ex.Message);}
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
             }
             else {
                 MessageBox.Show("Item not selected.");
             }
+            DGVLoad();
         }
 
         private void btnAddCat_Click(object sender, EventArgs e) {
@@ -182,25 +188,88 @@ namespace CoffeeShopWinForm {
         }
 
         private void dgvUserList_CellClick(object sender, DataGridViewCellEventArgs e) {
-            
+            try {
+                string id = dgvUserList.CurrentRow.Cells[0].Value.ToString();
+                if (id != null) {
+                    User u = context.Users.Find(int.Parse(id));
+                    txtUserId.Text = u.UserId.ToString();
+                    txtUserName.Text = u.Username;
+                    txtUserPass.Text = u.Password;
+                    txtUserMail.Text = u.Email;
+                    txtUserPhone.Text = u.Phone;
+
+                    List<Tuple<int, string, decimal, string>> orderList = new List<Tuple<int, string, decimal, string>>();
+                    foreach(var item in context.Orders.Where(o => o.UserId == u.UserId)) {
+                        Tuple<int, string, decimal, string> t = new Tuple<int, string, decimal, string>(item.OrderId,item.Phone,item.Total,item.Status);
+                        orderList.Add(t);
+                    }
+
+                    dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvOrder.DataSource = orderList;
+                    dgvOrder.Columns[0].HeaderText = "OrderId"; dgvOrder.Columns[1].HeaderText = "Phone"; dgvOrder.Columns[2].HeaderText = "Total"; dgvOrder.Columns[3].HeaderText = "Status";
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void dgvCategory_CellClick(object sender, DataGridViewCellEventArgs e) {
-            tabControl2.SelectedIndex = 0;
+            try {
+                string id = dgvCategory.CurrentRow.Cells[0].Value.ToString();
+                if (id != null) {
+                    tabControl2.SelectedIndex = 0;
+                    cbItemCat.SelectedIndex = int.Parse(id) - 1;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void dgvCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-
+            try {
+                string id = dgvCategory.CurrentRow.Cells[0].Value.ToString();
+                if (id != null) {
+                    tabControl2.SelectedIndex = 1;
+                    txtCatId.Text = id;
+                    txtCatName.Text = context.Categories.Find(int.Parse(id)).CategoryName;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void dgvItem_CellClick(object sender, DataGridViewCellEventArgs e) {
-
+            try {
+                string id = dgvItem.CurrentRow.Cells[0].Value.ToString();
+                if (id != null) {
+                    Item i = context.Items.Find(id);
+                    txtItemId.Text = i.ItemId;
+                    txtItemName.Text = i.ItemName;
+                    txtItemPrice.Text = i.Price.ToString();
+                    cbItemCat.SelectedIndex = i.CategoryId - 1;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void btnItemClear_Click(object sender, EventArgs e) {
+        private void btnClearItem_Click(object sender, EventArgs e) {
             txtItemId.Text = "";
             txtItemName.Text = "";
             txtItemPrice.Text = "";
+            cbItemCat.SelectedIndex = 0;
+        }
+
+        private void btnClearCat_Click(object sender, EventArgs e) {
+            txtCatId.Text = "";
+            txtCatName.Text = "";
+        }
+
+        private void btnClearUser_Click(object sender, EventArgs e) {
+            txtUserId.Text = "";
+            txtUserName.Text = "";
+            txtUserMail.Text = "";
+            txtUserPass.Text = "";
+            txtUserPhone.Text = "";
+
+            dgvOrder.DataBindings.Clear();
+            dgvOrder.Columns.Clear();
         }
     }
 }
