@@ -91,8 +91,17 @@ namespace CoffeeShopWinForm {
                 DialogResult re = MessageBox.Show("Add new item?", "Confirm", MessageBoxButtons.YesNo);
                 if (re == DialogResult.Yes) {
                     try {
-                        context.Items.Add(new Item { ItemName = txtItemName.Text, Price = price, CategoryId = context.Categories.Where(c => c.CategoryName == cbItemCat.SelectedText).FirstOrDefault().CategoryId });
+                        Item item = new Item { ItemName = txtItemName.Text, Price = price, CategoryId = context.Categories.Where(c => c.CategoryName == cbItemCat.Text).FirstOrDefault().CategoryId };
+                        int id = context.Items.Where(i => i.CategoryId == item.CategoryId).Count();
+                        string cat = context.Categories.Find(item.CategoryId).CategoryName.Substring(0, 1).ToLower();
+                        item.ItemId = cat + (id + 1);
+                        context.Items.Add(item);
                         context.SaveChanges();
+                        txtItemId.Clear();
+                        txtItemName.Clear();
+                        txtItemPrice.Clear();
+                        cbItemCat.SelectedIndex = 0;
+                        MessageBox.Show("New item added.");
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -129,6 +138,11 @@ namespace CoffeeShopWinForm {
                         try {
                             context.Items.Update(i);
                             context.SaveChanges();
+                            txtItemId.Clear();
+                            txtItemName.Clear();
+                            txtItemPrice.Clear();
+                            cbItemCat.SelectedIndex = 0;
+                            MessageBox.Show("Item changes saved.");
                         }
                         catch (Exception ex) { MessageBox.Show(ex.Message); }
                     }
@@ -153,6 +167,11 @@ namespace CoffeeShopWinForm {
                     try {
                         context.Items.Remove(context.Items.Find(txtItemId.Text));
                         context.SaveChanges();
+                        txtItemId.Clear();
+                        txtItemName.Clear();
+                        txtItemPrice.Clear();
+                        cbItemCat.SelectedIndex = 0;
+                        MessageBox.Show("Item deleted.");
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }
@@ -164,27 +183,131 @@ namespace CoffeeShopWinForm {
         }
 
         private void btnAddCat_Click(object sender, EventArgs e) {
-
+            if( txtCatName.Text.Length > 0) {
+                if(context.Categories.Where(c => c.CategoryName == txtCatName.Text).Count() == 0) {
+                    DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
+                    if (re == DialogResult.Yes) {
+                        Category c = new Category { CategoryName = txtCatName.Text };
+                        context.Categories.Add(c);
+                        context.SaveChanges();
+                        txtCatName.Clear();
+                        txtCatId.Clear();
+                        MessageBox.Show("New category added.");
+                    }
+                }
+                else { MessageBox.Show("Category name duplicated.");}
+            }
+            else { MessageBox.Show("Enter category name.");}
+            DGVLoad();
         }
 
         private void btnSaveCat_Click(object sender, EventArgs e) {
+            if(txtCatId.Text.Length > 0) {
+                if(txtCatName.Text.Length > 0) {
+                    try {
+                        if (context.Categories.Where(c => c.CategoryName == txtCatName.Text && c.CategoryId != int.Parse(txtCatId.Text)).Count() == 0) {
+                            DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
+                            if (re == DialogResult.Yes) {
+                                Category c = context.Categories.FirstOrDefault(c => c.CategoryId == int.Parse(txtCatId.Text));
+                                c.CategoryName = txtCatName.Text;
+                                context.Categories.Update(c);
+                                context.SaveChanges();
+                                txtCatId.Clear();
+                                txtCatName.Clear();
+                                MessageBox.Show("Category changes saved.");
+                            }
+                        }
 
+                    }
+                    catch (Exception ex){
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else { MessageBox.Show("Category name cannot be empty.");}
+            }
+            else { MessageBox.Show("Select a category to update."); }
+            DGVLoad();
         }
 
         private void btnDeleteCat_Click(object sender, EventArgs e) {
-
+            if(txtCatId.Text.Length > 0) {
+                try {
+                    if (context.Categories.Where(c => c.CategoryId == int.Parse(txtCatId.Text)).Count() != 0) {
+                        DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
+                        if (re == DialogResult.Yes) {
+                            context.Categories.Remove(context.Categories.Find(int.Parse(txtCatId.Text)));
+                            context.SaveChanges();
+                            txtCatId.Clear();
+                            txtCatName.Clear();
+                            MessageBox.Show("Category deleted.");
+                        }
+                    }
+                    else { MessageBox.Show("Cannot find category."); }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message);}
+            }
+            else { MessageBox.Show("Category not selected."); }
+            DGVLoad();
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e) {
-
-        }
 
         private void btnSaveUser_Click(object sender, EventArgs e) {
-
+            string phone = "";
+            try {
+                txtUserPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                phone = txtUserPhone.Text;
+                txtUserPhone.TextMaskFormat = MaskFormat.IncludeLiterals;
+                int.Parse(phone);
+                if(phone.Length != 10) { phone = "";throw new Exception(); }
+            }
+            catch (Exception ex) { MessageBox.Show("Phone number must be a 10-digits number");}
+            if(txtUserId.Text.Length > 0 && txtUserName.Text.Length > 0 && txtUserPass.Text.Length > 0 && txtUserMail.Text.Length > 0 && phone.Length > 0) {
+                try {
+                    if (context.Users.Where(c => c.UserId == int.Parse(txtUserId.Text)).Count() != 0) {
+                        User u = context.Users.Where(c => c.UserId == int.Parse(txtUserId.Text)).FirstOrDefault();
+                        u.Username = txtUserName.Text;
+                        u.Phone = phone;
+                        u.Email = txtUserMail.Text;
+                        u.Password = txtUserPass.Text;
+                        DialogResult re = MessageBox.Show("Save changes?","Confirm",MessageBoxButtons.YesNo);
+                        if(re == DialogResult.Yes) { 
+                            context.Users.Update(u);
+                            context.SaveChanges();
+                            txtUserPass.Clear();
+                            txtUserMail.Clear();
+                            txtUserId.Clear();
+                            txtUserName.Clear();
+                            txtUserPhone.Clear();
+                            MessageBox.Show("User updated.");
+                        }
+                    }
+                }
+                catch(Exception ex ) { MessageBox.Show(ex.Message);}
+            }
+            else MessageBox.Show("Cannot save user. Required field(s) is empty.");
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e) {
-
+            if(txtUserId.Text.Length > 0) {
+                try {
+                    if (context.Users.Find(int.Parse(txtUserId.Text)) != null) {
+                        DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
+                        if (re == DialogResult.Yes) {
+                            context.Users.Remove(context.Users.Find(int.Parse(txtUserId.Text)));
+                            context.SaveChanges();
+                            txtUserPass.Clear();
+                            txtUserMail.Clear();
+                            txtUserId.Clear();
+                            txtUserName.Clear();
+                            txtUserPhone.Clear();
+                            MessageBox.Show("User deleted.");
+                        }
+                    }
+                    else { MessageBox.Show("Cannot find user."); }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message);}
+            }
+            else { MessageBox.Show("Select a user.");}
         }
 
         private void dgvUserList_CellClick(object sender, DataGridViewCellEventArgs e) {
