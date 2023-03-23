@@ -66,7 +66,7 @@ namespace CoffeeShopWinForm {
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e) {
-
+            DialogResult = DialogResult.OK;
         }
     }
 }

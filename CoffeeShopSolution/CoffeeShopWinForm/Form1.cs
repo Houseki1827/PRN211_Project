@@ -52,10 +52,11 @@ namespace CoffeeShopWinForm {
                         frmAdmin.ShowDialog();
                         return;
                     }
-                    Form3 frmShopping = new Form3(user);
+                    Form3 frmMenu = new Form3(user);
+                    frmMenu.FormClosed += new FormClosedEventHandler(MenuClosed);
                     Hide();
                     this.ShowInTaskbar = false;
-                    frmShopping.ShowDialog();
+                    frmMenu.ShowDialog();
                     return;
                 }
                 else MessageBox.Show("Username or password incorrect.");
@@ -70,7 +71,12 @@ namespace CoffeeShopWinForm {
         }
 
         private void focus_Close(object? sender, EventArgs e) {
-            txtUser.Select();
+            var frm = sender as Form2;
+            if(frm.DialogResult == DialogResult.OK) {
+                txtUser.Clear();
+                txtPass.Clear();
+                txtUser.Focus();
+            }
         }
 
         private void txtUser_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
@@ -106,10 +112,24 @@ namespace CoffeeShopWinForm {
                 Email = "guest"
             };
 
-            Form3 frmShopping = new Form3(guest);
+            Form3 frmMenu = new Form3(guest);
+            frmMenu.FormClosed += new FormClosedEventHandler(MenuClosed);
             Hide();
             this.ShowInTaskbar = false;
-            frmShopping.ShowDialog();
+            frmMenu.ShowDialog();
+        }
+
+        private void MenuClosed(object? sender, FormClosedEventArgs e) {
+            var frm = sender as Form3;   
+            if(frm.DialogResult == DialogResult.Abort) { 
+                Application.Exit();
+            }
+            else {
+                txtUser.Clear();
+                txtPass.Clear();
+                txtUser.Focus();
+                Show();
+            }
         }
     }
 }

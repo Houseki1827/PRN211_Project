@@ -152,7 +152,7 @@ namespace CoffeeShopWinForm {
         }
 
         private void btnLogout_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.Abort;
             Close();
         }
 
