@@ -1,7 +1,5 @@
-﻿namespace CoffeeShopWinForm
-{
-    partial class Form3
-    {
+﻿namespace CoffeeShopWinForm {
+    partial class Form3 {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,322 +22,312 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rbCoffee = new System.Windows.Forms.RadioButton();
-            this.rbDessert = new System.Windows.Forms.RadioButton();
-            this.picture = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.cbSelect = new System.Windows.Forms.ComboBox();
-            this.tbPrice = new System.Windows.Forms.TextBox();
-            this.numericQuantity = new System.Windows.Forms.NumericUpDown();
-            this.tbTotal = new System.Windows.Forms.TextBox();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbAmount = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
-            this.SuspendLayout();
+        private void InitializeComponent() {
+            panel1 = new Panel();
+            label1 = new Label();
+            rbCoffee = new RadioButton();
+            rbDessert = new RadioButton();
+            picture = new PictureBox();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            cbSelect = new ComboBox();
+            tbPrice = new TextBox();
+            numericQuantity = new NumericUpDown();
+            tbTotal = new TextBox();
+            btnLoad = new Button();
+            dgvCart = new DataGridView();
+            name = new DataGridViewTextBoxColumn();
+            price = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            total = new DataGridViewTextBoxColumn();
+            date = new DataGridViewTextBoxColumn();
+            label6 = new Label();
+            tbAmount = new TextBox();
+            btnClear = new Button();
+            btnSave = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericQuantity).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCart).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1051, 107);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(128, 64, 0);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(1, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1051, 107);
+            panel1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(363, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(360, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "COFFEE SHOP";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Rounded MT Bold", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(363, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(292, 44);
+            label1.TabIndex = 0;
+            label1.Text = "COFFEE SHOP";
             // 
             // rbCoffee
             // 
-            this.rbCoffee.AutoSize = true;
-            this.rbCoffee.Location = new System.Drawing.Point(33, 137);
-            this.rbCoffee.Name = "rbCoffee";
-            this.rbCoffee.Size = new System.Drawing.Size(98, 24);
-            this.rbCoffee.TabIndex = 1;
-            this.rbCoffee.TabStop = true;
-            this.rbCoffee.Text = "COFFEE";
-            this.rbCoffee.UseVisualStyleBackColor = true;
-            this.rbCoffee.CheckedChanged += new System.EventHandler(this.rbCoffee_CheckedChanged);
+            rbCoffee.AutoSize = true;
+            rbCoffee.Location = new Point(33, 137);
+            rbCoffee.Name = "rbCoffee";
+            rbCoffee.Size = new Size(80, 20);
+            rbCoffee.TabIndex = 1;
+            rbCoffee.TabStop = true;
+            rbCoffee.Text = "COFFEE";
+            rbCoffee.UseVisualStyleBackColor = true;
+            rbCoffee.CheckedChanged += rbCoffee_CheckedChanged;
             // 
             // rbDessert
             // 
-            this.rbDessert.AutoSize = true;
-            this.rbDessert.Location = new System.Drawing.Point(223, 137);
-            this.rbDessert.Name = "rbDessert";
-            this.rbDessert.Size = new System.Drawing.Size(110, 24);
-            this.rbDessert.TabIndex = 2;
-            this.rbDessert.TabStop = true;
-            this.rbDessert.Text = "DESSERT";
-            this.rbDessert.UseVisualStyleBackColor = true;
-            this.rbDessert.CheckedChanged += new System.EventHandler(this.rbDessert_CheckedChanged);
+            rbDessert.AutoSize = true;
+            rbDessert.Location = new Point(223, 137);
+            rbDessert.Name = "rbDessert";
+            rbDessert.Size = new Size(90, 20);
+            rbDessert.TabIndex = 2;
+            rbDessert.TabStop = true;
+            rbDessert.Text = "DESSERT";
+            rbDessert.UseVisualStyleBackColor = true;
+            rbDessert.CheckedChanged += rbDessert_CheckedChanged;
             // 
             // picture
             // 
-            this.picture.Location = new System.Drawing.Point(33, 187);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(300, 300);
-            this.picture.TabIndex = 3;
-            this.picture.TabStop = false;
+            picture.BorderStyle = BorderStyle.FixedSingle;
+            picture.Location = new Point(33, 187);
+            picture.Name = "picture";
+            picture.Size = new Size(300, 300);
+            picture.TabIndex = 3;
+            picture.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 519);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Select Items";
+            label2.AutoSize = true;
+            label2.Location = new Point(33, 519);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 16);
+            label2.TabIndex = 4;
+            label2.Text = "Select Items";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 564);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Prices";
+            label3.AutoSize = true;
+            label3.Location = new Point(33, 564);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 16);
+            label3.TabIndex = 5;
+            label3.Text = "Prices";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 607);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Quantity";
+            label4.AutoSize = true;
+            label4.Location = new Point(33, 607);
+            label4.Name = "label4";
+            label4.Size = new Size(64, 16);
+            label4.TabIndex = 6;
+            label4.Text = "Quantity";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 650);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Total";
+            label5.AutoSize = true;
+            label5.Location = new Point(33, 650);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 16);
+            label5.TabIndex = 7;
+            label5.Text = "Total";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(33, 709);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(130, 40);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add Items";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.Location = new Point(33, 709);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(130, 40);
+            btnAdd.TabIndex = 8;
+            btnAdd.Text = "Add Items";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(203, 709);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(130, 40);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete Items";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.Location = new Point(203, 709);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(130, 40);
+            btnDelete.TabIndex = 9;
+            btnDelete.Text = "Delete Items";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // cbSelect
             // 
-            this.cbSelect.FormattingEnabled = true;
-            this.cbSelect.Location = new System.Drawing.Point(149, 516);
-            this.cbSelect.Name = "cbSelect";
-            this.cbSelect.Size = new System.Drawing.Size(184, 28);
-            this.cbSelect.TabIndex = 10;
-            this.cbSelect.SelectedIndexChanged += new System.EventHandler(this.cbSelect_SelectedIndexChanged);
+            cbSelect.FormattingEnabled = true;
+            cbSelect.Location = new Point(149, 516);
+            cbSelect.Name = "cbSelect";
+            cbSelect.Size = new Size(184, 24);
+            cbSelect.TabIndex = 10;
+            cbSelect.SelectedIndexChanged += cbSelect_SelectedIndexChanged;
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(149, 561);
-            this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(184, 27);
-            this.tbPrice.TabIndex = 11;
+            tbPrice.Location = new Point(149, 561);
+            tbPrice.Name = "tbPrice";
+            tbPrice.Size = new Size(184, 23);
+            tbPrice.TabIndex = 11;
             // 
             // numericQuantity
             // 
-            this.numericQuantity.Location = new System.Drawing.Point(149, 605);
-            this.numericQuantity.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.numericQuantity.Name = "numericQuantity";
-            this.numericQuantity.Size = new System.Drawing.Size(184, 27);
-            this.numericQuantity.TabIndex = 12;
-            this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged);
+            numericQuantity.Location = new Point(149, 605);
+            numericQuantity.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
+            numericQuantity.Name = "numericQuantity";
+            numericQuantity.Size = new Size(184, 23);
+            numericQuantity.TabIndex = 12;
+            numericQuantity.ValueChanged += numericQuantity_ValueChanged;
             // 
             // tbTotal
             // 
-            this.tbTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTotal.Location = new System.Drawing.Point(149, 647);
-            this.tbTotal.Name = "tbTotal";
-            this.tbTotal.Size = new System.Drawing.Size(184, 27);
-            this.tbTotal.TabIndex = 13;
-            this.tbTotal.TextChanged += new System.EventHandler(this.tbTotal_TextChanged);
+            tbTotal.Cursor = Cursors.IBeam;
+            tbTotal.Location = new Point(149, 647);
+            tbTotal.Name = "tbTotal";
+            tbTotal.Size = new Size(184, 23);
+            tbTotal.TabIndex = 13;
+            tbTotal.TextChanged += tbTotal_TextChanged;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(643, 129);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(94, 40);
-            this.btnLoad.TabIndex = 14;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            btnLoad.Location = new Point(643, 129);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(94, 40);
+            btnLoad.TabIndex = 14;
+            btnLoad.Text = "Load";
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
             // 
             // dgvCart
             // 
-            this.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCart.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.price,
-            this.quantity,
-            this.total,
-            this.date});
-            this.dgvCart.Location = new System.Drawing.Point(364, 187);
-            this.dgvCart.Name = "dgvCart";
-            this.dgvCart.RowHeadersWidth = 51;
-            this.dgvCart.RowTemplate.Height = 29;
-            this.dgvCart.Size = new System.Drawing.Size(662, 445);
-            this.dgvCart.TabIndex = 15;
-            this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
+            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCart.BackgroundColor = Color.White;
+            dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCart.Columns.AddRange(new DataGridViewColumn[] { name, price, quantity, total, date });
+            dgvCart.Location = new Point(364, 187);
+            dgvCart.Name = "dgvCart";
+            dgvCart.RowHeadersWidth = 51;
+            dgvCart.RowTemplate.Height = 29;
+            dgvCart.Size = new Size(662, 445);
+            dgvCart.TabIndex = 15;
+            dgvCart.CellContentClick += dgvCart_CellContentClick;
             // 
             // name
             // 
-            this.name.HeaderText = "Items Name";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
+            name.HeaderText = "Items Name";
+            name.MinimumWidth = 6;
+            name.Name = "name";
             // 
             // price
             // 
-            this.price.HeaderText = "Prices";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
+            price.HeaderText = "Prices";
+            price.MinimumWidth = 6;
+            price.Name = "price";
             // 
             // quantity
             // 
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
+            quantity.HeaderText = "Quantity";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
             // 
             // total
             // 
-            this.total.HeaderText = "Total";
-            this.total.MinimumWidth = 6;
-            this.total.Name = "total";
+            total.HeaderText = "Total";
+            total.MinimumWidth = 6;
+            total.Name = "total";
             // 
             // date
             // 
-            this.date.HeaderText = "Date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
+            date.HeaderText = "Date";
+            date.MinimumWidth = 6;
+            date.Name = "date";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(908, 678);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 20);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Total Amount";
+            label6.AutoSize = true;
+            label6.Location = new Point(908, 678);
+            label6.Name = "label6";
+            label6.Size = new Size(96, 16);
+            label6.TabIndex = 16;
+            label6.Text = "Total Amount";
             // 
             // tbAmount
             // 
-            this.tbAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tbAmount.Location = new System.Drawing.Point(908, 716);
-            this.tbAmount.Name = "tbAmount";
-            this.tbAmount.Size = new System.Drawing.Size(118, 27);
-            this.tbAmount.TabIndex = 17;
-            this.tbAmount.Text = "0";
+            tbAmount.Cursor = Cursors.IBeam;
+            tbAmount.ForeColor = Color.FromArgb(128, 64, 0);
+            tbAmount.Location = new Point(908, 716);
+            tbAmount.Name = "tbAmount";
+            tbAmount.Size = new Size(118, 23);
+            tbAmount.TabIndex = 17;
+            tbAmount.Text = "0";
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(491, 709);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 40);
-            this.btnClear.TabIndex = 18;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            btnClear.Location = new Point(491, 709);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 40);
+            btnClear.TabIndex = 18;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(674, 709);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 40);
-            this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Location = new Point(674, 709);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 40);
+            btnSave.TabIndex = 19;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 781);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.tbAmount);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dgvCart);
-            this.Controls.Add(this.btnLoad);
-            this.Controls.Add(this.tbTotal);
-            this.Controls.Add(this.numericQuantity);
-            this.Controls.Add(this.tbPrice);
-            this.Controls.Add(this.cbSelect);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.picture);
-            this.Controls.Add(this.rbDessert);
-            this.Controls.Add(this.rbCoffee);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form3";
-            this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(9F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1053, 781);
+            Controls.Add(btnSave);
+            Controls.Add(btnClear);
+            Controls.Add(tbAmount);
+            Controls.Add(label6);
+            Controls.Add(dgvCart);
+            Controls.Add(btnLoad);
+            Controls.Add(tbTotal);
+            Controls.Add(numericQuantity);
+            Controls.Add(tbPrice);
+            Controls.Add(cbSelect);
+            Controls.Add(btnDelete);
+            Controls.Add(btnAdd);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(picture);
+            Controls.Add(rbDessert);
+            Controls.Add(rbCoffee);
+            Controls.Add(panel1);
+            Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Form3";
+            Text = "Form3";
+            Load += Form3_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericQuantity).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCart).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

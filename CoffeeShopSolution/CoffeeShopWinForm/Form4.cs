@@ -55,6 +55,18 @@ namespace CoffeeShopWinForm {
 
             // **** Profile ****
 
+            txtPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string phoneNum = txtPhone.Text;
+            txtPhone.TextMaskFormat = MaskFormat.IncludeLiterals;
+            if (u.Username.Length > 5 && phoneNum.Equals("0000000000") && u.Email.Length == 5) {
+                if (u.Username.Substring(0, 5).Equals("guest") && u.Email.Equals("guest")) {
+                    txtName.ReadOnly = true;
+                    txtEmail.ReadOnly = true;
+                    txtPhone.ReadOnly = true;
+                    txtPass.ReadOnly = true;
+                }
+            }
+
             txtName.Text = u.Username;
             txtEmail.Text = u.Email;
             txtPhone.Text = u.Phone;
@@ -150,6 +162,14 @@ namespace CoffeeShopWinForm {
             txtPhone.TextMaskFormat = MaskFormat.IncludeLiterals;
             //if (txtName.Text.Equals(u.Username) && txtEmail.Text.Equals(u.Email) && txtPhone.Text.Equals(phoneNum)) {
             //}
+
+            if(u.Username.Length > 5 && phoneNum.Equals("0000000000") && u.Email.Length == 5) { 
+                if(u.Username.Substring(0,5).Equals("guest") && u.Email.Equals("guest")) {
+                    MessageBox.Show("Cannot save guest account.");
+                    return;
+                }
+            }
+
             if (txtName.Text.Length != 0 || txtEmail.Text.Length != 0 || phoneNum.Length != 0) {
                 string newPass = "";
                 if (txtPass.Text.Length > 0) {

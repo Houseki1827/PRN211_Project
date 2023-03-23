@@ -388,9 +388,7 @@ D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\
 D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form2.resources
 D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form3.resources
 D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form4.resources
-D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form5.resources
 D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form6.resources
-D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form7.resources
 D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.csproj.GenerateResource.cache
 D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.GeneratedMSBuildEditorConfig.editorconfig
 D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.AssemblyInfoInputs.cache

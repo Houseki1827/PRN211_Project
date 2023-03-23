@@ -1,13 +1,11 @@
 using BusinessObject.Models;
 using DataAccess;
-using DataAccess.Repositories.Repo;
 using Microsoft.IdentityModel.Tokens;
 
-namespace CoffeeShopWinForm
-{
+namespace CoffeeShopWinForm {
     public partial class Form1 : Form {
         //This form is for 'initial login'. DO NOT change name until it's design is finalized
-        UserRepository repository = new UserRepository();
+        CoffeeShopContext context = new CoffeeShopContext();
 
         public Form1() {
             InitializeComponent();
@@ -26,7 +24,7 @@ namespace CoffeeShopWinForm
             }
             else {
                 errLogin.SetError(txtUser, "");
-                checkUser= true;
+                checkUser = true;
             }
             if (txtPass.Text.IsNullOrEmpty()) {
                 txtPass.Focus();
@@ -34,9 +32,9 @@ namespace CoffeeShopWinForm
             }
             else {
                 errLogin.SetError(txtPass, "");
-                checkPass= true;
+                checkPass = true;
             }
-            if (repository.GetUsers().Where(c => c.Username == txtUser.Text || c.Email == txtUser.Text).Count() == 0) {
+            if (context.Users.Where(c => c.Username == txtUser.Text || c.Email == txtUser.Text).Count() == 0) {
                 MessageBox.Show("Cannot find user.");
                 txtUser.Clear();
                 txtPass.Clear();
@@ -44,16 +42,20 @@ namespace CoffeeShopWinForm
                 return;
             }
             else checkLogin = true;
-            if(checkUser && checkPass && checkLogin) {
-                User user = repository.GetUserByLogin(txtUser.Text.Trim(), txtPass.Text.Trim());
+            if (checkUser && checkPass && checkLogin) {
+                User user = context.Users.Where(u => u.Username == txtUser.Text.Trim() && u.Password == txtPass.Text.Trim()).FirstOrDefault();
                 if (user != null) {
-                    if(user.Username == "admin") {
+                    if (user.Username == "admin") {
+                        Hide();
+                        this.ShowInTaskbar = false;
                         Form6 frmAdmin = new Form6();
                         frmAdmin.ShowDialog();
                         return;
                     }
-                    //Form3 frm = new Form3(user);
-                    //frm.ShowDialog();
+                    Form3 frmShopping = new Form3(user);
+                    Hide();
+                    this.ShowInTaskbar = false;
+                    frmShopping.ShowDialog();
                     return;
                 }
                 else MessageBox.Show("Username or password incorrect.");
@@ -61,9 +63,9 @@ namespace CoffeeShopWinForm
         }
 
         private void btnCreate_Click(object sender, EventArgs e) {
-            Form2 form2 = new Form2();
-            form2.FormClosed += new FormClosedEventHandler(focus_Close);
-            form2.ShowDialog();
+            Form2 frmCreate = new Form2();
+            frmCreate.FormClosed += new FormClosedEventHandler(focus_Close);
+            frmCreate.ShowDialog();
             return;
         }
 
@@ -72,7 +74,7 @@ namespace CoffeeShopWinForm
         }
 
         private void txtUser_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
-            if(txtUser.Text.IsNullOrEmpty()) {  
+            if (txtUser.Text.IsNullOrEmpty()) {
                 e.Cancel = true;
                 txtUser.Focus();
                 errLogin.SetError(txtUser, "Username must not be blank!");
@@ -84,7 +86,7 @@ namespace CoffeeShopWinForm
 
         private void txtPass_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
             if (txtPass.Text.IsNullOrEmpty()) {
-                
+
                 errLogin.SetError(txtPass, "Password must not be blank!");
             }
             else {
@@ -93,6 +95,21 @@ namespace CoffeeShopWinForm
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+        }
+
+        private void btnGuest_Click(object sender, EventArgs e) {
+            Random random = new Random();
+            User guest = new User {
+                Username = "guest" + random.Next(1000, 9999),
+                Password = (random.Next(1000, 9999)* random.Next(10, 99)).ToString(),
+                Phone = "0000000000",
+                Email = "guest"
+            };
+
+            Form3 frmShopping = new Form3(guest);
+            Hide();
+            this.ShowInTaskbar = false;
+            frmShopping.ShowDialog();
         }
     }
 }
