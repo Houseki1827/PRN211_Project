@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj": {}
+    "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
+    "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\obj\\",
+        "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\iamap\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iamap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,21 +76,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj": {
+    "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
+        "projectUniqueName": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
         "projectName": "CoffeeShopWinForm",
-        "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\obj\\",
+        "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
+        "packagesPath": "C:\\Users\\iamap\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iamap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,17 +102,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
+              "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
               },
-              "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj"
+              "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -136,21 +146,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
+    "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\obj\\",
+        "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\iamap\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iamap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,14 +172,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
+              "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -215,7 +230,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

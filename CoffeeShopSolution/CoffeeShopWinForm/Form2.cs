@@ -23,7 +23,7 @@ namespace CoffeeShopWinForm {
         }
 
         private void btnCreate_Click(object sender, EventArgs e) {
-            bool check = false; 
+            bool check = false;
             string phoneNum = "";
             try {
                 checkEmpty();

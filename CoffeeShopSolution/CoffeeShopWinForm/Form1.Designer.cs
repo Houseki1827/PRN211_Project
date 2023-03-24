@@ -23,136 +23,135 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
-            this.lbLogin = new System.Windows.Forms.Label();
-            this.lbUser = new System.Windows.Forms.Label();
-            this.lbPass = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.errLogin = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnGuest = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.errLogin)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            lbLogin = new Label();
+            lbUser = new Label();
+            lbPass = new Label();
+            txtUser = new TextBox();
+            btnLogin = new Button();
+            btnCreate = new Button();
+            txtPass = new TextBox();
+            errLogin = new ErrorProvider(components);
+            btnGuest = new Button();
+            ((System.ComponentModel.ISupportInitialize)errLogin).BeginInit();
+            SuspendLayout();
             // 
             // lbLogin
             // 
-            this.lbLogin.AutoSize = true;
-            this.lbLogin.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbLogin.Location = new System.Drawing.Point(160, 31);
-            this.lbLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(110, 46);
-            this.lbLogin.TabIndex = 0;
-            this.lbLogin.Text = "Login";
+            lbLogin.AutoSize = true;
+            lbLogin.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            lbLogin.Location = new Point(185, 36);
+            lbLogin.Margin = new Padding(4, 0, 4, 0);
+            lbLogin.Name = "lbLogin";
+            lbLogin.Size = new Size(89, 37);
+            lbLogin.TabIndex = 0;
+            lbLogin.Text = "Login";
             // 
             // lbUser
             // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbUser.Location = new System.Drawing.Point(35, 112);
-            this.lbUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(103, 22);
-            this.lbUser.TabIndex = 1;
-            this.lbUser.Text = "Username";
+            lbUser.AutoSize = true;
+            lbUser.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbUser.Location = new Point(35, 112);
+            lbUser.Margin = new Padding(4, 0, 4, 0);
+            lbUser.Name = "lbUser";
+            lbUser.Size = new Size(83, 17);
+            lbUser.TabIndex = 1;
+            lbUser.Text = "Username";
             // 
             // lbPass
             // 
-            this.lbPass.AutoSize = true;
-            this.lbPass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPass.Location = new System.Drawing.Point(35, 177);
-            this.lbPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(100, 22);
-            this.lbPass.TabIndex = 2;
-            this.lbPass.Text = "Password";
+            lbPass.AutoSize = true;
+            lbPass.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPass.Location = new Point(35, 177);
+            lbPass.Margin = new Padding(4, 0, 4, 0);
+            lbPass.Name = "lbPass";
+            lbPass.Size = new Size(80, 17);
+            lbPass.TabIndex = 2;
+            lbPass.Text = "Password";
             // 
             // txtUser
             // 
-            this.txtUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUser.Location = new System.Drawing.Point(142, 108);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(261, 29);
-            this.txtUser.TabIndex = 1;
+            txtUser.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUser.Location = new Point(142, 108);
+            txtUser.Margin = new Padding(4);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(261, 24);
+            txtUser.TabIndex = 1;
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogin.Location = new System.Drawing.Point(250, 247);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(119, 40);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            btnLogin.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogin.Location = new Point(250, 247);
+            btnLogin.Margin = new Padding(4);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(119, 40);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnCreate
             // 
-            this.btnCreate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCreate.Location = new System.Drawing.Point(69, 247);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(119, 40);
-            this.btnCreate.TabIndex = 4;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            btnCreate.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreate.Location = new Point(69, 247);
+            btnCreate.Margin = new Padding(4);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(119, 40);
+            btnCreate.TabIndex = 4;
+            btnCreate.Text = "Create";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // txtPass
             // 
-            this.txtPass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPass.Location = new System.Drawing.Point(142, 173);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(261, 29);
-            this.txtPass.TabIndex = 2;
+            txtPass.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPass.Location = new Point(142, 173);
+            txtPass.Margin = new Padding(4);
+            txtPass.Name = "txtPass";
+            txtPass.PasswordChar = '*';
+            txtPass.Size = new Size(261, 24);
+            txtPass.TabIndex = 2;
             // 
             // errLogin
             // 
-            this.errLogin.ContainerControl = this;
+            errLogin.ContainerControl = this;
             // 
             // btnGuest
             // 
-            this.btnGuest.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuest.Location = new System.Drawing.Point(69, 297);
-            this.btnGuest.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGuest.Name = "btnGuest";
-            this.btnGuest.Size = new System.Drawing.Size(300, 43);
-            this.btnGuest.TabIndex = 5;
-            this.btnGuest.Text = "Login as Guest";
-            this.btnGuest.UseVisualStyleBackColor = true;
-            this.btnGuest.Click += new System.EventHandler(this.btnGuest_Click);
+            btnGuest.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuest.Location = new Point(69, 297);
+            btnGuest.Margin = new Padding(4);
+            btnGuest.Name = "btnGuest";
+            btnGuest.Size = new Size(300, 43);
+            btnGuest.TabIndex = 5;
+            btnGuest.Text = "Login as Guest";
+            btnGuest.UseVisualStyleBackColor = true;
+            btnGuest.Click += btnGuest_Click;
             // 
             // Form1
             // 
-            this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(441, 380);
-            this.Controls.Add(this.btnGuest);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.lbPass);
-            this.Controls.Add(this.lbUser);
-            this.Controls.Add(this.lbLogin);
-            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.errLogin)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnLogin;
+            AutoScaleDimensions = new SizeF(9F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            CausesValidation = false;
+            ClientSize = new Size(441, 380);
+            Controls.Add(btnGuest);
+            Controls.Add(txtPass);
+            Controls.Add(btnCreate);
+            Controls.Add(btnLogin);
+            Controls.Add(txtUser);
+            Controls.Add(lbPass);
+            Controls.Add(lbUser);
+            Controls.Add(lbLogin);
+            Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(4);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)errLogin).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

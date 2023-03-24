@@ -110,10 +110,9 @@ namespace CoffeeShopWinForm {
                 guestName = "guest" + random.Next(1000, 9999);
             }
             while (context.Users.Where(c => c.Username == guestName).Count() > 0);
-            BusinessObject.Models.User guest = new BusinessObject.Models.User
-            {
+            BusinessObject.Models.User guest = new BusinessObject.Models.User {
                 Username = guestName,
-                Password = (random.Next(1000, 9999)* random.Next(10, 99)).ToString(),
+                Password = (random.Next(1000, 9999) * random.Next(10, 99)).ToString(),
                 Phone = "0000000000",
                 Email = "guest"
             };
@@ -129,8 +128,8 @@ namespace CoffeeShopWinForm {
         }
 
         private void MenuClosed(object? sender, FormClosedEventArgs e) {
-            var frm = sender as Form3;   
-            if(frm.DialogResult == DialogResult.Abort) {
+            var frm = sender as Form3;
+            if (frm.DialogResult == DialogResult.Abort) {
                 txtUser.Clear();
                 txtPass.Clear();
                 Focus();

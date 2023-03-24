@@ -25,530 +25,515 @@ namespace CoffeeShopWinForm {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tbOrder = new System.Windows.Forms.TableLayoutPanel();
-            this.lbTotal = new System.Windows.Forms.Label();
-            this.lbPhone = new System.Windows.Forms.Label();
-            this.btnView = new System.Windows.Forms.Button();
-            this.lbID = new System.Windows.Forms.Label();
-            this.lbStatus = new System.Windows.Forms.Label();
-            this.pHeader = new System.Windows.Forms.Panel();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.tbHeader = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbSort = new System.Windows.Forms.ComboBox();
-            this.fpContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lbTitle_2 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtConfirm = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lbPhone_Pf = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.lbCPass = new System.Windows.Forms.Label();
-            this.lbPass = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tbOrder.SuspendLayout();
-            this.pHeader.SuspendLayout();
-            this.tbHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.SuspendLayout();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            pHeader = new Panel();
+            lbTitle = new Label();
+            tbHeader = new TableLayoutPanel();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            cbSort = new ComboBox();
+            fpContainer = new FlowLayoutPanel();
+            tbOrder = new TableLayoutPanel();
+            lbTotal = new Label();
+            lbPhone = new Label();
+            btnView = new Button();
+            lbID = new Label();
+            lbStatus = new Label();
+            dgvOrderDetails = new DataGridView();
+            tabPage2 = new TabPage();
+            lbTitle_2 = new Label();
+            btnCancel = new Button();
+            btnSave = new Button();
+            txtPhone = new MaskedTextBox();
+            txtEmail = new TextBox();
+            txtConfirm = new TextBox();
+            txtPass = new TextBox();
+            txtName = new TextBox();
+            lbPhone_Pf = new Label();
+            lbEmail = new Label();
+            lbCPass = new Label();
+            lbPass = new Label();
+            lbName = new Label();
+            btnLogout = new Button();
+            label5 = new Label();
+            label6 = new Label();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            pHeader.SuspendLayout();
+            tbHeader.SuspendLayout();
+            fpContainer.SuspendLayout();
+            tbOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvOrderDetails).BeginInit();
+            tabPage2.SuspendLayout();
+            SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(636, 661);
-            this.tabControl1.TabIndex = 0;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(4);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(636, 661);
+            tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tbOrder);
-            this.tabPage1.Controls.Add(this.pHeader);
-            this.tabPage1.Controls.Add(this.fpContainer);
-            this.tabPage1.Controls.Add(this.dgvOrderDetails);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(628, 628);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Order history";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tbOrder
-            // 
-            this.tbOrder.ColumnCount = 5;
-            this.tbOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.35408F));
-            this.tbOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.64592F));
-            this.tbOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tbOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
-            this.tbOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tbOrder.Controls.Add(this.lbTotal, 3, 0);
-            this.tbOrder.Controls.Add(this.lbPhone, 1, 0);
-            this.tbOrder.Controls.Add(this.btnView, 4, 0);
-            this.tbOrder.Controls.Add(this.lbID, 0, 0);
-            this.tbOrder.Controls.Add(this.lbStatus, 2, 0);
-            this.tbOrder.Location = new System.Drawing.Point(3, 153);
-            this.tbOrder.Margin = new System.Windows.Forms.Padding(4);
-            this.tbOrder.Name = "tbOrder";
-            this.tbOrder.RowCount = 1;
-            this.tbOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tbOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tbOrder.Size = new System.Drawing.Size(621, 49);
-            this.tbOrder.TabIndex = 1;
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbTotal.AutoSize = true;
-            this.lbTotal.Location = new System.Drawing.Point(402, 14);
-            this.lbTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(64, 20);
-            this.lbTotal.TabIndex = 3;
-            this.lbTotal.Text = "$33.00";
-            // 
-            // lbPhone
-            // 
-            this.lbPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.Location = new System.Drawing.Point(103, 14);
-            this.lbPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(121, 20);
-            this.lbPhone.TabIndex = 1;
-            this.lbPhone.Text = "0123-456-789";
-            // 
-            // btnView
-            // 
-            this.btnView.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnView.Location = new System.Drawing.Point(529, 4);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(88, 41);
-            this.btnView.TabIndex = 4;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            // 
-            // lbID
-            // 
-            this.lbID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(40, 14);
-            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(19, 20);
-            this.lbID.TabIndex = 0;
-            this.lbID.Text = "1";
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbStatus.ForeColor = System.Drawing.Color.Firebrick;
-            this.lbStatus.Location = new System.Drawing.Point(269, 12);
-            this.lbStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(49, 25);
-            this.lbStatus.TabIndex = 2;
-            this.lbStatus.Text = "Paid";
-            this.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            tabPage1.Controls.Add(pHeader);
+            tabPage1.Controls.Add(fpContainer);
+            tabPage1.Controls.Add(dgvOrderDetails);
+            tabPage1.Location = new Point(4, 25);
+            tabPage1.Margin = new Padding(4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(4);
+            tabPage1.Size = new Size(628, 632);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Order history";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
             // pHeader
             // 
-            this.pHeader.Controls.Add(this.lbTitle);
-            this.pHeader.Controls.Add(this.tbHeader);
-            this.pHeader.Controls.Add(this.cbSort);
-            this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pHeader.Location = new System.Drawing.Point(4, 4);
-            this.pHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(620, 141);
-            this.pHeader.TabIndex = 4;
+            pHeader.Controls.Add(lbTitle);
+            pHeader.Controls.Add(tbHeader);
+            pHeader.Controls.Add(cbSort);
+            pHeader.Dock = DockStyle.Top;
+            pHeader.Location = new Point(4, 4);
+            pHeader.Margin = new Padding(4);
+            pHeader.Name = "pHeader";
+            pHeader.Size = new Size(620, 141);
+            pHeader.TabIndex = 4;
             // 
             // lbTitle
             // 
-            this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTitle.Location = new System.Drawing.Point(185, 25);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(240, 46);
-            this.lbTitle.TabIndex = 3;
-            this.lbTitle.Text = "Order History";
+            lbTitle.Anchor = AnchorStyles.None;
+            lbTitle.AutoSize = true;
+            lbTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTitle.Location = new Point(185, 25);
+            lbTitle.Margin = new Padding(4, 0, 4, 0);
+            lbTitle.Name = "lbTitle";
+            lbTitle.Size = new Size(194, 37);
+            lbTitle.TabIndex = 3;
+            lbTitle.Text = "Order History";
             // 
             // tbHeader
             // 
-            this.tbHeader.ColumnCount = 5;
-            this.tbHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.88546F));
-            this.tbHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.11454F));
-            this.tbHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tbHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
-            this.tbHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.tbHeader.Controls.Add(this.label7, 3, 0);
-            this.tbHeader.Controls.Add(this.label8, 0, 0);
-            this.tbHeader.Controls.Add(this.label9, 2, 0);
-            this.tbHeader.Controls.Add(this.label10, 1, 0);
-            this.tbHeader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbHeader.Location = new System.Drawing.Point(0, 97);
-            this.tbHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.tbHeader.Name = "tbHeader";
-            this.tbHeader.RowCount = 1;
-            this.tbHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tbHeader.Size = new System.Drawing.Size(620, 44);
-            this.tbHeader.TabIndex = 2;
+            tbHeader.ColumnCount = 5;
+            tbHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.88546F));
+            tbHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62.11454F));
+            tbHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 122F));
+            tbHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 164F));
+            tbHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 106F));
+            tbHeader.Controls.Add(label7, 3, 0);
+            tbHeader.Controls.Add(label8, 0, 0);
+            tbHeader.Controls.Add(label9, 2, 0);
+            tbHeader.Controls.Add(label10, 1, 0);
+            tbHeader.Dock = DockStyle.Bottom;
+            tbHeader.Location = new Point(0, 97);
+            tbHeader.Margin = new Padding(4);
+            tbHeader.Name = "tbHeader";
+            tbHeader.RowCount = 1;
+            tbHeader.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tbHeader.Size = new Size(620, 44);
+            tbHeader.TabIndex = 2;
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(405, 12);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Total";
+            label7.Anchor = AnchorStyles.None;
+            label7.AutoSize = true;
+            label7.Location = new Point(410, 14);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(41, 16);
+            label7.TabIndex = 3;
+            label7.Text = "Total";
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 12);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "OrderID";
+            label8.Anchor = AnchorStyles.None;
+            label8.AutoSize = true;
+            label8.Location = new Point(12, 14);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(61, 16);
+            label8.TabIndex = 0;
+            label8.Text = "OrderID";
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(257, 12);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Status";
+            label9.Anchor = AnchorStyles.None;
+            label9.AutoSize = true;
+            label9.Location = new Point(263, 14);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(50, 16);
+            label9.TabIndex = 2;
+            label9.Text = "Status";
             // 
             // label10
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(126, 12);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Phone";
+            label10.Anchor = AnchorStyles.None;
+            label10.AutoSize = true;
+            label10.Location = new Point(132, 14);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(48, 16);
+            label10.TabIndex = 1;
+            label10.Text = "Phone";
             // 
             // cbSort
             // 
-            this.cbSort.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbSort.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbSort.FormattingEnabled = true;
-            this.cbSort.Items.AddRange(new object[] {
-            "(none)",
-            "ID ↑",
-            "ID ↓",
-            "Total ↑",
-            "Total ↓"});
-            this.cbSort.Location = new System.Drawing.Point(485, 61);
-            this.cbSort.Margin = new System.Windows.Forms.Padding(4);
-            this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(135, 28);
-            this.cbSort.TabIndex = 2;
-            this.cbSort.Text = "(none)";
+            cbSort.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbSort.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbSort.FormattingEnabled = true;
+            cbSort.Items.AddRange(new object[] { "(none)", "ID ↑", "ID ↓", "Total ↑", "Total ↓" });
+            cbSort.Location = new Point(485, 61);
+            cbSort.Margin = new Padding(4);
+            cbSort.Name = "cbSort";
+            cbSort.Size = new Size(135, 24);
+            cbSort.TabIndex = 2;
+            cbSort.Text = "(none)";
+            cbSort.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // fpContainer
             // 
-            this.fpContainer.AutoScroll = true;
-            this.fpContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.fpContainer.Location = new System.Drawing.Point(4, 150);
-            this.fpContainer.Margin = new System.Windows.Forms.Padding(4, 4, 23, 4);
-            this.fpContainer.Name = "fpContainer";
-            this.fpContainer.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.fpContainer.Size = new System.Drawing.Size(620, 231);
-            this.fpContainer.TabIndex = 1;
-            this.fpContainer.WrapContents = false;
+            fpContainer.AutoScroll = true;
+            fpContainer.Controls.Add(tbOrder);
+            fpContainer.Dock = DockStyle.Bottom;
+            fpContainer.Location = new Point(4, 154);
+            fpContainer.Margin = new Padding(4, 4, 23, 4);
+            fpContainer.Name = "fpContainer";
+            fpContainer.Padding = new Padding(0, 0, 15, 0);
+            fpContainer.Size = new Size(620, 231);
+            fpContainer.TabIndex = 1;
+            fpContainer.WrapContents = false;
+            // 
+            // tbOrder
+            // 
+            tbOrder.ColumnCount = 5;
+            tbOrder.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.35408F));
+            tbOrder.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62.64592F));
+            tbOrder.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 133F));
+            tbOrder.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 127F));
+            tbOrder.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 95F));
+            tbOrder.Controls.Add(lbTotal, 3, 0);
+            tbOrder.Controls.Add(lbPhone, 1, 0);
+            tbOrder.Controls.Add(btnView, 4, 0);
+            tbOrder.Controls.Add(lbID, 0, 0);
+            tbOrder.Controls.Add(lbStatus, 2, 0);
+            tbOrder.Dock = DockStyle.Top;
+            tbOrder.Location = new Point(4, 4);
+            tbOrder.Margin = new Padding(4);
+            tbOrder.Name = "tbOrder";
+            tbOrder.RowCount = 1;
+            tbOrder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tbOrder.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
+            tbOrder.Size = new Size(611, 49);
+            tbOrder.TabIndex = 1;
+            // 
+            // lbTotal
+            // 
+            lbTotal.Anchor = AnchorStyles.Left;
+            lbTotal.AutoSize = true;
+            lbTotal.Location = new Point(392, 16);
+            lbTotal.Margin = new Padding(4, 0, 4, 0);
+            lbTotal.Name = "lbTotal";
+            lbTotal.Size = new Size(51, 16);
+            lbTotal.TabIndex = 3;
+            lbTotal.Text = "$33.00";
+            // 
+            // lbPhone
+            // 
+            lbPhone.Anchor = AnchorStyles.Left;
+            lbPhone.AutoSize = true;
+            lbPhone.Location = new Point(99, 16);
+            lbPhone.Margin = new Padding(4, 0, 4, 0);
+            lbPhone.Name = "lbPhone";
+            lbPhone.Size = new Size(97, 16);
+            lbPhone.TabIndex = 1;
+            lbPhone.Text = "0123-456-789";
+            // 
+            // btnView
+            // 
+            btnView.Anchor = AnchorStyles.Left;
+            btnView.Location = new Point(519, 4);
+            btnView.Margin = new Padding(4);
+            btnView.Name = "btnView";
+            btnView.Size = new Size(88, 41);
+            btnView.TabIndex = 4;
+            btnView.Text = "View";
+            btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnView_Click_1;
+            // 
+            // lbID
+            // 
+            lbID.Anchor = AnchorStyles.None;
+            lbID.AutoSize = true;
+            lbID.Location = new Point(40, 16);
+            lbID.Margin = new Padding(4, 0, 4, 0);
+            lbID.Name = "lbID";
+            lbID.Size = new Size(15, 16);
+            lbID.TabIndex = 0;
+            lbID.Text = "1";
+            // 
+            // lbStatus
+            // 
+            lbStatus.Anchor = AnchorStyles.Left;
+            lbStatus.AutoSize = true;
+            lbStatus.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbStatus.ForeColor = Color.Firebrick;
+            lbStatus.Location = new Point(259, 14);
+            lbStatus.Margin = new Padding(4, 0, 4, 0);
+            lbStatus.Name = "lbStatus";
+            lbStatus.Size = new Size(39, 20);
+            lbStatus.TabIndex = 2;
+            lbStatus.Text = "Paid";
+            lbStatus.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dgvOrderDetails
             // 
-            this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvOrderDetails.Location = new System.Drawing.Point(4, 381);
-            this.dgvOrderDetails.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvOrderDetails.Name = "dgvOrderDetails";
-            this.dgvOrderDetails.ReadOnly = true;
-            this.dgvOrderDetails.RowHeadersWidth = 51;
-            this.dgvOrderDetails.RowTemplate.Height = 25;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(620, 243);
-            this.dgvOrderDetails.TabIndex = 0;
+            dgvOrderDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrderDetails.Dock = DockStyle.Bottom;
+            dgvOrderDetails.Location = new Point(4, 385);
+            dgvOrderDetails.Margin = new Padding(4);
+            dgvOrderDetails.Name = "dgvOrderDetails";
+            dgvOrderDetails.ReadOnly = true;
+            dgvOrderDetails.RowHeadersWidth = 51;
+            dgvOrderDetails.RowTemplate.Height = 25;
+            dgvOrderDetails.Size = new Size(620, 243);
+            dgvOrderDetails.TabIndex = 0;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.lbTitle_2);
-            this.tabPage2.Controls.Add(this.btnCancel);
-            this.tabPage2.Controls.Add(this.btnSave);
-            this.tabPage2.Controls.Add(this.txtPhone);
-            this.tabPage2.Controls.Add(this.txtEmail);
-            this.tabPage2.Controls.Add(this.txtConfirm);
-            this.tabPage2.Controls.Add(this.txtPass);
-            this.tabPage2.Controls.Add(this.txtName);
-            this.tabPage2.Controls.Add(this.lbPhone_Pf);
-            this.tabPage2.Controls.Add(this.lbEmail);
-            this.tabPage2.Controls.Add(this.lbCPass);
-            this.tabPage2.Controls.Add(this.lbPass);
-            this.tabPage2.Controls.Add(this.lbName);
-            this.tabPage2.Controls.Add(this.btnLogout);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(15, 13, 15, 13);
-            this.tabPage2.Size = new System.Drawing.Size(628, 628);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Profile";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Controls.Add(lbTitle_2);
+            tabPage2.Controls.Add(btnCancel);
+            tabPage2.Controls.Add(btnSave);
+            tabPage2.Controls.Add(txtPhone);
+            tabPage2.Controls.Add(txtEmail);
+            tabPage2.Controls.Add(txtConfirm);
+            tabPage2.Controls.Add(txtPass);
+            tabPage2.Controls.Add(txtName);
+            tabPage2.Controls.Add(lbPhone_Pf);
+            tabPage2.Controls.Add(lbEmail);
+            tabPage2.Controls.Add(lbCPass);
+            tabPage2.Controls.Add(lbPass);
+            tabPage2.Controls.Add(lbName);
+            tabPage2.Controls.Add(btnLogout);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Margin = new Padding(4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(15, 13, 15, 13);
+            tabPage2.Size = new Size(628, 633);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Profile";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // lbTitle_2
             // 
-            this.lbTitle_2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTitle_2.AutoSize = true;
-            this.lbTitle_2.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTitle_2.Location = new System.Drawing.Point(245, 51);
-            this.lbTitle_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitle_2.Name = "lbTitle_2";
-            this.lbTitle_2.Size = new System.Drawing.Size(138, 50);
-            this.lbTitle_2.TabIndex = 13;
-            this.lbTitle_2.Text = "Profile";
+            lbTitle_2.Anchor = AnchorStyles.Top;
+            lbTitle_2.AutoSize = true;
+            lbTitle_2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTitle_2.Location = new Point(245, 51);
+            lbTitle_2.Margin = new Padding(4, 0, 4, 0);
+            lbTitle_2.Name = "lbTitle_2";
+            lbTitle_2.Size = new Size(112, 41);
+            lbTitle_2.TabIndex = 13;
+            lbTitle_2.Text = "Profile";
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancel.Location = new System.Drawing.Point(127, 456);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(119, 40);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.Location = new Point(127, 456);
+            btnCancel.Margin = new Padding(4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(119, 40);
+            btnCancel.TabIndex = 6;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(375, 456);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(119, 40);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            btnSave.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Location = new Point(375, 456);
+            btnSave.Margin = new Padding(4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(119, 40);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhone.Location = new System.Drawing.Point(269, 355);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPhone.Mask = "(999) 000-0000";
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(288, 28);
-            this.txtPhone.TabIndex = 4;
+            txtPhone.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPhone.Location = new Point(269, 355);
+            txtPhone.Margin = new Padding(4);
+            txtPhone.Mask = "(999) 000-0000";
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(288, 24);
+            txtPhone.TabIndex = 4;
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(269, 304);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(288, 28);
-            this.txtEmail.TabIndex = 3;
+            txtEmail.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.Location = new Point(269, 304);
+            txtEmail.Margin = new Padding(4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(288, 24);
+            txtEmail.TabIndex = 3;
             // 
             // txtConfirm
             // 
-            this.txtConfirm.Enabled = false;
-            this.txtConfirm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirm.Location = new System.Drawing.Point(269, 255);
-            this.txtConfirm.Margin = new System.Windows.Forms.Padding(4);
-            this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.PasswordChar = '*';
-            this.txtConfirm.PlaceholderText = "**********";
-            this.txtConfirm.Size = new System.Drawing.Size(288, 28);
-            this.txtConfirm.TabIndex = 2;
+            txtConfirm.Enabled = false;
+            txtConfirm.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtConfirm.Location = new Point(269, 255);
+            txtConfirm.Margin = new Padding(4);
+            txtConfirm.Name = "txtConfirm";
+            txtConfirm.PasswordChar = '*';
+            txtConfirm.PlaceholderText = "**********";
+            txtConfirm.Size = new Size(288, 24);
+            txtConfirm.TabIndex = 2;
             // 
             // txtPass
             // 
-            this.txtPass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPass.Location = new System.Drawing.Point(269, 206);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.PlaceholderText = "**********";
-            this.txtPass.Size = new System.Drawing.Size(288, 29);
-            this.txtPass.TabIndex = 1;
+            txtPass.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPass.Location = new Point(269, 206);
+            txtPass.Margin = new Padding(4);
+            txtPass.Name = "txtPass";
+            txtPass.PasswordChar = '*';
+            txtPass.PlaceholderText = "**********";
+            txtPass.Size = new Size(288, 24);
+            txtPass.TabIndex = 1;
+            txtPass.TextChanged += txtPass_TextChanged;
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(269, 159);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(288, 29);
-            this.txtName.TabIndex = 0;
+            txtName.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.Location = new Point(269, 159);
+            txtName.Margin = new Padding(4);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(288, 24);
+            txtName.TabIndex = 0;
             // 
             // lbPhone_Pf
             // 
-            this.lbPhone_Pf.AutoSize = true;
-            this.lbPhone_Pf.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPhone_Pf.Location = new System.Drawing.Point(65, 358);
-            this.lbPhone_Pf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPhone_Pf.Name = "lbPhone_Pf";
-            this.lbPhone_Pf.Size = new System.Drawing.Size(73, 22);
-            this.lbPhone_Pf.TabIndex = 5;
-            this.lbPhone_Pf.Text = "Phone:";
+            lbPhone_Pf.AutoSize = true;
+            lbPhone_Pf.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPhone_Pf.Location = new Point(65, 358);
+            lbPhone_Pf.Margin = new Padding(4, 0, 4, 0);
+            lbPhone_Pf.Name = "lbPhone_Pf";
+            lbPhone_Pf.Size = new Size(59, 17);
+            lbPhone_Pf.TabIndex = 5;
+            lbPhone_Pf.Text = "Phone:";
             // 
             // lbEmail
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEmail.Location = new System.Drawing.Point(65, 307);
-            this.lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(73, 22);
-            this.lbEmail.TabIndex = 4;
-            this.lbEmail.Text = "E-mail:";
+            lbEmail.AutoSize = true;
+            lbEmail.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbEmail.Location = new Point(65, 307);
+            lbEmail.Margin = new Padding(4, 0, 4, 0);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new Size(58, 17);
+            lbEmail.TabIndex = 4;
+            lbEmail.Text = "E-mail:";
             // 
             // lbCPass
             // 
-            this.lbCPass.AutoSize = true;
-            this.lbCPass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCPass.Location = new System.Drawing.Point(65, 256);
-            this.lbCPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCPass.Name = "lbCPass";
-            this.lbCPass.Size = new System.Drawing.Size(178, 21);
-            this.lbCPass.TabIndex = 3;
-            this.lbCPass.Text = "Confirm password:";
+            lbCPass.AutoSize = true;
+            lbCPass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lbCPass.Location = new Point(65, 256);
+            lbCPass.Margin = new Padding(4, 0, 4, 0);
+            lbCPass.Name = "lbCPass";
+            lbCPass.Size = new Size(146, 17);
+            lbCPass.TabIndex = 3;
+            lbCPass.Text = "Confirm password:";
             // 
             // lbPass
             // 
-            this.lbPass.AutoSize = true;
-            this.lbPass.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPass.Location = new System.Drawing.Point(65, 207);
-            this.lbPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(104, 21);
-            this.lbPass.TabIndex = 2;
-            this.lbPass.Text = "Password:";
+            lbPass.AutoSize = true;
+            lbPass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPass.Location = new Point(65, 207);
+            lbPass.Margin = new Padding(4, 0, 4, 0);
+            lbPass.Name = "lbPass";
+            lbPass.Size = new Size(85, 17);
+            lbPass.TabIndex = 2;
+            lbPass.Text = "Password:";
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbName.Location = new System.Drawing.Point(65, 159);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(108, 21);
-            this.lbName.TabIndex = 1;
-            this.lbName.Text = "Username:";
+            lbName.AutoSize = true;
+            lbName.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lbName.Location = new Point(65, 159);
+            lbName.Margin = new Padding(4, 0, 4, 0);
+            lbName.Name = "lbName";
+            lbName.Size = new Size(88, 17);
+            lbName.TabIndex = 1;
+            lbName.Text = "Username:";
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.Red;
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogout.Location = new System.Drawing.Point(15, 558);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(598, 57);
-            this.btnLogout.TabIndex = 99;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.15884F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.84116F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel2.Controls.Add(this.label5, 3, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel2.TabIndex = 0;
+            btnLogout.BackColor = Color.Red;
+            btnLogout.Dock = DockStyle.Bottom;
+            btnLogout.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogout.ForeColor = SystemColors.ButtonHighlight;
+            btnLogout.Location = new Point(15, 563);
+            btnLogout.Margin = new Padding(4);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(598, 57);
+            btnLogout.TabIndex = 99;
+            btnLogout.Text = "Log Out";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Total";
+            label5.Anchor = AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.Location = new Point(110, 40);
+            label5.Name = "label5";
+            label5.Size = new Size(42, 20);
+            label5.TabIndex = 3;
+            label5.Text = "Total";
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "OrderID";
+            label6.Anchor = AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 42);
+            label6.Name = "label6";
+            label6.Size = new Size(1, 15);
+            label6.TabIndex = 0;
+            label6.Text = "OrderID";
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 661);
-            this.Controls.Add(this.tabControl1);
-            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form4";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form4";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tbOrder.ResumeLayout(false);
-            this.tbOrder.PerformLayout();
-            this.pHeader.ResumeLayout(false);
-            this.pHeader.PerformLayout();
-            this.tbHeader.ResumeLayout(false);
-            this.tbHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(9F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(636, 661);
+            Controls.Add(tabControl1);
+            Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(4);
+            Name = "Form4";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form4";
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            pHeader.ResumeLayout(false);
+            pHeader.PerformLayout();
+            tbHeader.ResumeLayout(false);
+            tbHeader.PerformLayout();
+            fpContainer.ResumeLayout(false);
+            tbOrder.ResumeLayout(false);
+            tbOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvOrderDetails).EndInit();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -564,7 +549,6 @@ namespace CoffeeShopWinForm {
         private Label label8;
         private Label label9;
         private Label label10;
-        private TableLayoutPanel tableLayoutPanel2;
         private Label label5;
         private Label label6;
         private Label lbTitle_2;

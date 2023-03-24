@@ -23,166 +23,166 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.lbName = new System.Windows.Forms.Label();
-            this.lbPwd = new System.Windows.Forms.Label();
-            this.lbPwdCfm = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPwdCfm = new System.Windows.Forms.TextBox();
-            this.txtPwd = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.lbPhone = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
-            this.SuspendLayout();
+            lbName = new Label();
+            lbPwd = new Label();
+            lbPwdCfm = new Label();
+            lbEmail = new Label();
+            txtName = new TextBox();
+            txtPwdCfm = new TextBox();
+            txtPwd = new TextBox();
+            txtEmail = new TextBox();
+            lbTitle = new Label();
+            btnCreate = new Button();
+            lbPhone = new Label();
+            txtPhone = new MaskedTextBox();
+            SuspendLayout();
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbName.Location = new System.Drawing.Point(43, 97);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(111, 22);
-            this.lbName.TabIndex = 10;
-            this.lbName.Text = "Username:";
+            lbName.AutoSize = true;
+            lbName.Font = new Font("Arial", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            lbName.Location = new Point(43, 97);
+            lbName.Margin = new Padding(4, 0, 4, 0);
+            lbName.Name = "lbName";
+            lbName.Size = new Size(84, 18);
+            lbName.TabIndex = 10;
+            lbName.Text = "Username:";
             // 
             // lbPwd
             // 
-            this.lbPwd.AutoSize = true;
-            this.lbPwd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPwd.Location = new System.Drawing.Point(43, 145);
-            this.lbPwd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPwd.Name = "lbPwd";
-            this.lbPwd.Size = new System.Drawing.Size(106, 22);
-            this.lbPwd.TabIndex = 9;
-            this.lbPwd.Text = "Password:";
+            lbPwd.AutoSize = true;
+            lbPwd.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPwd.Location = new Point(43, 145);
+            lbPwd.Margin = new Padding(4, 0, 4, 0);
+            lbPwd.Name = "lbPwd";
+            lbPwd.Size = new Size(85, 17);
+            lbPwd.TabIndex = 9;
+            lbPwd.Text = "Password:";
             // 
             // lbPwdCfm
             // 
-            this.lbPwdCfm.AutoSize = true;
-            this.lbPwdCfm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPwdCfm.Location = new System.Drawing.Point(43, 195);
-            this.lbPwdCfm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPwdCfm.Name = "lbPwdCfm";
-            this.lbPwdCfm.Size = new System.Drawing.Size(183, 22);
-            this.lbPwdCfm.TabIndex = 6;
-            this.lbPwdCfm.Text = "Confirm Password:";
+            lbPwdCfm.AutoSize = true;
+            lbPwdCfm.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPwdCfm.Location = new Point(43, 195);
+            lbPwdCfm.Margin = new Padding(4, 0, 4, 0);
+            lbPwdCfm.Name = "lbPwdCfm";
+            lbPwdCfm.Size = new Size(147, 17);
+            lbPwdCfm.TabIndex = 6;
+            lbPwdCfm.Text = "Confirm Password:";
             // 
             // lbEmail
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbEmail.Location = new System.Drawing.Point(43, 241);
-            this.lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(73, 22);
-            this.lbEmail.TabIndex = 8;
-            this.lbEmail.Text = "E-mail:";
+            lbEmail.AutoSize = true;
+            lbEmail.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbEmail.Location = new Point(43, 241);
+            lbEmail.Margin = new Padding(4, 0, 4, 0);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new Size(58, 17);
+            lbEmail.TabIndex = 8;
+            lbEmail.Text = "E-mail:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(230, 94);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(239, 28);
-            this.txtName.TabIndex = 0;
+            txtName.Location = new Point(230, 94);
+            txtName.Margin = new Padding(4);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(239, 24);
+            txtName.TabIndex = 0;
             // 
             // txtPwdCfm
             // 
-            this.txtPwdCfm.Location = new System.Drawing.Point(230, 192);
-            this.txtPwdCfm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPwdCfm.Name = "txtPwdCfm";
-            this.txtPwdCfm.PasswordChar = '*';
-            this.txtPwdCfm.Size = new System.Drawing.Size(239, 28);
-            this.txtPwdCfm.TabIndex = 2;
+            txtPwdCfm.Location = new Point(230, 192);
+            txtPwdCfm.Margin = new Padding(4);
+            txtPwdCfm.Name = "txtPwdCfm";
+            txtPwdCfm.PasswordChar = '*';
+            txtPwdCfm.Size = new Size(239, 24);
+            txtPwdCfm.TabIndex = 2;
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(230, 142);
-            this.txtPwd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPwd.Name = "txtPwd";
-            this.txtPwd.PasswordChar = '*';
-            this.txtPwd.Size = new System.Drawing.Size(239, 28);
-            this.txtPwd.TabIndex = 1;
+            txtPwd.Location = new Point(230, 142);
+            txtPwd.Margin = new Padding(4);
+            txtPwd.Name = "txtPwd";
+            txtPwd.PasswordChar = '*';
+            txtPwd.Size = new Size(239, 24);
+            txtPwd.TabIndex = 1;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(230, 238);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(239, 28);
-            this.txtEmail.TabIndex = 3;
+            txtEmail.Location = new Point(230, 238);
+            txtEmail.Margin = new Padding(4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(239, 24);
+            txtEmail.TabIndex = 3;
             // 
             // lbTitle
             // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTitle.Location = new System.Drawing.Point(153, 23);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(199, 46);
-            this.lbTitle.TabIndex = 8;
-            this.lbTitle.Text = "Create user";
+            lbTitle.AutoSize = true;
+            lbTitle.Font = new Font("Segoe UI", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTitle.Location = new Point(153, 23);
+            lbTitle.Margin = new Padding(4, 0, 4, 0);
+            lbTitle.Name = "lbTitle";
+            lbTitle.Size = new Size(162, 37);
+            lbTitle.TabIndex = 8;
+            lbTitle.Text = "Create user";
             // 
             // btnCreate
             // 
-            this.btnCreate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCreate.Location = new System.Drawing.Point(187, 350);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(119, 40);
-            this.btnCreate.TabIndex = 5;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreate.Location = new Point(187, 350);
+            btnCreate.Margin = new Padding(4);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(119, 40);
+            btnCreate.TabIndex = 5;
+            btnCreate.Text = "Create";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // lbPhone
             // 
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPhone.Location = new System.Drawing.Point(43, 286);
-            this.lbPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(73, 22);
-            this.lbPhone.TabIndex = 11;
-            this.lbPhone.Text = "Phone:";
+            lbPhone.AutoSize = true;
+            lbPhone.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lbPhone.Location = new Point(43, 286);
+            lbPhone.Margin = new Padding(4, 0, 4, 0);
+            lbPhone.Name = "lbPhone";
+            lbPhone.Size = new Size(59, 17);
+            lbPhone.TabIndex = 11;
+            lbPhone.Text = "Phone:";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(230, 283);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPhone.Mask = "(999) 000-0000";
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(239, 28);
-            this.txtPhone.TabIndex = 12;
+            txtPhone.Location = new Point(230, 283);
+            txtPhone.Margin = new Padding(4);
+            txtPhone.Mask = "(999) 000-0000";
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(239, 24);
+            txtPhone.TabIndex = 12;
             // 
             // Form2
             // 
-            this.AcceptButton = this.btnCreate;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 426);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.lbPhone);
-            this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtPwd);
-            this.Controls.Add(this.txtPwdCfm);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lbEmail);
-            this.Controls.Add(this.lbPwdCfm);
-            this.Controls.Add(this.lbPwd);
-            this.Controls.Add(this.lbName);
-            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnCreate;
+            AutoScaleDimensions = new SizeF(9F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(514, 426);
+            Controls.Add(txtPhone);
+            Controls.Add(lbPhone);
+            Controls.Add(btnCreate);
+            Controls.Add(lbTitle);
+            Controls.Add(txtEmail);
+            Controls.Add(txtPwd);
+            Controls.Add(txtPwdCfm);
+            Controls.Add(txtName);
+            Controls.Add(lbEmail);
+            Controls.Add(lbPwdCfm);
+            Controls.Add(lbPwd);
+            Controls.Add(lbName);
+            Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(4);
+            Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form2";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

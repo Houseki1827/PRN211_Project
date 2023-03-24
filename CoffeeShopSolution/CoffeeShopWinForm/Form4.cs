@@ -21,7 +21,6 @@ namespace CoffeeShopWinForm {
             InitializeComponent();
 
             // **** Order ****
-
             tbOrder.AutoSize = true;
             //tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             fpContainer.HorizontalScroll.Maximum = 0;
@@ -42,6 +41,8 @@ namespace CoffeeShopWinForm {
                 //source.DataSource = context.OrderDetails.Local.ToBindingList();
             }
             else {
+                //tbOrder.Controls.Clear();
+
                 Label lbNoOrder = new Label();
                 lbNoOrder.Name = "lbNoOrder";
                 lbNoOrder.Text = "You have no orders!";
@@ -135,15 +136,16 @@ namespace CoffeeShopWinForm {
             try {
                 int OrderId = int.Parse(b.Name.Split('_')[1]);
                 //source = context.OrderDetails.Where(x => x.OrderId == OrderId).ToList();
-                List<Tuple<string, int, DateTime>> list = new List<Tuple<string, int, DateTime>>();
+                List<Tuple<string, int, decimal, DateTime>> list = new List<Tuple<string, int, decimal, DateTime>>();
                 foreach (var item in context.OrderDetails.Where(x => x.OrderId == OrderId)) {
-                    Tuple<string, int, DateTime> t = new Tuple<string, int, DateTime>(context.Items.Where(i => i.ItemId == item.ItemId).FirstOrDefault().ItemName, item.Quantity, item.OrderDate);
+                    Tuple<string, int, decimal, DateTime> t = new Tuple<string, int, decimal, DateTime>(context.Items.Where(i => i.ItemId == item.ItemId).FirstOrDefault().ItemName, item.Quantity, context.Items.Where(i => i.ItemId == item.ItemId).FirstOrDefault().Price * item.Quantity, item.OrderDate);
                     list.Add(t);
                 }
                 dgvOrderDetails.DataSource = list;
                 dgvOrderDetails.Columns[0].HeaderText = "Item";
                 dgvOrderDetails.Columns[1].HeaderText = "Quantity";
-                dgvOrderDetails.Columns[2].HeaderText = "Order date";
+                dgvOrderDetails.Columns[2].HeaderText = "Price";
+                dgvOrderDetails.Columns[3].HeaderText = "Order date";
                 dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex) {
@@ -164,8 +166,8 @@ namespace CoffeeShopWinForm {
             //if (txtName.Text.Equals(u.Username) && txtEmail.Text.Equals(u.Email) && txtPhone.Text.Equals(phoneNum)) {
             //}
 
-            if(u.Username.Length > 5 && phoneNum.Equals("0000000000") && u.Email.Length == 5) { 
-                if(u.Username.Substring(0,5).Equals("guest") && u.Email.Equals("guest")) {
+            if (u.Username.Length > 5 && phoneNum.Equals("0000000000") && u.Email.Length == 5) {
+                if (u.Username.Substring(0, 5).Equals("guest") && u.Email.Equals("guest")) {
                     MessageBox.Show("Cannot save guest account.");
                     return;
                 }
@@ -239,5 +241,8 @@ namespace CoffeeShopWinForm {
             Fill_OrderTable();
         }
 
+        private void btnView_Click_1(object sender, EventArgs e) {
+            MessageBox.Show("Test");
+        }
     }
 }
