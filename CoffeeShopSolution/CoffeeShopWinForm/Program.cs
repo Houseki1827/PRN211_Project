@@ -11,7 +11,7 @@ namespace CoffeeShopWinForm {
             // see https://aka.ms/applicationconfiguration.
             CoffeeShopContext context = new CoffeeShopContext();    
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form6());
+            Application.Run(new Form1());
         }
     }
 }

@@ -44,11 +44,6 @@
             this.numericQuantity = new System.Windows.Forms.NumericUpDown();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.tbAmount = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
@@ -86,7 +81,7 @@
             // rbCoffee
             // 
             this.rbCoffee.AutoSize = true;
-            this.rbCoffee.Location = new System.Drawing.Point(33, 137);
+            this.rbCoffee.Location = new System.Drawing.Point(55, 137);
             this.rbCoffee.Name = "rbCoffee";
             this.rbCoffee.Size = new System.Drawing.Size(98, 24);
             this.rbCoffee.TabIndex = 1;
@@ -98,7 +93,7 @@
             // rbDessert
             // 
             this.rbDessert.AutoSize = true;
-            this.rbDessert.Location = new System.Drawing.Point(223, 137);
+            this.rbDessert.Location = new System.Drawing.Point(203, 137);
             this.rbDessert.Name = "rbDessert";
             this.rbDessert.Size = new System.Drawing.Size(110, 24);
             this.rbDessert.TabIndex = 2;
@@ -204,13 +199,13 @@
             // 
             // tbTotal
             // 
+            this.tbTotal.BackColor = System.Drawing.Color.White;
             this.tbTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbTotal.Location = new System.Drawing.Point(149, 647);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(184, 27);
             this.tbTotal.TabIndex = 13;
-            this.tbTotal.TextChanged += new System.EventHandler(this.tbTotal_TextChanged);
             // 
             // dgvCart
             // 
@@ -219,12 +214,6 @@
             this.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCart.BackgroundColor = System.Drawing.Color.White;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.price,
-            this.quantity,
-            this.total,
-            this.date});
             this.dgvCart.Location = new System.Drawing.Point(364, 187);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.RowHeadersWidth = 51;
@@ -232,36 +221,6 @@
             this.dgvCart.Size = new System.Drawing.Size(662, 445);
             this.dgvCart.TabIndex = 15;
             this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Items Name";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Prices";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            // 
-            // total
-            // 
-            this.total.HeaderText = "Total";
-            this.total.MinimumWidth = 6;
-            this.total.Name = "total";
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
             // 
             // label6
             // 
@@ -298,7 +257,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 40);
             this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Buy";
+            this.btnSave.Text = "Order";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -314,16 +273,16 @@
             // 
             // tbItemId
             // 
+            this.tbItemId.BackColor = System.Drawing.SystemColors.Control;
             this.tbItemId.Location = new System.Drawing.Point(365, 647);
             this.tbItemId.Name = "tbItemId";
             this.tbItemId.Size = new System.Drawing.Size(184, 27);
             this.tbItemId.TabIndex = 23;
-            this.tbItemId.TextChanged += new System.EventHandler(this.tbItemId_TextChanged);
             // 
             // lb2
             // 
             this.lb2.AutoSize = true;
-            this.lb2.Location = new System.Drawing.Point(367, 142);
+            this.lb2.Location = new System.Drawing.Point(365, 139);
             this.lb2.Name = "lb2";
             this.lb2.Size = new System.Drawing.Size(36, 20);
             this.lb2.TabIndex = 24;
@@ -332,7 +291,7 @@
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(400, 142);
+            this.lbUsername.Location = new System.Drawing.Point(391, 139);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(48, 20);
             this.lbUsername.TabIndex = 25;
@@ -404,11 +363,6 @@
         private Button btnClear;
         private Button btnSave;
         private Button btnForm4;
-        private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn price;
-        private DataGridViewTextBoxColumn quantity;
-        private DataGridViewTextBoxColumn total;
-        private DataGridViewTextBoxColumn date;
         private TextBox tbItemId;
         private Label lb2;
         private Label lbUsername;

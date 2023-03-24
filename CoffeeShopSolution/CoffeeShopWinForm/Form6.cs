@@ -183,8 +183,8 @@ namespace CoffeeShopWinForm {
         }
 
         private void btnAddCat_Click(object sender, EventArgs e) {
-            if( txtCatName.Text.Length > 0) {
-                if(context.Categories.Where(c => c.CategoryName == txtCatName.Text).Count() == 0) {
+            if (txtCatName.Text.Length > 0) {
+                if (context.Categories.Where(c => c.CategoryName == txtCatName.Text).Count() == 0) {
                     DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
                     if (re == DialogResult.Yes) {
                         Category c = new Category { CategoryName = txtCatName.Text };
@@ -195,15 +195,15 @@ namespace CoffeeShopWinForm {
                         MessageBox.Show("New category added.");
                     }
                 }
-                else { MessageBox.Show("Category name duplicated.");}
+                else { MessageBox.Show("Category name duplicated."); }
             }
-            else { MessageBox.Show("Enter category name.");}
+            else { MessageBox.Show("Enter category name."); }
             DGVLoad();
         }
 
         private void btnSaveCat_Click(object sender, EventArgs e) {
-            if(txtCatId.Text.Length > 0) {
-                if(txtCatName.Text.Length > 0) {
+            if (txtCatId.Text.Length > 0) {
+                if (txtCatName.Text.Length > 0) {
                     try {
                         if (context.Categories.Where(c => c.CategoryName == txtCatName.Text && c.CategoryId != int.Parse(txtCatId.Text)).Count() == 0) {
                             DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
@@ -219,18 +219,18 @@ namespace CoffeeShopWinForm {
                         }
 
                     }
-                    catch (Exception ex){
+                    catch (Exception ex) {
                         MessageBox.Show(ex.Message);
                     }
                 }
-                else { MessageBox.Show("Category name cannot be empty.");}
+                else { MessageBox.Show("Category name cannot be empty."); }
             }
             else { MessageBox.Show("Select a category to update."); }
             DGVLoad();
         }
 
         private void btnDeleteCat_Click(object sender, EventArgs e) {
-            if(txtCatId.Text.Length > 0) {
+            if (txtCatId.Text.Length > 0) {
                 try {
                     if (context.Categories.Where(c => c.CategoryId == int.Parse(txtCatId.Text)).Count() != 0) {
                         DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
@@ -244,7 +244,7 @@ namespace CoffeeShopWinForm {
                     }
                     else { MessageBox.Show("Cannot find category."); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message);}
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
             else { MessageBox.Show("Category not selected."); }
             DGVLoad();
@@ -258,10 +258,10 @@ namespace CoffeeShopWinForm {
                 phone = txtUserPhone.Text;
                 txtUserPhone.TextMaskFormat = MaskFormat.IncludeLiterals;
                 int.Parse(phone);
-                if(phone.Length != 10) { phone = "";throw new Exception(); }
+                if (phone.Length != 10) { phone = ""; throw new Exception(); }
             }
-            catch (Exception ex) { MessageBox.Show("Phone number must be a 10-digits number");}
-            if(txtUserId.Text.Length > 0 && txtUserName.Text.Length > 0 && txtUserPass.Text.Length > 0 && txtUserMail.Text.Length > 0 && phone.Length > 0) {
+            catch (Exception ex) { MessageBox.Show("Phone number must be a 10-digits number"); }
+            if (txtUserId.Text.Length > 0 && txtUserName.Text.Length > 0 && txtUserPass.Text.Length > 0 && txtUserMail.Text.Length > 0 && phone.Length > 0) {
                 try {
                     if (context.Users.Where(c => c.UserId == int.Parse(txtUserId.Text)).Count() != 0) {
                         User u = context.Users.Where(c => c.UserId == int.Parse(txtUserId.Text)).FirstOrDefault();
@@ -269,8 +269,8 @@ namespace CoffeeShopWinForm {
                         u.Phone = phone;
                         u.Email = txtUserMail.Text;
                         u.Password = txtUserPass.Text;
-                        DialogResult re = MessageBox.Show("Save changes?","Confirm",MessageBoxButtons.YesNo);
-                        if(re == DialogResult.Yes) { 
+                        DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
+                        if (re == DialogResult.Yes) {
                             context.Users.Update(u);
                             context.SaveChanges();
                             txtUserPass.Clear();
@@ -282,13 +282,14 @@ namespace CoffeeShopWinForm {
                         }
                     }
                 }
-                catch(Exception ex ) { MessageBox.Show(ex.Message);}
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
             else MessageBox.Show("Cannot save user. Required field(s) is empty.");
+            DGVLoad();
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e) {
-            if(txtUserId.Text.Length > 0) {
+            if (txtUserId.Text.Length > 0) {
                 try {
                     if (context.Users.Find(int.Parse(txtUserId.Text)) != null) {
                         DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
@@ -305,9 +306,10 @@ namespace CoffeeShopWinForm {
                     }
                     else { MessageBox.Show("Cannot find user."); }
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message);}
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            else { MessageBox.Show("Select a user.");}
+            else { MessageBox.Show("Select a user."); }
+            DGVLoad();
         }
 
         private void dgvUserList_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -322,8 +324,8 @@ namespace CoffeeShopWinForm {
                     txtUserPhone.Text = u.Phone;
 
                     List<Tuple<int, string, decimal, string>> orderList = new List<Tuple<int, string, decimal, string>>();
-                    foreach(var item in context.Orders.Where(o => o.UserId == u.UserId)) {
-                        Tuple<int, string, decimal, string> t = new Tuple<int, string, decimal, string>(item.OrderId,item.Phone,item.Total,item.Status);
+                    foreach (var item in context.Orders.Where(o => o.UserId == u.UserId)) {
+                        Tuple<int, string, decimal, string> t = new Tuple<int, string, decimal, string>(item.OrderId, item.Phone, item.Total, item.Status);
                         orderList.Add(t);
                     }
 
@@ -363,6 +365,7 @@ namespace CoffeeShopWinForm {
                 string id = dgvItem.CurrentRow.Cells[0].Value.ToString();
                 if (id != null) {
                     Item i = context.Items.Find(id);
+                    tabControl2.SelectedIndex = 0;
                     txtItemId.Text = i.ItemId;
                     txtItemName.Text = i.ItemName;
                     txtItemPrice.Text = i.Price.ToString();
@@ -377,11 +380,13 @@ namespace CoffeeShopWinForm {
             txtItemName.Text = "";
             txtItemPrice.Text = "";
             cbItemCat.SelectedIndex = 0;
+            DGVLoad();
         }
 
         private void btnClearCat_Click(object sender, EventArgs e) {
             txtCatId.Text = "";
             txtCatName.Text = "";
+            DGVLoad();
         }
 
         private void btnClearUser_Click(object sender, EventArgs e) {
@@ -393,6 +398,10 @@ namespace CoffeeShopWinForm {
 
             dgvOrder.DataBindings.Clear();
             dgvOrder.Columns.Clear();
+        }
+
+        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
         }
     }
 }

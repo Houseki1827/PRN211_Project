@@ -54,11 +54,9 @@
             gbCategory = new GroupBox();
             dgvCategory = new DataGridView();
             tpUser = new TabPage();
-            panel2 = new Panel();
             gbOrder = new GroupBox();
             dgvOrder = new DataGridView();
-            gbUser = new GroupBox();
-            dgvUserList = new DataGridView();
+            panel2 = new Panel();
             panel1 = new Panel();
             btnClearUser = new Button();
             txtUserId = new TextBox();
@@ -73,6 +71,8 @@
             lbUserEmail = new Label();
             lbUserPass = new Label();
             lbUserName = new Label();
+            gbUser = new GroupBox();
+            dgvUserList = new DataGridView();
             tabControl1.SuspendLayout();
             tpItemAndCat.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -84,12 +84,12 @@
             gbCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
             tpUser.SuspendLayout();
-            panel2.SuspendLayout();
             gbOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvOrder).BeginInit();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             gbUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUserList).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -404,6 +404,7 @@
             dgvCategory.Size = new Size(325, 98);
             dgvCategory.TabIndex = 0;
             dgvCategory.CellClick += dgvCategory_CellClick;
+            dgvCategory.CellContentClick += dgvCategory_CellContentClick;
             dgvCategory.CellDoubleClick += dgvCategory_CellDoubleClick;
             // 
             // tpUser
@@ -417,16 +418,6 @@
             tpUser.TabIndex = 1;
             tpUser.Text = "Users";
             tpUser.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(panel1);
-            panel2.Controls.Add(gbUser);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(3, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(622, 229);
-            panel2.TabIndex = 1;
             // 
             // gbOrder
             // 
@@ -449,27 +440,15 @@
             dgvOrder.Size = new Size(616, 139);
             dgvOrder.TabIndex = 0;
             // 
-            // gbUser
+            // panel2
             // 
-            gbUser.Controls.Add(dgvUserList);
-            gbUser.Dock = DockStyle.Right;
-            gbUser.Location = new Point(255, 0);
-            gbUser.Name = "gbUser";
-            gbUser.Size = new Size(367, 229);
-            gbUser.TabIndex = 0;
-            gbUser.TabStop = false;
-            gbUser.Text = "Users";
-            // 
-            // dgvUserList
-            // 
-            dgvUserList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUserList.Dock = DockStyle.Fill;
-            dgvUserList.Location = new Point(3, 19);
-            dgvUserList.Name = "dgvUserList";
-            dgvUserList.RowTemplate.Height = 25;
-            dgvUserList.Size = new Size(361, 207);
-            dgvUserList.TabIndex = 0;
-            dgvUserList.CellClick += dgvUserList_CellClick;
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(gbUser);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(622, 229);
+            panel2.TabIndex = 1;
             // 
             // panel1
             // 
@@ -605,6 +584,28 @@
             lbUserName.TabIndex = 0;
             lbUserName.Text = "Username:";
             // 
+            // gbUser
+            // 
+            gbUser.Controls.Add(dgvUserList);
+            gbUser.Dock = DockStyle.Right;
+            gbUser.Location = new Point(255, 0);
+            gbUser.Name = "gbUser";
+            gbUser.Size = new Size(367, 229);
+            gbUser.TabIndex = 0;
+            gbUser.TabStop = false;
+            gbUser.Text = "Users";
+            // 
+            // dgvUserList
+            // 
+            dgvUserList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUserList.Dock = DockStyle.Fill;
+            dgvUserList.Location = new Point(3, 19);
+            dgvUserList.Name = "dgvUserList";
+            dgvUserList.RowTemplate.Height = 25;
+            dgvUserList.Size = new Size(361, 207);
+            dgvUserList.TabIndex = 0;
+            dgvUserList.CellClick += dgvUserList_CellClick;
+            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -629,13 +630,13 @@
             gbCategory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCategory).EndInit();
             tpUser.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             gbOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();
-            gbUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvUserList).EndInit();
+            panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            gbUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvUserList).EndInit();
             ResumeLayout(false);
         }
 

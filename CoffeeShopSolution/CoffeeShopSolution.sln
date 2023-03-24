@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C8D629C9-FFBD-4593-A48E-AB638E16C911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopWinForm", "CoffeeShopWinForm\CoffeeShopWinForm.csproj", "{18943AA7-5DB5-452C-B3FD-883B3E095D72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopWinForm", "CoffeeShopWinForm\CoffeeShopWinForm.csproj", "{18943AA7-5DB5-452C-B3FD-883B3E095D72}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation Layer", "1.Presentation Layer", "{81B16110-7169-4800-B4CA-82644FF41999}"
 EndProject

@@ -3007,19 +3007,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iamap\\.nuget\\packages\\": {}
+    "C:\\Users\\iamap\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
+      "projectUniqueName": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
       "projectName": "CoffeeShopWinForm",
-      "projectPath": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
+      "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
       "packagesPath": "C:\\Users\\iamap\\.nuget\\packages\\",
-      "outputPath": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\obj\\",
+      "outputPath": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\iamap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3027,17 +3032,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
+            "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
             },
-            "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj"
+            "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj"
             }
           }
         }
