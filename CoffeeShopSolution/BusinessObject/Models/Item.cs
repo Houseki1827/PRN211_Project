@@ -13,7 +13,5 @@ public partial class Item
 
     public decimal Price { get; set; }
 
-    public virtual ICollection<Cart> Carts { get; } = new List<Cart>();
-
     public virtual Category Category { get; set; } = null!;
 }

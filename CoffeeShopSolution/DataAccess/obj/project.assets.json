@@ -3162,19 +3162,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell\\.nuget\\packages\\": {}
+    "C:\\Users\\iamap\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\obj\\",
+      "projectPath": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\iamap\\.nuget\\packages\\",
+      "outputPath": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\iamap\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3188,8 +3188,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\GitHub\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
+            "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\PRN211\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }
@@ -3239,7 +3239,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

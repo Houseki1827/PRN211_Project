@@ -28,58 +28,57 @@ public partial class CoffeeShopContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected internal User admin = getAdmin();
-    public static User getAdmin()
-    {
+    public User admin = getAdmin();
+    public static User getAdmin() {
         User admin = new User();
         IConfiguration configuration = new ConfigurationBuilder().
             SetBasePath(Directory.GetCurrentDirectory()).
             AddJsonFile("appsettings.json", true, true).Build();
-        admin = new User
-        {
+        admin = new User {
             Username = configuration[key: "account:admin:username"],
             Password = configuration["account:admin:password"]
         };
         return admin;
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
         IConfiguration configuration = new ConfigurationBuilder().
             SetBasePath(Directory.GetCurrentDirectory()).
             AddJsonFile("appsettings.json", true, true).Build();
         optionsBuilder.UseSqlServer(configuration["ConnectionStrings:CoffeeShopDB"]);
     }
 
-protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Cart>(entity =>
-        {
-            entity.HasKey(e => new { e.ItemId, e.UserId });
 
-            entity.ToTable("Cart");
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        modelBuilder.Entity<Cart>(entity => {
+            entity
+                .HasNoKey()
+                .ToTable("Cart");
 
             entity.Property(e => e.ItemId)
                 .HasMaxLength(5)
                 .HasColumnName("itemId");
-            entity.Property(e => e.UserId).HasColumnName("userId");
+            entity.Property(e => e.ItemName)
+                .HasMaxLength(150)
+                .HasColumnName("itemName");
             entity.Property(e => e.OrderDate)
                 .HasColumnType("datetime")
                 .HasColumnName("orderDate");
+            entity.Property(e => e.Price)
+                .HasColumnType("money")
+                .HasColumnName("price");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
+            entity.Property(e => e.UserId).HasColumnName("userId");
 
-            entity.HasOne(d => d.Item).WithMany(p => p.Carts)
+            entity.HasOne(d => d.Item).WithMany()
                 .HasForeignKey(d => d.ItemId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Cart_Item");
 
-            entity.HasOne(d => d.User).WithMany(p => p.Carts)
+            entity.HasOne(d => d.User).WithMany()
                 .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Cart_User");
         });
 
-        modelBuilder.Entity<Category>(entity =>
-        {
+        modelBuilder.Entity<Category>(entity => {
             entity.ToTable("Category");
 
             entity.Property(e => e.CategoryId)
@@ -90,8 +89,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
                 .HasColumnName("categoryName");
         });
 
-        modelBuilder.Entity<Item>(entity =>
-        {
+        modelBuilder.Entity<Item>(entity => {
             entity.HasKey(e => e.ItemId).HasName("PK_Item_1");
 
             entity.ToTable("Item");
@@ -109,12 +107,10 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
             entity.HasOne(d => d.Category).WithMany(p => p.Items)
                 .HasForeignKey(d => d.CategoryId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Item_Category");
         });
 
-        modelBuilder.Entity<Order>(entity =>
-        {
+        modelBuilder.Entity<Order>(entity => {
             entity.HasKey(e => e.OrderId).HasName("PK_Order_1");
 
             entity.ToTable("Order");
@@ -134,12 +130,10 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
             entity.HasOne(d => d.User).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Order_User1");
         });
 
-        modelBuilder.Entity<OrderDetail>(entity =>
-        {
+        modelBuilder.Entity<OrderDetail>(entity => {
             entity
                 .HasNoKey()
                 .ToTable("OrderDetail");
@@ -155,17 +149,14 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
             entity.HasOne(d => d.Item).WithMany()
                 .HasForeignKey(d => d.ItemId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_OrderDetail_Item");
 
             entity.HasOne(d => d.Order).WithMany()
                 .HasForeignKey(d => d.OrderId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_OrderDetail_Order");
         });
 
-        modelBuilder.Entity<User>(entity =>
-        {
+        modelBuilder.Entity<User>(entity => {
             entity.HasKey(e => e.UserId).HasName("PK_Table_1");
 
             entity.ToTable("User");
@@ -188,6 +179,5 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         OnModelCreatingPartial(modelBuilder);
     }
-
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

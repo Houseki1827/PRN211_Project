@@ -110,7 +110,6 @@
             // picture
             // 
             this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picture.Image = global::CoffeeShopWinForm.Properties.Resources.banbaro;
             this.picture.Location = new System.Drawing.Point(33, 187);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(300, 300);
