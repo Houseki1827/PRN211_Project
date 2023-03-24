@@ -23,12 +23,17 @@ namespace CoffeeShopWinForm {
         }
 
         private void btnCreate_Click(object sender, EventArgs e) {
-            bool check = false;
+            bool check = false; 
+            string phoneNum = "";
             try {
                 checkEmpty();
                 matchPasswordAndName();
                 checkExists();
                 check = true;
+                txtPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                phoneNum = txtPhone.Text;
+                txtPhone.TextMaskFormat = MaskFormat.IncludeLiterals;
+                int.Parse(phoneNum);
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -37,7 +42,8 @@ namespace CoffeeShopWinForm {
                 User u = new User {
                     Username = txtName.Text,
                     Password = txtPwd.Text,
-                    Email = txtEmail.Text
+                    Email = txtEmail.Text,
+                    Phone = phoneNum
                 };
                 repository.AddUser(u);
                 MessageBox.Show("User created.");
@@ -47,10 +53,11 @@ namespace CoffeeShopWinForm {
 
         private void checkEmpty() {
             bool check = false;
-            if (txtName == null) { check = true; }
-            if (txtPwd == null) { check = true; }
-            if (txtEmail == null) { check = true; }
-            if (txtPwdCfm == null) { check = true; }
+            if (txtName.Text.Length == 0) { check = true; }
+            if (txtPwd.Text.Length == 0) { check = true; }
+            if (txtEmail.Text.Length == 0) { check = true; }
+            if (txtPwdCfm.Text.Length == 0) { check = true; }
+            if (txtPhone.Text.Length == 0) { check = true; }
             if (check) throw new Exception("Field(s) must not be empty!");
         }
 

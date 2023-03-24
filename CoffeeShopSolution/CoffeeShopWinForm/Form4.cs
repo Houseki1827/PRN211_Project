@@ -76,11 +76,12 @@ namespace CoffeeShopWinForm {
             tbOrder.Controls.Clear();
             tbOrder.RowCount = 0;
 
-            if (cbSort.SelectedItem.Equals("ID ↑")) foreach (var item in context.Orders.OrderBy(o => o.OrderId)) Fill_Order(item);
-            else if (cbSort.SelectedItem.Equals("ID ↓")) foreach (var item in context.Orders.OrderByDescending(o => o.OrderId)) Fill_Order(item);
-            else if (cbSort.SelectedItem.Equals("Total ↑")) foreach (var item in context.Orders.OrderBy(o => o.Total)) Fill_Order(item);
-            else if (cbSort.SelectedItem.Equals("Total ↓")) foreach (var item in context.Orders.OrderByDescending(o => o.Total)) Fill_Order(item);
-            else foreach (var item in context.Orders) Fill_Order(item);
+            var userOrders = context.Orders.Where(o => o.UserId == u.UserId);
+            if (cbSort.SelectedItem.Equals("ID ↑")) foreach (var item in userOrders.OrderBy(o => o.OrderId)) Fill_Order(item);
+            else if (cbSort.SelectedItem.Equals("ID ↓")) foreach (var item in userOrders.OrderByDescending(o => o.OrderId)) Fill_Order(item);
+            else if (cbSort.SelectedItem.Equals("Total ↑")) foreach (var item in userOrders.OrderBy(o => o.Total)) Fill_Order(item);
+            else if (cbSort.SelectedItem.Equals("Total ↓")) foreach (var item in userOrders.OrderByDescending(o => o.Total)) Fill_Order(item);
+            else foreach (var item in userOrders) Fill_Order(item);
         }
 
         private void Fill_Order(Order item) {
@@ -237,5 +238,6 @@ namespace CoffeeShopWinForm {
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
             Fill_OrderTable();
         }
+
     }
 }

@@ -50,6 +50,7 @@ public partial class CoffeeShopContext : DbContext
             AddJsonFile("appsettings.json", true, true).Build();
         optionsBuilder.UseSqlServer(configuration["ConnectionStrings:CoffeeShopDB"]);
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Cart>(entity =>
@@ -86,9 +87,7 @@ public partial class CoffeeShopContext : DbContext
         {
             entity.ToTable("Category");
 
-            entity.Property(e => e.CategoryId)
-                .ValueGeneratedNever()
-                .HasColumnName("categoryId");
+            entity.Property(e => e.CategoryId).HasColumnName("categoryId");
             entity.Property(e => e.CategoryName)
                 .HasMaxLength(150)
                 .HasColumnName("categoryName");
@@ -142,24 +141,24 @@ public partial class CoffeeShopContext : DbContext
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("OrderDetail");
+            entity.HasKey(e => new { e.OrderId, e.ItemId, e.Quantity, e.OrderDate });
 
+            entity.ToTable("OrderDetail");
+
+            entity.Property(e => e.OrderId).HasColumnName("orderId");
             entity.Property(e => e.ItemId)
                 .HasMaxLength(5)
                 .HasColumnName("itemId");
+            entity.Property(e => e.Quantity).HasColumnName("quantity");
             entity.Property(e => e.OrderDate)
                 .HasColumnType("datetime")
                 .HasColumnName("orderDate");
-            entity.Property(e => e.OrderId).HasColumnName("orderId");
-            entity.Property(e => e.Quantity).HasColumnName("quantity");
 
-            entity.HasOne(d => d.Item).WithMany()
+            entity.HasOne(d => d.Item).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.ItemId)
                 .HasConstraintName("FK_OrderDetail_Item");
 
-            entity.HasOne(d => d.Order).WithMany()
+            entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.OrderId)
                 .HasConstraintName("FK_OrderDetail_Order");
         });

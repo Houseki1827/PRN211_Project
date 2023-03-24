@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using DataAccess;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CoffeeShopWinForm
 {
@@ -29,12 +30,11 @@ namespace CoffeeShopWinForm
 
         private void dgvLoad()
         {
-            string total = tbTotal.Text.Trim();
-            List<Tuple<string, decimal, int, string, DateTime>> list = new List<Tuple<string, decimal, int, string, DateTime>>();
+            List<Tuple<string, decimal, int, decimal, DateTime>> list = new List<Tuple<string, decimal, int, decimal, DateTime>>();
             foreach (var item in db.Carts.Where(c => c.UserId == u.UserId))
             {
-                Tuple<string, decimal, int, string, DateTime> t = new Tuple<string, decimal, int, string, DateTime>(
-                    item.ItemName, item.Price, item.Quantity, total, item.OrderDate);
+                Tuple<string, decimal, int, decimal, DateTime> t = new Tuple<string, decimal, int, decimal, DateTime>(
+                    item.ItemName, item.Price, item.Quantity, item.Price * item.Quantity, item.OrderDate);
                 list.Add(t);
             }
             dgvCart.DataSource = list;
@@ -118,51 +118,7 @@ namespace CoffeeShopWinForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //var cart = from c in db.Carts
-            //           join item in db.Items
-            //           on c.ItemId equals item.ItemId
-            //           join user in db.Users
-            //           on c.UserId equals user.UserId
-            //           select new { item.ItemName, item.Price, c.Quantity, c.OrderDate };
-
-            //var cart = new Cart
-            //{
-            //    ItemId = cbSelect.Text.Trim(),
-            //    Quantity = (int)numericQuantity.Value,
-            //    OrderDate = DateTime.Now
-            //};
-            //db.Carts.Add(cart);
-            //db.SaveChanges();
-            //ReloadDataGridView();
-
-            //foreach(var c in db.Carts) 
-            //{
-            //    foreach (var item in db.Items)
-            //    {
-            //        item.ItemName = cbSelect.Text.Trim();
-            //        item.Price = decimal.Parse(tbPrice.Text.Trim());
-            //    }
-            //    c.Quantity = Convert.ToInt16(numericQuantity.Value);
-            //    c.OrderDate = DateTime.Now;
-            //    db.Carts.Add(c);
-            //}
-            //db.SaveChanges();
-            //ReloadDataGridView();
-
-            //{
-            //    ItemName = item.ItemName,
-            //    Price = 
-            //{
-            //    itemName = cbSelect.Text.Trim(),
-            //    .price = tbPrice.Text.Trim(),
-            //    cart.quantity = numericQuantity.Value,
-            //    cart.total = tbTotal.Text.Trim()
-
-            //db.Carts.Add(new Cart {ItemId = cbSelect.Text, Price = tbPrice.Text}  )
-
             int userId = u.UserId;
-            //String itemName = cbSelect.Text.Trim();;
-            //string itemId = db.Items.Where(x => x.ItemName == itemName).Select(x => x.ItemId).FirstOrDefault();
             var cart = new Cart
             {
                 UserId = userId,
@@ -183,22 +139,6 @@ namespace CoffeeShopWinForm
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (dgvCart.SelectedRows.Count > 0)
-            //{
-            //    for (int i = 0; i < dgvCart.SelectedRows.Count; i++)
-            //    {
-            //        if (dgvCart.Rows[i].Selected)
-            //        {
-            //            tbAmount.Text = (int.Parse(tbAmount.Text) - int.Parse(dgvCart.Rows[i].Cells[3].Value)).ToString();
-            //            dgvCart.Rows.RemoveAt(i);
-            //        }
-            //    }
-            //    cbSelect.Text = string.Empty;
-            //    tbPrice.Text = string.Empty;
-            //    numericQuantity.Text = string.Empty;
-            //    tbTotal.Text = string.Empty;
-            ////}
-
             if (dgvCart.SelectedRows.Count > 0)
             {
                 string name = dgvCart.SelectedRows[0].Cells[0].Value.ToString();
@@ -211,73 +151,16 @@ namespace CoffeeShopWinForm
                 foreach (Cart c in cart)
                 {
                     db.Carts.Remove(c);
-                    tbAmount.Text = (decimal.Parse(tbAmount.Text) - c.Price).ToString();
+                    tbAmount.Text = (decimal.Parse(tbAmount.Text) - c.Price*c.Quantity).ToString();
                     db.SaveChanges();
                     dgvLoad();
                 }
-
-                //cbSelect.Text = string.Empty;
-                //tbPrice.Text = string.Empty;
-                //numericQuantity.Text = string.Empty;
-                //tbTotal.Text = string.Empty;
-
-                //var order = from o in db.Orders
-                //            join c in db.Carts
-                //            on o.UserId equals c.UserId
-                //            where c.ItemName == name
-                //            select o;
-
-                //foreach(Order o in order)
-                //{
-                //    db.Orders.Remove(o);
-                //    db.SaveChanges();
-                //}
-
-                //var orderDetail = from od in db.OrderDetails
-                //                  join o in db.Orders
-                //                  on od.OrderId equals o.OrderId
-                //                  where od.ItemId == 
-                //                  select od;
-
-
             }
 
         }
 
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //string name = cbSelect.Text.Trim();
-            //var cart = from c in db.Carts
-            //           join i in db.Items
-            //             on c.ItemId equals i.ItemId
-            //           where i.ItemName == name
-            //           select new { i.ItemId, i.Price, c.Quantity, c.OrderDate};
-
-
-
-            //from c in db.Carts
-            //       join i in db.Items
-            //       on c.ItemId equals i.ItemId
-            //       select new
-            //       {
-            //           i.ItemName,
-            //           i.Price,
-            //           c.Quantity,
-            //           c.OrderDate
-            //       };
-
-            //decimal price = db.Items.Where(x => x.ItemName == name).Select(x => x.Price).FirstOrDefault();
-
-            //var orderDetail = new OrderDetail
-            //{
-            //    OrderId = order.OrderId,
-            //    ItemId = ;
-            //    Quantity = ;
-            //      OrderDate
-            //};
-
-            
             var order = new Order
             {
                 UserId = u.UserId,
@@ -288,15 +171,34 @@ namespace CoffeeShopWinForm
             db.Orders.Add(order);
             db.SaveChanges();
 
-            //var orderDetail = new OrderDetail
-            //{
-            //    OrderId = order.OrderId,
-            //    ItemId = itemId,
-            //    Quantity = (int)numericQuantity.Value,
-            //    OrderDate = DateTime.Now,
-            //};
-            //db.OrderDetails.Add(orderDetail);
-            //db.SaveChanges();
+            foreach(var item in db.Carts.Where(c => c.UserId == u.UserId))
+            { 
+                OrderDetail o = new OrderDetail 
+                { 
+                    OrderId = order.OrderId, 
+                    ItemId = item.ItemId, 
+                    Quantity = item.Quantity, 
+                    OrderDate = item.OrderDate 
+                }; 
+                db.OrderDetails.Add(o); 
+            }
+            db.SaveChanges();
+
+
+            int userid = u.UserId;
+            var cart = db.Carts.Where(c => c.UserId == userid);
+            foreach (var item in cart)
+            {
+                db.Carts.Remove(item);
+                db.SaveChanges();
+                dgvLoad();
+            }
+
+            cbSelect.Text = string.Empty;
+            tbPrice.Text = string.Empty;
+            numericQuantity.Text = string.Empty;
+            tbTotal.Text = string.Empty;
+            tbAmount.Text = "0";
 
             MessageBox.Show("Order successfull!");
 
@@ -304,30 +206,20 @@ namespace CoffeeShopWinForm
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            //dgvCart.Rows.Clear();
-            //tbAmount.Text = "0";
-            if (dgvCart.SelectedRows.Count > 0)
+            int userid = u.UserId;
+            var cart = db.Carts.Where(c => c.UserId == userid);
+            DialogResult re = MessageBox.Show("Do you want to clear your cart?", "Confirm", MessageBoxButtons.YesNo);
+            if (re == DialogResult.Yes)
             {
-                int userid = u.UserId;
-
-                //var clear = from c in db.Carts
-                //           where c.UserId == userid
-                //           select c;
-
-                var clear = db.Carts.FirstOrDefault(c => c.UserId == userid);
-                if (clear != null)
-                {
-                    db.Carts.Remove(clear);
-                    db.SaveChanges();
-                    dgvLoad();
-                }
-
-                cbSelect.Text = string.Empty;
+                foreach (var item in cart) { db.Carts.Remove(item); }
+                db.SaveChanges();
+                dgvLoad();
+            }
+            cbSelect.Text = string.Empty;
                 tbPrice.Text = string.Empty;
                 numericQuantity.Text = string.Empty;
                 tbTotal.Text = string.Empty;
                 tbAmount.Text = "0";
-            }
 
         }
 

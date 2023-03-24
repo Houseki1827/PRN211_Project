@@ -403,5 +403,6 @@ namespace CoffeeShopWinForm {
         private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
         }
+
     }
 }

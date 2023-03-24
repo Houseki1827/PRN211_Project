@@ -23,621 +23,664 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            tabControl1 = new TabControl();
-            tpItemAndCat = new TabPage();
-            tabControl2 = new TabControl();
-            tabPage1 = new TabPage();
-            btnItemClear = new Button();
-            txtItemId = new TextBox();
-            cbItemCat = new ComboBox();
-            lbItemCat = new Label();
-            txtItemPrice = new TextBox();
-            txtItemName = new TextBox();
-            btnDeleteItem = new Button();
-            btnAddItem = new Button();
-            btnSaveItem = new Button();
-            btnPic = new Button();
-            lbItemPrice = new Label();
-            lbItemName = new Label();
-            picPreview = new PictureBox();
-            tpCategory = new TabPage();
-            btnClearCat = new Button();
-            txtCatId = new TextBox();
-            lbCatId = new Label();
-            btnDeleteCat = new Button();
-            btnSaveCat = new Button();
-            btnAddCat = new Button();
-            txtCatName = new TextBox();
-            lbCatName = new Label();
-            gbItem = new GroupBox();
-            dgvItem = new DataGridView();
-            gbCategory = new GroupBox();
-            dgvCategory = new DataGridView();
-            tpUser = new TabPage();
-            gbOrder = new GroupBox();
-            dgvOrder = new DataGridView();
-            panel2 = new Panel();
-            panel1 = new Panel();
-            btnClearUser = new Button();
-            txtUserId = new TextBox();
-            lbUserId = new Label();
-            btnDeleteUser = new Button();
-            txtUserPhone = new MaskedTextBox();
-            txtUserMail = new TextBox();
-            txtUserPass = new TextBox();
-            txtUserName = new TextBox();
-            btnSaveUser = new Button();
-            lbUserPhone = new Label();
-            lbUserEmail = new Label();
-            lbUserPass = new Label();
-            lbUserName = new Label();
-            gbUser = new GroupBox();
-            dgvUserList = new DataGridView();
-            tabControl1.SuspendLayout();
-            tpItemAndCat.SuspendLayout();
-            tabControl2.SuspendLayout();
-            tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
-            tpCategory.SuspendLayout();
-            gbItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvItem).BeginInit();
-            gbCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
-            tpUser.SuspendLayout();
-            gbOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvOrder).BeginInit();
-            panel2.SuspendLayout();
-            panel1.SuspendLayout();
-            gbUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvUserList).BeginInit();
-            SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tpItemAndCat = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnItemClear = new System.Windows.Forms.Button();
+            this.txtItemId = new System.Windows.Forms.TextBox();
+            this.cbItemCat = new System.Windows.Forms.ComboBox();
+            this.lbItemCat = new System.Windows.Forms.Label();
+            this.txtItemPrice = new System.Windows.Forms.TextBox();
+            this.txtItemName = new System.Windows.Forms.TextBox();
+            this.btnDeleteItem = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnSaveItem = new System.Windows.Forms.Button();
+            this.btnPic = new System.Windows.Forms.Button();
+            this.lbItemPrice = new System.Windows.Forms.Label();
+            this.lbItemName = new System.Windows.Forms.Label();
+            this.picPreview = new System.Windows.Forms.PictureBox();
+            this.tpCategory = new System.Windows.Forms.TabPage();
+            this.btnClearCat = new System.Windows.Forms.Button();
+            this.txtCatId = new System.Windows.Forms.TextBox();
+            this.lbCatId = new System.Windows.Forms.Label();
+            this.btnDeleteCat = new System.Windows.Forms.Button();
+            this.btnSaveCat = new System.Windows.Forms.Button();
+            this.btnAddCat = new System.Windows.Forms.Button();
+            this.txtCatName = new System.Windows.Forms.TextBox();
+            this.lbCatName = new System.Windows.Forms.Label();
+            this.gbItem = new System.Windows.Forms.GroupBox();
+            this.dgvItem = new System.Windows.Forms.DataGridView();
+            this.gbCategory = new System.Windows.Forms.GroupBox();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.tpUser = new System.Windows.Forms.TabPage();
+            this.gbOrder = new System.Windows.Forms.GroupBox();
+            this.dgvOrder = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClearUser = new System.Windows.Forms.Button();
+            this.txtUserId = new System.Windows.Forms.TextBox();
+            this.lbUserId = new System.Windows.Forms.Label();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.txtUserPhone = new System.Windows.Forms.MaskedTextBox();
+            this.txtUserMail = new System.Windows.Forms.TextBox();
+            this.txtUserPass = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.btnSaveUser = new System.Windows.Forms.Button();
+            this.lbUserPhone = new System.Windows.Forms.Label();
+            this.lbUserEmail = new System.Windows.Forms.Label();
+            this.lbUserPass = new System.Windows.Forms.Label();
+            this.lbUserName = new System.Windows.Forms.Label();
+            this.gbUser = new System.Windows.Forms.GroupBox();
+            this.dgvUserList = new System.Windows.Forms.DataGridView();
+            this.tabControl1.SuspendLayout();
+            this.tpItemAndCat.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
+            this.tpCategory.SuspendLayout();
+            this.gbItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
+            this.gbCategory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
+            this.tpUser.SuspendLayout();
+            this.gbOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.gbUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
+            this.SuspendLayout();
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tpItemAndCat);
-            tabControl1.Controls.Add(tpUser);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(636, 430);
-            tabControl1.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tpItemAndCat);
+            this.tabControl1.Controls.Add(this.tpUser);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(939, 619);
+            this.tabControl1.TabIndex = 0;
             // 
             // tpItemAndCat
             // 
-            tpItemAndCat.Controls.Add(tabControl2);
-            tpItemAndCat.Controls.Add(gbItem);
-            tpItemAndCat.Controls.Add(gbCategory);
-            tpItemAndCat.Location = new Point(4, 24);
-            tpItemAndCat.Name = "tpItemAndCat";
-            tpItemAndCat.Padding = new Padding(3);
-            tpItemAndCat.Size = new Size(628, 402);
-            tpItemAndCat.TabIndex = 0;
-            tpItemAndCat.Text = "Items";
-            tpItemAndCat.UseVisualStyleBackColor = true;
+            this.tpItemAndCat.Controls.Add(this.tabControl2);
+            this.tpItemAndCat.Controls.Add(this.gbItem);
+            this.tpItemAndCat.Controls.Add(this.gbCategory);
+            this.tpItemAndCat.Location = new System.Drawing.Point(4, 29);
+            this.tpItemAndCat.Margin = new System.Windows.Forms.Padding(4);
+            this.tpItemAndCat.Name = "tpItemAndCat";
+            this.tpItemAndCat.Padding = new System.Windows.Forms.Padding(4);
+            this.tpItemAndCat.Size = new System.Drawing.Size(931, 586);
+            this.tpItemAndCat.TabIndex = 0;
+            this.tpItemAndCat.Text = "Items";
+            this.tpItemAndCat.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
-            tabControl2.Controls.Add(tabPage1);
-            tabControl2.Controls.Add(tpCategory);
-            tabControl2.Dock = DockStyle.Left;
-            tabControl2.Location = new Point(3, 3);
-            tabControl2.Name = "tabControl2";
-            tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(277, 396);
-            tabControl2.TabIndex = 3;
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tpCategory);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl2.Location = new System.Drawing.Point(4, 4);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(373, 578);
+            this.tabControl2.TabIndex = 3;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(btnItemClear);
-            tabPage1.Controls.Add(txtItemId);
-            tabPage1.Controls.Add(cbItemCat);
-            tabPage1.Controls.Add(lbItemCat);
-            tabPage1.Controls.Add(txtItemPrice);
-            tabPage1.Controls.Add(txtItemName);
-            tabPage1.Controls.Add(btnDeleteItem);
-            tabPage1.Controls.Add(btnAddItem);
-            tabPage1.Controls.Add(btnSaveItem);
-            tabPage1.Controls.Add(btnPic);
-            tabPage1.Controls.Add(lbItemPrice);
-            tabPage1.Controls.Add(lbItemName);
-            tabPage1.Controls.Add(picPreview);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(269, 368);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Item";
-            tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.btnItemClear);
+            this.tabPage1.Controls.Add(this.txtItemId);
+            this.tabPage1.Controls.Add(this.cbItemCat);
+            this.tabPage1.Controls.Add(this.lbItemCat);
+            this.tabPage1.Controls.Add(this.txtItemPrice);
+            this.tabPage1.Controls.Add(this.txtItemName);
+            this.tabPage1.Controls.Add(this.btnDeleteItem);
+            this.tabPage1.Controls.Add(this.btnAddItem);
+            this.tabPage1.Controls.Add(this.btnSaveItem);
+            this.tabPage1.Controls.Add(this.btnPic);
+            this.tabPage1.Controls.Add(this.lbItemPrice);
+            this.tabPage1.Controls.Add(this.lbItemName);
+            this.tabPage1.Controls.Add(this.picPreview);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(365, 545);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Item";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnItemClear
             // 
-            btnItemClear.Location = new Point(21, 136);
-            btnItemClear.Name = "btnItemClear";
-            btnItemClear.Size = new Size(47, 30);
-            btnItemClear.TabIndex = 10;
-            btnItemClear.Text = "Clear";
-            btnItemClear.UseVisualStyleBackColor = true;
-            btnItemClear.Click += btnClearItem_Click;
+            this.btnItemClear.Location = new System.Drawing.Point(38, 238);
+            this.btnItemClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnItemClear.Name = "btnItemClear";
+            this.btnItemClear.Size = new System.Drawing.Size(71, 40);
+            this.btnItemClear.TabIndex = 10;
+            this.btnItemClear.Text = "Clear";
+            this.btnItemClear.UseVisualStyleBackColor = true;
             // 
             // txtItemId
             // 
-            txtItemId.Location = new Point(21, 105);
-            txtItemId.Name = "txtItemId";
-            txtItemId.ReadOnly = true;
-            txtItemId.Size = new Size(47, 23);
-            txtItemId.TabIndex = 9;
+            this.txtItemId.Location = new System.Drawing.Point(8, 181);
+            this.txtItemId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtItemId.Name = "txtItemId";
+            this.txtItemId.ReadOnly = true;
+            this.txtItemId.Size = new System.Drawing.Size(71, 27);
+            this.txtItemId.TabIndex = 9;
             // 
             // cbItemCat
             // 
-            cbItemCat.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cbItemCat.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbItemCat.FormattingEnabled = true;
-            cbItemCat.Location = new Point(95, 253);
-            cbItemCat.Name = "cbItemCat";
-            cbItemCat.Size = new Size(145, 23);
-            cbItemCat.TabIndex = 8;
+            this.cbItemCat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbItemCat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbItemCat.FormattingEnabled = true;
+            this.cbItemCat.Location = new System.Drawing.Point(133, 390);
+            this.cbItemCat.Margin = new System.Windows.Forms.Padding(4);
+            this.cbItemCat.Name = "cbItemCat";
+            this.cbItemCat.Size = new System.Drawing.Size(197, 28);
+            this.cbItemCat.TabIndex = 8;
             // 
             // lbItemCat
             // 
-            lbItemCat.AutoSize = true;
-            lbItemCat.Location = new Point(21, 256);
-            lbItemCat.Name = "lbItemCat";
-            lbItemCat.Size = new Size(58, 15);
-            lbItemCat.TabIndex = 7;
-            lbItemCat.Text = "Category:";
+            this.lbItemCat.AutoSize = true;
+            this.lbItemCat.Location = new System.Drawing.Point(23, 394);
+            this.lbItemCat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbItemCat.Name = "lbItemCat";
+            this.lbItemCat.Size = new System.Drawing.Size(90, 20);
+            this.lbItemCat.TabIndex = 7;
+            this.lbItemCat.Text = "Category:";
             // 
             // txtItemPrice
             // 
-            txtItemPrice.Location = new Point(95, 218);
-            txtItemPrice.Name = "txtItemPrice";
-            txtItemPrice.Size = new Size(145, 23);
-            txtItemPrice.TabIndex = 2;
-            txtItemPrice.Text = "0";
+            this.txtItemPrice.Location = new System.Drawing.Point(133, 344);
+            this.txtItemPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtItemPrice.Name = "txtItemPrice";
+            this.txtItemPrice.Size = new System.Drawing.Size(197, 27);
+            this.txtItemPrice.TabIndex = 2;
+            this.txtItemPrice.Text = "0";
             // 
             // txtItemName
             // 
-            txtItemName.Location = new Point(95, 179);
-            txtItemName.Name = "txtItemName";
-            txtItemName.Size = new Size(145, 23);
-            txtItemName.TabIndex = 1;
+            this.txtItemName.Location = new System.Drawing.Point(133, 296);
+            this.txtItemName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.Size = new System.Drawing.Size(197, 27);
+            this.txtItemName.TabIndex = 1;
             // 
             // btnDeleteItem
             // 
-            btnDeleteItem.Location = new Point(16, 327);
-            btnDeleteItem.Name = "btnDeleteItem";
-            btnDeleteItem.Size = new Size(237, 35);
-            btnDeleteItem.TabIndex = 5;
-            btnDeleteItem.Text = "Delete";
-            btnDeleteItem.UseVisualStyleBackColor = true;
-            btnDeleteItem.Click += btnDeleteItem_Click;
+            this.btnDeleteItem.Location = new System.Drawing.Point(8, 490);
+            this.btnDeleteItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteItem.Name = "btnDeleteItem";
+            this.btnDeleteItem.Size = new System.Drawing.Size(349, 47);
+            this.btnDeleteItem.TabIndex = 5;
+            this.btnDeleteItem.Text = "Delete";
+            this.btnDeleteItem.UseVisualStyleBackColor = true;
             // 
             // btnAddItem
             // 
-            btnAddItem.Location = new Point(147, 289);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(75, 23);
-            btnAddItem.TabIndex = 3;
-            btnAddItem.Text = "Add Item";
-            btnAddItem.UseVisualStyleBackColor = true;
-            btnAddItem.Click += btnAddItem_Click;
+            this.btnAddItem.Location = new System.Drawing.Point(203, 442);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(119, 40);
+            this.btnAddItem.TabIndex = 3;
+            this.btnAddItem.Text = "Add Item";
+            this.btnAddItem.UseVisualStyleBackColor = true;
             // 
             // btnSaveItem
             // 
-            btnSaveItem.Location = new Point(45, 289);
-            btnSaveItem.Name = "btnSaveItem";
-            btnSaveItem.Size = new Size(75, 23);
-            btnSaveItem.TabIndex = 4;
-            btnSaveItem.Text = "Save";
-            btnSaveItem.UseVisualStyleBackColor = true;
-            btnSaveItem.Click += btnSaveItem_Click;
+            this.btnSaveItem.Location = new System.Drawing.Point(42, 442);
+            this.btnSaveItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveItem.Name = "btnSaveItem";
+            this.btnSaveItem.Size = new System.Drawing.Size(119, 40);
+            this.btnSaveItem.TabIndex = 4;
+            this.btnSaveItem.Text = "Save";
+            this.btnSaveItem.UseVisualStyleBackColor = true;
             // 
             // btnPic
             // 
-            btnPic.Location = new Point(81, 134);
-            btnPic.Name = "btnPic";
-            btnPic.Size = new Size(141, 30);
-            btnPic.TabIndex = 6;
-            btnPic.Text = "Add Picture";
-            btnPic.UseVisualStyleBackColor = true;
-            btnPic.Click += btnPic_Click;
+            this.btnPic.Location = new System.Drawing.Point(133, 238);
+            this.btnPic.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPic.Name = "btnPic";
+            this.btnPic.Size = new System.Drawing.Size(150, 40);
+            this.btnPic.TabIndex = 6;
+            this.btnPic.Text = "Add Picture";
+            this.btnPic.UseVisualStyleBackColor = true;
             // 
             // lbItemPrice
             // 
-            lbItemPrice.AutoSize = true;
-            lbItemPrice.Location = new Point(21, 221);
-            lbItemPrice.Name = "lbItemPrice";
-            lbItemPrice.Size = new Size(36, 15);
-            lbItemPrice.TabIndex = 2;
-            lbItemPrice.Text = "Price:";
+            this.lbItemPrice.AutoSize = true;
+            this.lbItemPrice.Location = new System.Drawing.Point(23, 348);
+            this.lbItemPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbItemPrice.Name = "lbItemPrice";
+            this.lbItemPrice.Size = new System.Drawing.Size(57, 20);
+            this.lbItemPrice.TabIndex = 2;
+            this.lbItemPrice.Text = "Price:";
             // 
             // lbItemName
             // 
-            lbItemName.AutoSize = true;
-            lbItemName.Location = new Point(21, 182);
-            lbItemName.Name = "lbItemName";
-            lbItemName.Size = new Size(69, 15);
-            lbItemName.TabIndex = 1;
-            lbItemName.Text = "Item Name:";
+            this.lbItemName.AutoSize = true;
+            this.lbItemName.Location = new System.Drawing.Point(23, 299);
+            this.lbItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbItemName.Name = "lbItemName";
+            this.lbItemName.Size = new System.Drawing.Size(102, 20);
+            this.lbItemName.TabIndex = 1;
+            this.lbItemName.Text = "Item Name:";
             // 
             // picPreview
             // 
-            picPreview.BorderStyle = BorderStyle.FixedSingle;
-            picPreview.Location = new Point(81, 16);
-            picPreview.Name = "picPreview";
-            picPreview.Size = new Size(141, 112);
-            picPreview.TabIndex = 0;
-            picPreview.TabStop = false;
+            this.picPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPreview.Location = new System.Drawing.Point(92, 8);
+            this.picPreview.Margin = new System.Windows.Forms.Padding(4);
+            this.picPreview.Name = "picPreview";
+            this.picPreview.Size = new System.Drawing.Size(200, 200);
+            this.picPreview.TabIndex = 0;
+            this.picPreview.TabStop = false;
             // 
             // tpCategory
             // 
-            tpCategory.Controls.Add(btnClearCat);
-            tpCategory.Controls.Add(txtCatId);
-            tpCategory.Controls.Add(lbCatId);
-            tpCategory.Controls.Add(btnDeleteCat);
-            tpCategory.Controls.Add(btnSaveCat);
-            tpCategory.Controls.Add(btnAddCat);
-            tpCategory.Controls.Add(txtCatName);
-            tpCategory.Controls.Add(lbCatName);
-            tpCategory.Location = new Point(4, 24);
-            tpCategory.Name = "tpCategory";
-            tpCategory.Padding = new Padding(3);
-            tpCategory.Size = new Size(269, 368);
-            tpCategory.TabIndex = 1;
-            tpCategory.Text = "Category";
-            tpCategory.UseVisualStyleBackColor = true;
+            this.tpCategory.Controls.Add(this.btnClearCat);
+            this.tpCategory.Controls.Add(this.txtCatId);
+            this.tpCategory.Controls.Add(this.lbCatId);
+            this.tpCategory.Controls.Add(this.btnDeleteCat);
+            this.tpCategory.Controls.Add(this.btnSaveCat);
+            this.tpCategory.Controls.Add(this.btnAddCat);
+            this.tpCategory.Controls.Add(this.txtCatName);
+            this.tpCategory.Controls.Add(this.lbCatName);
+            this.tpCategory.Location = new System.Drawing.Point(4, 29);
+            this.tpCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.tpCategory.Name = "tpCategory";
+            this.tpCategory.Padding = new System.Windows.Forms.Padding(4);
+            this.tpCategory.Size = new System.Drawing.Size(365, 545);
+            this.tpCategory.TabIndex = 1;
+            this.tpCategory.Text = "Category";
+            this.tpCategory.UseVisualStyleBackColor = true;
             // 
             // btnClearCat
             // 
-            btnClearCat.Location = new Point(141, 78);
-            btnClearCat.Name = "btnClearCat";
-            btnClearCat.Size = new Size(60, 23);
-            btnClearCat.TabIndex = 7;
-            btnClearCat.Text = "Clear";
-            btnClearCat.UseVisualStyleBackColor = true;
-            btnClearCat.Click += btnClearCat_Click;
+            this.btnClearCat.Location = new System.Drawing.Point(221, 147);
+            this.btnClearCat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClearCat.Name = "btnClearCat";
+            this.btnClearCat.Size = new System.Drawing.Size(95, 40);
+            this.btnClearCat.TabIndex = 7;
+            this.btnClearCat.Text = "Clear";
+            this.btnClearCat.UseVisualStyleBackColor = true;
             // 
             // txtCatId
             // 
-            txtCatId.Location = new Point(97, 78);
-            txtCatId.Name = "txtCatId";
-            txtCatId.ReadOnly = true;
-            txtCatId.Size = new Size(37, 23);
-            txtCatId.TabIndex = 6;
+            this.txtCatId.Location = new System.Drawing.Point(153, 154);
+            this.txtCatId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCatId.Name = "txtCatId";
+            this.txtCatId.ReadOnly = true;
+            this.txtCatId.Size = new System.Drawing.Size(57, 27);
+            this.txtCatId.TabIndex = 6;
             // 
             // lbCatId
             // 
-            lbCatId.AutoSize = true;
-            lbCatId.Location = new Point(23, 81);
-            lbCatId.Name = "lbCatId";
-            lbCatId.Size = new Size(71, 15);
-            lbCatId.TabIndex = 5;
-            lbCatId.Text = "Category Id:";
+            this.lbCatId.AutoSize = true;
+            this.lbCatId.Location = new System.Drawing.Point(35, 157);
+            this.lbCatId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCatId.Name = "lbCatId";
+            this.lbCatId.Size = new System.Drawing.Size(110, 20);
+            this.lbCatId.TabIndex = 5;
+            this.lbCatId.Text = "Category Id:";
             // 
             // btnDeleteCat
             // 
-            btnDeleteCat.Location = new Point(23, 201);
-            btnDeleteCat.Name = "btnDeleteCat";
-            btnDeleteCat.Size = new Size(205, 28);
-            btnDeleteCat.TabIndex = 4;
-            btnDeleteCat.Text = "Delete";
-            btnDeleteCat.UseVisualStyleBackColor = true;
-            btnDeleteCat.Click += btnDeleteCat_Click;
+            this.btnDeleteCat.Location = new System.Drawing.Point(20, 317);
+            this.btnDeleteCat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteCat.Name = "btnDeleteCat";
+            this.btnDeleteCat.Size = new System.Drawing.Size(321, 40);
+            this.btnDeleteCat.TabIndex = 4;
+            this.btnDeleteCat.Text = "Delete";
+            this.btnDeleteCat.UseVisualStyleBackColor = true;
             // 
             // btnSaveCat
             // 
-            btnSaveCat.Location = new Point(39, 162);
-            btnSaveCat.Name = "btnSaveCat";
-            btnSaveCat.Size = new Size(75, 23);
-            btnSaveCat.TabIndex = 3;
-            btnSaveCat.Text = "Save";
-            btnSaveCat.UseVisualStyleBackColor = true;
-            btnSaveCat.Click += btnSaveCat_Click;
+            this.btnSaveCat.Location = new System.Drawing.Point(47, 265);
+            this.btnSaveCat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveCat.Name = "btnSaveCat";
+            this.btnSaveCat.Size = new System.Drawing.Size(119, 40);
+            this.btnSaveCat.TabIndex = 3;
+            this.btnSaveCat.Text = "Save";
+            this.btnSaveCat.UseVisualStyleBackColor = true;
             // 
             // btnAddCat
             // 
-            btnAddCat.Location = new Point(141, 162);
-            btnAddCat.Name = "btnAddCat";
-            btnAddCat.Size = new Size(75, 23);
-            btnAddCat.TabIndex = 2;
-            btnAddCat.Text = "Add";
-            btnAddCat.UseVisualStyleBackColor = true;
-            btnAddCat.Click += btnAddCat_Click;
+            this.btnAddCat.Location = new System.Drawing.Point(206, 265);
+            this.btnAddCat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddCat.Name = "btnAddCat";
+            this.btnAddCat.Size = new System.Drawing.Size(119, 40);
+            this.btnAddCat.TabIndex = 2;
+            this.btnAddCat.Text = "Add";
+            this.btnAddCat.UseVisualStyleBackColor = true;
             // 
             // txtCatName
             // 
-            txtCatName.Location = new Point(97, 110);
-            txtCatName.Name = "txtCatName";
-            txtCatName.Size = new Size(131, 23);
-            txtCatName.TabIndex = 1;
+            this.txtCatName.Location = new System.Drawing.Point(153, 197);
+            this.txtCatName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCatName.Name = "txtCatName";
+            this.txtCatName.Size = new System.Drawing.Size(163, 27);
+            this.txtCatName.TabIndex = 1;
             // 
             // lbCatName
             // 
-            lbCatName.AutoSize = true;
-            lbCatName.Location = new Point(23, 113);
-            lbCatName.Name = "lbCatName";
-            lbCatName.Size = new Size(58, 15);
-            lbCatName.TabIndex = 0;
-            lbCatName.Text = "Category:";
+            this.lbCatName.AutoSize = true;
+            this.lbCatName.Location = new System.Drawing.Point(35, 200);
+            this.lbCatName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCatName.Name = "lbCatName";
+            this.lbCatName.Size = new System.Drawing.Size(90, 20);
+            this.lbCatName.TabIndex = 0;
+            this.lbCatName.Text = "Category:";
             // 
             // gbItem
             // 
-            gbItem.Controls.Add(dgvItem);
-            gbItem.Location = new Point(289, 132);
-            gbItem.Name = "gbItem";
-            gbItem.Size = new Size(331, 262);
-            gbItem.TabIndex = 2;
-            gbItem.TabStop = false;
-            gbItem.Text = "Item list";
+            this.gbItem.Controls.Add(this.dgvItem);
+            this.gbItem.Location = new System.Drawing.Point(373, 176);
+            this.gbItem.Margin = new System.Windows.Forms.Padding(4);
+            this.gbItem.Name = "gbItem";
+            this.gbItem.Padding = new System.Windows.Forms.Padding(4);
+            this.gbItem.Size = new System.Drawing.Size(554, 402);
+            this.gbItem.TabIndex = 2;
+            this.gbItem.TabStop = false;
+            this.gbItem.Text = "Item list";
             // 
             // dgvItem
             // 
-            dgvItem.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvItem.Dock = DockStyle.Fill;
-            dgvItem.Location = new Point(3, 19);
-            dgvItem.Name = "dgvItem";
-            dgvItem.ReadOnly = true;
-            dgvItem.RowTemplate.Height = 25;
-            dgvItem.Size = new Size(325, 240);
-            dgvItem.TabIndex = 0;
-            dgvItem.CellClick += dgvItem_CellClick;
+            this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvItem.Location = new System.Drawing.Point(4, 24);
+            this.dgvItem.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvItem.Name = "dgvItem";
+            this.dgvItem.ReadOnly = true;
+            this.dgvItem.RowHeadersWidth = 51;
+            this.dgvItem.RowTemplate.Height = 25;
+            this.dgvItem.Size = new System.Drawing.Size(546, 374);
+            this.dgvItem.TabIndex = 0;
             // 
             // gbCategory
             // 
-            gbCategory.AutoSize = true;
-            gbCategory.Controls.Add(dgvCategory);
-            gbCategory.Location = new Point(289, 6);
-            gbCategory.Name = "gbCategory";
-            gbCategory.Size = new Size(331, 120);
-            gbCategory.TabIndex = 0;
-            gbCategory.TabStop = false;
-            gbCategory.Text = "Category";
+            this.gbCategory.AutoSize = true;
+            this.gbCategory.Controls.Add(this.dgvCategory);
+            this.gbCategory.Location = new System.Drawing.Point(373, 8);
+            this.gbCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.gbCategory.Name = "gbCategory";
+            this.gbCategory.Padding = new System.Windows.Forms.Padding(4);
+            this.gbCategory.Size = new System.Drawing.Size(554, 160);
+            this.gbCategory.TabIndex = 0;
+            this.gbCategory.TabStop = false;
+            this.gbCategory.Text = "Category";
             // 
             // dgvCategory
             // 
-            dgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategory.Dock = DockStyle.Fill;
-            dgvCategory.Location = new Point(3, 19);
-            dgvCategory.Name = "dgvCategory";
-            dgvCategory.ReadOnly = true;
-            dgvCategory.RowTemplate.Height = 25;
-            dgvCategory.Size = new Size(325, 98);
-            dgvCategory.TabIndex = 0;
-            dgvCategory.CellClick += dgvCategory_CellClick;
-            dgvCategory.CellContentClick += dgvCategory_CellContentClick;
-            dgvCategory.CellDoubleClick += dgvCategory_CellDoubleClick;
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCategory.Location = new System.Drawing.Point(4, 24);
+            this.dgvCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.ReadOnly = true;
+            this.dgvCategory.RowHeadersWidth = 51;
+            this.dgvCategory.RowTemplate.Height = 25;
+            this.dgvCategory.Size = new System.Drawing.Size(546, 132);
+            this.dgvCategory.TabIndex = 0;
             // 
             // tpUser
             // 
-            tpUser.Controls.Add(gbOrder);
-            tpUser.Controls.Add(panel2);
-            tpUser.Location = new Point(4, 24);
-            tpUser.Name = "tpUser";
-            tpUser.Padding = new Padding(3);
-            tpUser.Size = new Size(628, 402);
-            tpUser.TabIndex = 1;
-            tpUser.Text = "Users";
-            tpUser.UseVisualStyleBackColor = true;
+            this.tpUser.Controls.Add(this.gbOrder);
+            this.tpUser.Controls.Add(this.panel2);
+            this.tpUser.Location = new System.Drawing.Point(4, 29);
+            this.tpUser.Margin = new System.Windows.Forms.Padding(4);
+            this.tpUser.Name = "tpUser";
+            this.tpUser.Padding = new System.Windows.Forms.Padding(4);
+            this.tpUser.Size = new System.Drawing.Size(931, 586);
+            this.tpUser.TabIndex = 1;
+            this.tpUser.Text = "Users";
+            this.tpUser.UseVisualStyleBackColor = true;
             // 
             // gbOrder
             // 
-            gbOrder.Controls.Add(dgvOrder);
-            gbOrder.Dock = DockStyle.Bottom;
-            gbOrder.Location = new Point(3, 238);
-            gbOrder.Name = "gbOrder";
-            gbOrder.Size = new Size(622, 161);
-            gbOrder.TabIndex = 1;
-            gbOrder.TabStop = false;
-            gbOrder.Text = "User's Orders";
+            this.gbOrder.Controls.Add(this.dgvOrder);
+            this.gbOrder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gbOrder.Location = new System.Drawing.Point(4, 317);
+            this.gbOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.gbOrder.Name = "gbOrder";
+            this.gbOrder.Padding = new System.Windows.Forms.Padding(4);
+            this.gbOrder.Size = new System.Drawing.Size(923, 265);
+            this.gbOrder.TabIndex = 1;
+            this.gbOrder.TabStop = false;
+            this.gbOrder.Text = "User\'s Orders";
             // 
             // dgvOrder
             // 
-            dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrder.Dock = DockStyle.Bottom;
-            dgvOrder.Location = new Point(3, 19);
-            dgvOrder.Name = "dgvOrder";
-            dgvOrder.RowTemplate.Height = 25;
-            dgvOrder.Size = new Size(616, 139);
-            dgvOrder.TabIndex = 0;
+            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvOrder.Location = new System.Drawing.Point(4, 28);
+            this.dgvOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.RowHeadersWidth = 51;
+            this.dgvOrder.RowTemplate.Height = 25;
+            this.dgvOrder.Size = new System.Drawing.Size(915, 233);
+            this.dgvOrder.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.Controls.Add(panel1);
-            panel2.Controls.Add(gbUser);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(3, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(622, 229);
-            panel2.TabIndex = 1;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.gbUser);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(923, 305);
+            this.panel2.TabIndex = 1;
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnClearUser);
-            panel1.Controls.Add(txtUserId);
-            panel1.Controls.Add(lbUserId);
-            panel1.Controls.Add(btnDeleteUser);
-            panel1.Controls.Add(txtUserPhone);
-            panel1.Controls.Add(txtUserMail);
-            panel1.Controls.Add(txtUserPass);
-            panel1.Controls.Add(txtUserName);
-            panel1.Controls.Add(btnSaveUser);
-            panel1.Controls.Add(lbUserPhone);
-            panel1.Controls.Add(lbUserEmail);
-            panel1.Controls.Add(lbUserPass);
-            panel1.Controls.Add(lbUserName);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(255, 229);
-            panel1.TabIndex = 9;
+            this.panel1.Controls.Add(this.btnClearUser);
+            this.panel1.Controls.Add(this.txtUserId);
+            this.panel1.Controls.Add(this.lbUserId);
+            this.panel1.Controls.Add(this.btnDeleteUser);
+            this.panel1.Controls.Add(this.txtUserPhone);
+            this.panel1.Controls.Add(this.txtUserMail);
+            this.panel1.Controls.Add(this.txtUserPass);
+            this.panel1.Controls.Add(this.txtUserName);
+            this.panel1.Controls.Add(this.btnSaveUser);
+            this.panel1.Controls.Add(this.lbUserPhone);
+            this.panel1.Controls.Add(this.lbUserEmail);
+            this.panel1.Controls.Add(this.lbUserPass);
+            this.panel1.Controls.Add(this.lbUserName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(369, 305);
+            this.panel1.TabIndex = 9;
             // 
             // btnClearUser
             // 
-            btnClearUser.Location = new Point(124, 15);
-            btnClearUser.Name = "btnClearUser";
-            btnClearUser.Size = new Size(54, 23);
-            btnClearUser.TabIndex = 10;
-            btnClearUser.Text = "Clear";
-            btnClearUser.UseVisualStyleBackColor = true;
-            btnClearUser.Click += btnClearUser_Click;
+            this.btnClearUser.Location = new System.Drawing.Point(196, 27);
+            this.btnClearUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClearUser.Name = "btnClearUser";
+            this.btnClearUser.Size = new System.Drawing.Size(86, 31);
+            this.btnClearUser.TabIndex = 10;
+            this.btnClearUser.Text = "Clear";
+            this.btnClearUser.UseVisualStyleBackColor = true;
             // 
             // txtUserId
             // 
-            txtUserId.Location = new Point(82, 15);
-            txtUserId.Name = "txtUserId";
-            txtUserId.ReadOnly = true;
-            txtUserId.Size = new Size(36, 23);
-            txtUserId.TabIndex = 9;
+            this.txtUserId.Location = new System.Drawing.Point(130, 27);
+            this.txtUserId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.ReadOnly = true;
+            this.txtUserId.Size = new System.Drawing.Size(55, 27);
+            this.txtUserId.TabIndex = 9;
             // 
             // lbUserId
             // 
-            lbUserId.AutoSize = true;
-            lbUserId.Location = new Point(13, 18);
-            lbUserId.Name = "lbUserId";
-            lbUserId.Size = new Size(21, 15);
-            lbUserId.TabIndex = 8;
-            lbUserId.Text = "ID:";
+            this.lbUserId.AutoSize = true;
+            this.lbUserId.Location = new System.Drawing.Point(21, 31);
+            this.lbUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUserId.Name = "lbUserId";
+            this.lbUserId.Size = new System.Drawing.Size(32, 20);
+            this.lbUserId.TabIndex = 8;
+            this.lbUserId.Text = "ID:";
             // 
             // btnDeleteUser
             // 
-            btnDeleteUser.Location = new Point(30, 176);
-            btnDeleteUser.Name = "btnDeleteUser";
-            btnDeleteUser.Size = new Size(75, 23);
-            btnDeleteUser.TabIndex = 7;
-            btnDeleteUser.Text = "Delete";
-            btnDeleteUser.UseVisualStyleBackColor = true;
-            btnDeleteUser.Click += btnDeleteUser_Click;
+            this.btnDeleteUser.Location = new System.Drawing.Point(46, 242);
+            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(119, 31);
+            this.btnDeleteUser.TabIndex = 7;
+            this.btnDeleteUser.Text = "Delete";
+            this.btnDeleteUser.UseVisualStyleBackColor = true;
             // 
             // txtUserPhone
             // 
-            txtUserPhone.Location = new Point(82, 136);
-            txtUserPhone.Mask = "(999) 000-0000";
-            txtUserPhone.Name = "txtUserPhone";
-            txtUserPhone.Size = new Size(138, 23);
-            txtUserPhone.TabIndex = 4;
+            this.txtUserPhone.Location = new System.Drawing.Point(130, 188);
+            this.txtUserPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserPhone.Mask = "(999) 000-0000";
+            this.txtUserPhone.Name = "txtUserPhone";
+            this.txtUserPhone.Size = new System.Drawing.Size(214, 27);
+            this.txtUserPhone.TabIndex = 4;
             // 
             // txtUserMail
             // 
-            txtUserMail.Location = new Point(82, 107);
-            txtUserMail.Name = "txtUserMail";
-            txtUserMail.Size = new Size(138, 23);
-            txtUserMail.TabIndex = 3;
+            this.txtUserMail.Location = new System.Drawing.Point(130, 150);
+            this.txtUserMail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserMail.Name = "txtUserMail";
+            this.txtUserMail.Size = new System.Drawing.Size(214, 27);
+            this.txtUserMail.TabIndex = 3;
             // 
             // txtUserPass
             // 
-            txtUserPass.Location = new Point(82, 76);
-            txtUserPass.Name = "txtUserPass";
-            txtUserPass.PasswordChar = '*';
-            txtUserPass.Size = new Size(138, 23);
-            txtUserPass.TabIndex = 2;
+            this.txtUserPass.Location = new System.Drawing.Point(130, 108);
+            this.txtUserPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserPass.Name = "txtUserPass";
+            this.txtUserPass.PasswordChar = '*';
+            this.txtUserPass.Size = new System.Drawing.Size(214, 27);
+            this.txtUserPass.TabIndex = 2;
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(82, 46);
-            txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(138, 23);
-            txtUserName.TabIndex = 1;
+            this.txtUserName.Location = new System.Drawing.Point(130, 68);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(214, 27);
+            this.txtUserName.TabIndex = 1;
             // 
             // btnSaveUser
             // 
-            btnSaveUser.Location = new Point(133, 176);
-            btnSaveUser.Name = "btnSaveUser";
-            btnSaveUser.Size = new Size(75, 23);
-            btnSaveUser.TabIndex = 6;
-            btnSaveUser.Text = "Save";
-            btnSaveUser.UseVisualStyleBackColor = true;
-            btnSaveUser.Click += btnSaveUser_Click;
+            this.btnSaveUser.Location = new System.Drawing.Point(209, 242);
+            this.btnSaveUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveUser.Name = "btnSaveUser";
+            this.btnSaveUser.Size = new System.Drawing.Size(119, 31);
+            this.btnSaveUser.TabIndex = 6;
+            this.btnSaveUser.Text = "Save";
+            this.btnSaveUser.UseVisualStyleBackColor = true;
             // 
             // lbUserPhone
             // 
-            lbUserPhone.AutoSize = true;
-            lbUserPhone.Location = new Point(13, 139);
-            lbUserPhone.Name = "lbUserPhone";
-            lbUserPhone.Size = new Size(44, 15);
-            lbUserPhone.TabIndex = 3;
-            lbUserPhone.Text = "Phone:";
+            this.lbUserPhone.AutoSize = true;
+            this.lbUserPhone.Location = new System.Drawing.Point(21, 192);
+            this.lbUserPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUserPhone.Name = "lbUserPhone";
+            this.lbUserPhone.Size = new System.Drawing.Size(65, 20);
+            this.lbUserPhone.TabIndex = 3;
+            this.lbUserPhone.Text = "Phone:";
             // 
             // lbUserEmail
             // 
-            lbUserEmail.AutoSize = true;
-            lbUserEmail.Location = new Point(13, 110);
-            lbUserEmail.Name = "lbUserEmail";
-            lbUserEmail.Size = new Size(47, 15);
-            lbUserEmail.TabIndex = 2;
-            lbUserEmail.Text = "E-mail: ";
+            this.lbUserEmail.AutoSize = true;
+            this.lbUserEmail.Location = new System.Drawing.Point(21, 154);
+            this.lbUserEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUserEmail.Name = "lbUserEmail";
+            this.lbUserEmail.Size = new System.Drawing.Size(70, 20);
+            this.lbUserEmail.TabIndex = 2;
+            this.lbUserEmail.Text = "E-mail: ";
             // 
             // lbUserPass
             // 
-            lbUserPass.AutoSize = true;
-            lbUserPass.Location = new Point(13, 79);
-            lbUserPass.Name = "lbUserPass";
-            lbUserPass.Size = new Size(60, 15);
-            lbUserPass.TabIndex = 1;
-            lbUserPass.Text = "Password:";
+            this.lbUserPass.AutoSize = true;
+            this.lbUserPass.Location = new System.Drawing.Point(21, 112);
+            this.lbUserPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUserPass.Name = "lbUserPass";
+            this.lbUserPass.Size = new System.Drawing.Size(95, 20);
+            this.lbUserPass.TabIndex = 1;
+            this.lbUserPass.Text = "Password:";
             // 
             // lbUserName
             // 
-            lbUserName.AutoSize = true;
-            lbUserName.Location = new Point(13, 49);
-            lbUserName.Name = "lbUserName";
-            lbUserName.Size = new Size(63, 15);
-            lbUserName.TabIndex = 0;
-            lbUserName.Text = "Username:";
+            this.lbUserName.AutoSize = true;
+            this.lbUserName.Location = new System.Drawing.Point(21, 72);
+            this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(98, 20);
+            this.lbUserName.TabIndex = 0;
+            this.lbUserName.Text = "Username:";
             // 
             // gbUser
             // 
-            gbUser.Controls.Add(dgvUserList);
-            gbUser.Dock = DockStyle.Right;
-            gbUser.Location = new Point(255, 0);
-            gbUser.Name = "gbUser";
-            gbUser.Size = new Size(367, 229);
-            gbUser.TabIndex = 0;
-            gbUser.TabStop = false;
-            gbUser.Text = "Users";
+            this.gbUser.Controls.Add(this.dgvUserList);
+            this.gbUser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gbUser.Location = new System.Drawing.Point(377, 0);
+            this.gbUser.Margin = new System.Windows.Forms.Padding(4);
+            this.gbUser.Name = "gbUser";
+            this.gbUser.Padding = new System.Windows.Forms.Padding(4);
+            this.gbUser.Size = new System.Drawing.Size(546, 305);
+            this.gbUser.TabIndex = 0;
+            this.gbUser.TabStop = false;
+            this.gbUser.Text = "Users";
             // 
             // dgvUserList
             // 
-            dgvUserList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUserList.Dock = DockStyle.Fill;
-            dgvUserList.Location = new Point(3, 19);
-            dgvUserList.Name = "dgvUserList";
-            dgvUserList.RowTemplate.Height = 25;
-            dgvUserList.Size = new Size(361, 207);
-            dgvUserList.TabIndex = 0;
-            dgvUserList.CellClick += dgvUserList_CellClick;
+            this.dgvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserList.Location = new System.Drawing.Point(4, 24);
+            this.dgvUserList.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvUserList.Name = "dgvUserList";
+            this.dgvUserList.RowHeadersWidth = 51;
+            this.dgvUserList.RowTemplate.Height = 25;
+            this.dgvUserList.Size = new System.Drawing.Size(538, 277);
+            this.dgvUserList.TabIndex = 0;
             // 
             // Form6
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(636, 430);
-            Controls.Add(tabControl1);
-            Name = "Form6";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form6";
-            Load += Form6_Load;
-            tabControl1.ResumeLayout(false);
-            tpItemAndCat.ResumeLayout(false);
-            tpItemAndCat.PerformLayout();
-            tabControl2.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picPreview).EndInit();
-            tpCategory.ResumeLayout(false);
-            tpCategory.PerformLayout();
-            gbItem.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvItem).EndInit();
-            gbCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvCategory).EndInit();
-            tpUser.ResumeLayout(false);
-            gbOrder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();
-            panel2.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            gbUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvUserList).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(939, 619);
+            this.Controls.Add(this.tabControl1);
+            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Form6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form6";
+            this.tabControl1.ResumeLayout(false);
+            this.tpItemAndCat.ResumeLayout(false);
+            this.tpItemAndCat.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
+            this.tpCategory.ResumeLayout(false);
+            this.tpCategory.PerformLayout();
+            this.gbItem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
+            this.gbCategory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
+            this.tpUser.ResumeLayout(false);
+            this.gbOrder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.gbUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
