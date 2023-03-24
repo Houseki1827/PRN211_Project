@@ -28,7 +28,7 @@ public partial class CoffeeShopContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected internal User admin = getAdmin();
+    public User admin = getAdmin();
     public static User getAdmin()
     {
         User admin = new User();
