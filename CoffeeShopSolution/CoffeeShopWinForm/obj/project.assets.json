@@ -3013,11 +3013,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iamap\\Desktop\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
+      "projectUniqueName": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
       "projectName": "CoffeeShopWinForm",
-      "projectPath": "C:\\Users\\iamap\\Desktop\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
+      "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
       "packagesPath": "C:\\Users\\iamap\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iamap\\Desktop\\CoffeeShopSolution\\CoffeeShopWinForm\\obj\\",
+      "outputPath": "D:\\PRN211_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3039,11 +3039,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\iamap\\Desktop\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\iamap\\Desktop\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
+            "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj"
             },
-            "C:\\Users\\iamap\\Desktop\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\iamap\\Desktop\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj"
+            "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\PRN211_Project\\CoffeeShopSolution\\DataAccess\\DataAccess.csproj"
             }
           }
         }

@@ -797,3 +797,4 @@ C:\Users\iamap\Desktop\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-win
 C:\Users\iamap\Desktop\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.pdb
 C:\Users\iamap\Desktop\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.genruntimeconfig.cache
 C:\Users\iamap\Desktop\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\ref\CoffeeShopWinForm.dll
+D:\PRN211_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Properties.Resources.resources
