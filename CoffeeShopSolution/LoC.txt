@@ -1,0 +1,23 @@
+tk admin:  admin | admin
+tk người dùng: longdh | 123456
+
+** Tính năng: 
+- Đăng nhập với tư cách admin hoặc user hoặc guest.
+- Tạo tài khoản.
+Tính năng dành cho người dùng:
+- Chọn, thêm, thay đổi và xóa giỏ hàng.
+- Đặt hàng sử dụng toàn bộ giỏ hàng.
+- Sort và xem lại các đơn hàng đã đặt.
+- Thay đổi thông tin cá nhân.
+Tính năng cho admin
+- Kiểm tra, thêm, sửa và xóa các sản phẩm 
+- Kiểm tra, thêm, sửa và xóa các hạng mục sản phẩm.
+- Kiểm tra, sửa và xóa thông tin người dùng
+- Kiểm tra và thay đổi trạng thái các đơn hàng của người dùng.
+
+** Changes:
+- sử dụng combobox để chọn category thay cho radio button
+- thêm thay đổi status của order cho admin
+- thêm nút tạo account trong profile page của guest user
+- thêm tính năng tự động xóa guest user "có tk > 1 ngày tuổi và chỉ có đơn hàng đã complete hoặc cancel > 1 ngày trước" vào login và guest login 
+(ko check cart)

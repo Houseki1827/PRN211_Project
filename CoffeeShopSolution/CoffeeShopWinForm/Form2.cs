@@ -14,6 +14,7 @@ using System.Windows.Forms;
 namespace CoffeeShopWinForm {
     public partial class Form2 : Form {
         UserRepository repository = new UserRepository();
+        public int id { get; set; } = 0;
         //This form is for 'creating user account'. DO NOT change name until it's design is finalized
         public Form2() {
             InitializeComponent();
@@ -46,6 +47,9 @@ namespace CoffeeShopWinForm {
                     Phone = phoneNum
                 };
                 repository.AddUser(u);
+
+                DialogResult = DialogResult.OK;
+                id = repository.GetUserByLogin(u.Username, u.Password).UserId;
                 MessageBox.Show("User created.");
                 this.Close();
             }
@@ -53,11 +57,15 @@ namespace CoffeeShopWinForm {
 
         private void checkEmpty() {
             bool check = false;
+            string phone = "";
+            txtPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            phone = txtPhone.Text;
+            txtPhone.TextMaskFormat = MaskFormat.IncludeLiterals;
             if (txtName.Text.Length == 0) { check = true; }
             if (txtPwd.Text.Length == 0) { check = true; }
             if (txtEmail.Text.Length == 0) { check = true; }
             if (txtPwdCfm.Text.Length == 0) { check = true; }
-            if (txtPhone.Text.Length == 0) { check = true; }
+            if (phone.Length != 10) { check = true; }
             if (check) throw new Exception("Field(s) must not be empty!");
         }
 
@@ -65,6 +73,7 @@ namespace CoffeeShopWinForm {
             if (txtPwd.Text != txtPwdCfm.Text) throw new Exception("Password do not match.");
             if (txtName.Text.Length < 6 || txtName.Text.Length > 40) throw new Exception("Username must be between 6 and 40 characters.");
             if (txtPwd.Text.Length < 6 || txtPwd.Text.Length > 40) throw new Exception("Password must be between 6 and 40 characters.");
+            if (txtName.Text.Contains("guest")) throw new Exception("Username cannot contain \"guest\"");
         }
 
         private void checkExists() {
@@ -74,6 +83,10 @@ namespace CoffeeShopWinForm {
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e) {
             DialogResult = DialogResult.OK;
+        }
+
+        private void Form2_Load_1(object sender, EventArgs e) {
+
         }
     }
 }

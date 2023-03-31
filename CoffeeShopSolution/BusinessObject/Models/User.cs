@@ -15,7 +15,7 @@ public partial class User
 
     public string Email { get; set; } = null!;
 
-    public virtual ICollection<Cart> Carts { get; } = new List<Cart>();
+    public DateTime CreatedDate { get; set; }
 
-    public virtual ICollection<Order> Orders { get; } = new List<Order>();
+    public virtual ICollection<Cart> Carts { get; } = new List<Cart>();
 }

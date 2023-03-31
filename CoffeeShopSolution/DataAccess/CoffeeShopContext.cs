@@ -51,10 +51,8 @@ public partial class CoffeeShopContext : DbContext
         optionsBuilder.UseSqlServer(configuration["ConnectionStrings:CoffeeShopDB"]);
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Cart>(entity =>
-        {
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        modelBuilder.Entity<Cart>(entity => {
             entity.HasKey(e => new { e.ItemId, e.UserId, e.Quantity, e.OrderDate });
 
             entity.ToTable("Cart");
@@ -65,6 +63,7 @@ public partial class CoffeeShopContext : DbContext
             entity.Property(e => e.UserId).HasColumnName("userId");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
             entity.Property(e => e.OrderDate)
+                .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("orderDate");
             entity.Property(e => e.ItemName)
@@ -76,15 +75,14 @@ public partial class CoffeeShopContext : DbContext
 
             entity.HasOne(d => d.Item).WithMany(p => p.Carts)
                 .HasForeignKey(d => d.ItemId)
-                .HasConstraintName("FK_Cart_Item");
+                .HasConstraintName("FK__Cart__itemId__3F466844");
 
             entity.HasOne(d => d.User).WithMany(p => p.Carts)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_Cart_User");
+                .HasConstraintName("FK__Cart__userId__403A8C7D");
         });
 
-        modelBuilder.Entity<Category>(entity =>
-        {
+        modelBuilder.Entity<Category>(entity => {
             entity.ToTable("Category");
 
             entity.Property(e => e.CategoryId).HasColumnName("categoryId");
@@ -93,8 +91,7 @@ public partial class CoffeeShopContext : DbContext
                 .HasColumnName("categoryName");
         });
 
-        modelBuilder.Entity<Item>(entity =>
-        {
+        modelBuilder.Entity<Item>(entity => {
             entity.HasKey(e => e.ItemId).HasName("PK_Item_1");
 
             entity.ToTable("Item");
@@ -112,11 +109,10 @@ public partial class CoffeeShopContext : DbContext
 
             entity.HasOne(d => d.Category).WithMany(p => p.Items)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK_Item_Category");
+                .HasConstraintName("FK__Item__categoryId__3C69FB99");
         });
 
-        modelBuilder.Entity<Order>(entity =>
-        {
+        modelBuilder.Entity<Order>(entity => {
             entity.HasKey(e => e.OrderId).HasName("PK_Order_1");
 
             entity.ToTable("Order");
@@ -133,14 +129,9 @@ public partial class CoffeeShopContext : DbContext
                 .HasColumnType("money")
                 .HasColumnName("total");
             entity.Property(e => e.UserId).HasColumnName("userId");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_Order_User1");
         });
 
-        modelBuilder.Entity<OrderDetail>(entity =>
-        {
+        modelBuilder.Entity<OrderDetail>(entity => {
             entity.HasKey(e => new { e.OrderId, e.ItemId, e.Quantity, e.OrderDate });
 
             entity.ToTable("OrderDetail");
@@ -156,20 +147,23 @@ public partial class CoffeeShopContext : DbContext
 
             entity.HasOne(d => d.Item).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.ItemId)
-                .HasConstraintName("FK_OrderDetail_Item");
+                .HasConstraintName("FK__OrderDeta__itemI__46E78A0C");
 
             entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.OrderId)
-                .HasConstraintName("FK_OrderDetail_Order");
+                .HasConstraintName("FK__OrderDeta__order__45F365D3");
         });
 
-        modelBuilder.Entity<User>(entity =>
-        {
+        modelBuilder.Entity<User>(entity => {
             entity.HasKey(e => e.UserId).HasName("PK_Table_1");
 
             entity.ToTable("User");
 
             entity.Property(e => e.UserId).HasColumnName("userId");
+            entity.Property(e => e.CreatedDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_date");
             entity.Property(e => e.Email)
                 .HasMaxLength(150)
                 .HasColumnName("email");
@@ -187,6 +181,7 @@ public partial class CoffeeShopContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
+
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

@@ -44,6 +44,7 @@ namespace CoffeeShopWinForm {
             lbStatus = new Label();
             dgvOrderDetails = new DataGridView();
             tabPage2 = new TabPage();
+            btnRegister = new Button();
             lbTitle_2 = new Label();
             btnCancel = new Button();
             btnSave = new Button();
@@ -267,7 +268,6 @@ namespace CoffeeShopWinForm {
             btnView.TabIndex = 4;
             btnView.Text = "View";
             btnView.UseVisualStyleBackColor = true;
-            btnView.Click += btnView_Click_1;
             // 
             // lbID
             // 
@@ -309,6 +309,7 @@ namespace CoffeeShopWinForm {
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnRegister);
             tabPage2.Controls.Add(lbTitle_2);
             tabPage2.Controls.Add(btnCancel);
             tabPage2.Controls.Add(btnSave);
@@ -323,21 +324,37 @@ namespace CoffeeShopWinForm {
             tabPage2.Controls.Add(lbPass);
             tabPage2.Controls.Add(lbName);
             tabPage2.Controls.Add(btnLogout);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 25);
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(15, 13, 15, 13);
-            tabPage2.Size = new Size(628, 633);
+            tabPage2.Size = new Size(628, 632);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnRegister
+            // 
+            btnRegister.BackColor = Color.Transparent;
+            btnRegister.Dock = DockStyle.Bottom;
+            btnRegister.Enabled = false;
+            btnRegister.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegister.ForeColor = Color.Crimson;
+            btnRegister.Location = new Point(15, 505);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(598, 57);
+            btnRegister.TabIndex = 99;
+            btnRegister.Text = "Register Account";
+            btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Visible = false;
+            btnRegister.Click += button1_Click;
             // 
             // lbTitle_2
             // 
             lbTitle_2.Anchor = AnchorStyles.Top;
             lbTitle_2.AutoSize = true;
             lbTitle_2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbTitle_2.Location = new Point(245, 51);
+            lbTitle_2.Location = new Point(241, 38);
             lbTitle_2.Margin = new Padding(4, 0, 4, 0);
             lbTitle_2.Name = "lbTitle_2";
             lbTitle_2.Size = new Size(112, 41);
@@ -347,7 +364,7 @@ namespace CoffeeShopWinForm {
             // btnCancel
             // 
             btnCancel.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.Location = new Point(127, 456);
+            btnCancel.Location = new Point(131, 416);
             btnCancel.Margin = new Padding(4);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(119, 40);
@@ -359,7 +376,7 @@ namespace CoffeeShopWinForm {
             // btnSave
             // 
             btnSave.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSave.Location = new Point(375, 456);
+            btnSave.Location = new Point(379, 416);
             btnSave.Margin = new Padding(4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(119, 40);
@@ -371,7 +388,7 @@ namespace CoffeeShopWinForm {
             // txtPhone
             // 
             txtPhone.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPhone.Location = new Point(269, 355);
+            txtPhone.Location = new Point(272, 332);
             txtPhone.Margin = new Padding(4);
             txtPhone.Mask = "(999) 000-0000";
             txtPhone.Name = "txtPhone";
@@ -381,7 +398,7 @@ namespace CoffeeShopWinForm {
             // txtEmail
             // 
             txtEmail.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.Location = new Point(269, 304);
+            txtEmail.Location = new Point(272, 281);
             txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(288, 24);
@@ -391,7 +408,7 @@ namespace CoffeeShopWinForm {
             // 
             txtConfirm.Enabled = false;
             txtConfirm.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtConfirm.Location = new Point(269, 255);
+            txtConfirm.Location = new Point(272, 232);
             txtConfirm.Margin = new Padding(4);
             txtConfirm.Name = "txtConfirm";
             txtConfirm.PasswordChar = '*';
@@ -402,7 +419,7 @@ namespace CoffeeShopWinForm {
             // txtPass
             // 
             txtPass.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPass.Location = new Point(269, 206);
+            txtPass.Location = new Point(272, 183);
             txtPass.Margin = new Padding(4);
             txtPass.Name = "txtPass";
             txtPass.PasswordChar = '*';
@@ -414,7 +431,7 @@ namespace CoffeeShopWinForm {
             // txtName
             // 
             txtName.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txtName.Location = new Point(269, 159);
+            txtName.Location = new Point(272, 136);
             txtName.Margin = new Padding(4);
             txtName.Name = "txtName";
             txtName.Size = new Size(288, 24);
@@ -424,7 +441,7 @@ namespace CoffeeShopWinForm {
             // 
             lbPhone_Pf.AutoSize = true;
             lbPhone_Pf.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lbPhone_Pf.Location = new Point(65, 358);
+            lbPhone_Pf.Location = new Point(68, 335);
             lbPhone_Pf.Margin = new Padding(4, 0, 4, 0);
             lbPhone_Pf.Name = "lbPhone_Pf";
             lbPhone_Pf.Size = new Size(59, 17);
@@ -435,7 +452,7 @@ namespace CoffeeShopWinForm {
             // 
             lbEmail.AutoSize = true;
             lbEmail.Font = new Font("Arial Rounded MT Bold", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lbEmail.Location = new Point(65, 307);
+            lbEmail.Location = new Point(68, 284);
             lbEmail.Margin = new Padding(4, 0, 4, 0);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new Size(58, 17);
@@ -446,7 +463,7 @@ namespace CoffeeShopWinForm {
             // 
             lbCPass.AutoSize = true;
             lbCPass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lbCPass.Location = new Point(65, 256);
+            lbCPass.Location = new Point(68, 233);
             lbCPass.Margin = new Padding(4, 0, 4, 0);
             lbCPass.Name = "lbCPass";
             lbCPass.Size = new Size(146, 17);
@@ -457,7 +474,7 @@ namespace CoffeeShopWinForm {
             // 
             lbPass.AutoSize = true;
             lbPass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lbPass.Location = new Point(65, 207);
+            lbPass.Location = new Point(68, 184);
             lbPass.Margin = new Padding(4, 0, 4, 0);
             lbPass.Name = "lbPass";
             lbPass.Size = new Size(85, 17);
@@ -468,7 +485,7 @@ namespace CoffeeShopWinForm {
             // 
             lbName.AutoSize = true;
             lbName.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lbName.Location = new Point(65, 159);
+            lbName.Location = new Point(68, 136);
             lbName.Margin = new Padding(4, 0, 4, 0);
             lbName.Name = "lbName";
             lbName.Size = new Size(88, 17);
@@ -481,7 +498,7 @@ namespace CoffeeShopWinForm {
             btnLogout.Dock = DockStyle.Bottom;
             btnLogout.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogout.ForeColor = SystemColors.ButtonHighlight;
-            btnLogout.Location = new Point(15, 563);
+            btnLogout.Location = new Point(15, 562);
             btnLogout.Margin = new Padding(4);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(598, 57);
@@ -521,6 +538,7 @@ namespace CoffeeShopWinForm {
             Name = "Form4";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form4";
+            Load += Form4_Load_1;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             pHeader.ResumeLayout(false);
@@ -573,5 +591,6 @@ namespace CoffeeShopWinForm {
         private Label lbStatus;
         private Label lbTitle;
         private Panel pHeader;
+        private Button btnRegister;
     }
 }

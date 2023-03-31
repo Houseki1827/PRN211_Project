@@ -54,6 +54,14 @@
             gbCategory = new GroupBox();
             dgvCategory = new DataGridView();
             tpUser = new TabPage();
+            panel3 = new Panel();
+            gbStatus = new GroupBox();
+            btnClearStat = new Button();
+            btnSaveStat = new Button();
+            cbStat = new ComboBox();
+            txtStatId = new TextBox();
+            lbStatus = new Label();
+            lbStatId = new Label();
             gbOrder = new GroupBox();
             dgvOrder = new DataGridView();
             panel2 = new Panel();
@@ -84,6 +92,8 @@
             gbCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
             tpUser.SuspendLayout();
+            panel3.SuspendLayout();
+            gbStatus.SuspendLayout();
             gbOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvOrder).BeginInit();
             panel2.SuspendLayout();
@@ -156,7 +166,7 @@
             // 
             // btnItemClear
             // 
-            btnItemClear.Location = new Point(38, 238);
+            btnItemClear.Location = new Point(23, 238);
             btnItemClear.Margin = new Padding(4);
             btnItemClear.Name = "btnItemClear";
             btnItemClear.Size = new Size(71, 40);
@@ -167,7 +177,7 @@
             // 
             // txtItemId
             // 
-            txtItemId.Location = new Point(8, 181);
+            txtItemId.Location = new Point(23, 203);
             txtItemId.Margin = new Padding(4);
             txtItemId.Name = "txtItemId";
             txtItemId.ReadOnly = true;
@@ -278,10 +288,12 @@
             // picPreview
             // 
             picPreview.BorderStyle = BorderStyle.FixedSingle;
-            picPreview.Location = new Point(92, 8);
+            picPreview.Image = Properties.Resources.banbaro;
+            picPreview.Location = new Point(102, 4);
             picPreview.Margin = new Padding(4);
             picPreview.Name = "picPreview";
-            picPreview.Size = new Size(200, 200);
+            picPreview.Size = new Size(205, 226);
+            picPreview.SizeMode = PictureBoxSizeMode.CenterImage;
             picPreview.TabIndex = 0;
             picPreview.TabStop = false;
             // 
@@ -295,11 +307,11 @@
             tpCategory.Controls.Add(btnAddCat);
             tpCategory.Controls.Add(txtCatName);
             tpCategory.Controls.Add(lbCatName);
-            tpCategory.Location = new Point(4, 25);
+            tpCategory.Location = new Point(4, 24);
             tpCategory.Margin = new Padding(4);
             tpCategory.Name = "tpCategory";
             tpCategory.Padding = new Padding(4);
-            tpCategory.Size = new Size(365, 553);
+            tpCategory.Size = new Size(365, 554);
             tpCategory.TabIndex = 1;
             tpCategory.Text = "Category";
             tpCategory.UseVisualStyleBackColor = true;
@@ -441,7 +453,7 @@
             // 
             // tpUser
             // 
-            tpUser.Controls.Add(gbOrder);
+            tpUser.Controls.Add(panel3);
             tpUser.Controls.Add(panel2);
             tpUser.Location = new Point(4, 25);
             tpUser.Margin = new Padding(4);
@@ -452,15 +464,97 @@
             tpUser.Text = "Users";
             tpUser.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(gbStatus);
+            panel3.Controls.Add(gbOrder);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(4, 312);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(923, 274);
+            panel3.TabIndex = 2;
+            // 
+            // gbStatus
+            // 
+            gbStatus.Controls.Add(btnClearStat);
+            gbStatus.Controls.Add(btnSaveStat);
+            gbStatus.Controls.Add(cbStat);
+            gbStatus.Controls.Add(txtStatId);
+            gbStatus.Controls.Add(lbStatus);
+            gbStatus.Controls.Add(lbStatId);
+            gbStatus.Dock = DockStyle.Left;
+            gbStatus.Location = new Point(0, 0);
+            gbStatus.Name = "gbStatus";
+            gbStatus.Size = new Size(290, 274);
+            gbStatus.TabIndex = 2;
+            gbStatus.TabStop = false;
+            gbStatus.Text = "OrderStatus";
+            // 
+            // btnClearStat
+            // 
+            btnClearStat.Location = new Point(160, 63);
+            btnClearStat.Name = "btnClearStat";
+            btnClearStat.Size = new Size(83, 27);
+            btnClearStat.TabIndex = 5;
+            btnClearStat.Text = "Clear";
+            btnClearStat.UseVisualStyleBackColor = true;
+            btnClearStat.Click += btnClearStat_Click;
+            // 
+            // btnSaveStat
+            // 
+            btnSaveStat.Location = new Point(101, 188);
+            btnSaveStat.Name = "btnSaveStat";
+            btnSaveStat.Size = new Size(75, 23);
+            btnSaveStat.TabIndex = 4;
+            btnSaveStat.Text = "Save";
+            btnSaveStat.UseVisualStyleBackColor = true;
+            btnSaveStat.Click += btnSaveStat_Click;
+            // 
+            // cbStat
+            // 
+            cbStat.FormattingEnabled = true;
+            cbStat.Items.AddRange(new object[] { "Paid", "Waiting", "Shipping", "Processing", "Pick-up", "Cancel", "Complete" });
+            cbStat.Location = new Point(101, 115);
+            cbStat.Name = "cbStat";
+            cbStat.Size = new Size(142, 24);
+            cbStat.TabIndex = 3;
+            cbStat.SelectedIndexChanged += cbStat_SelectedIndexChanged;
+            // 
+            // txtStatId
+            // 
+            txtStatId.Location = new Point(101, 65);
+            txtStatId.Name = "txtStatId";
+            txtStatId.ReadOnly = true;
+            txtStatId.Size = new Size(53, 23);
+            txtStatId.TabIndex = 2;
+            // 
+            // lbStatus
+            // 
+            lbStatus.AutoSize = true;
+            lbStatus.Location = new Point(22, 118);
+            lbStatus.Name = "lbStatus";
+            lbStatus.Size = new Size(54, 16);
+            lbStatus.TabIndex = 1;
+            lbStatus.Text = "Status:";
+            // 
+            // lbStatId
+            // 
+            lbStatId.AutoSize = true;
+            lbStatId.Location = new Point(22, 68);
+            lbStatId.Name = "lbStatId";
+            lbStatId.Size = new Size(73, 16);
+            lbStatId.TabIndex = 0;
+            lbStatId.Text = "Order ID: ";
+            // 
             // gbOrder
             // 
             gbOrder.Controls.Add(dgvOrder);
-            gbOrder.Dock = DockStyle.Bottom;
-            gbOrder.Location = new Point(4, 321);
+            gbOrder.Dock = DockStyle.Right;
+            gbOrder.Location = new Point(293, 0);
             gbOrder.Margin = new Padding(4);
             gbOrder.Name = "gbOrder";
             gbOrder.Padding = new Padding(4);
-            gbOrder.Size = new Size(923, 265);
+            gbOrder.Size = new Size(630, 274);
             gbOrder.TabIndex = 1;
             gbOrder.TabStop = false;
             gbOrder.Text = "User's Orders";
@@ -469,13 +563,14 @@
             // 
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOrder.Dock = DockStyle.Bottom;
-            dgvOrder.Location = new Point(4, 28);
+            dgvOrder.Location = new Point(4, 37);
             dgvOrder.Margin = new Padding(4);
             dgvOrder.Name = "dgvOrder";
             dgvOrder.RowHeadersWidth = 51;
             dgvOrder.RowTemplate.Height = 25;
-            dgvOrder.Size = new Size(915, 233);
+            dgvOrder.Size = new Size(622, 233);
             dgvOrder.TabIndex = 0;
+            dgvOrder.CellClick += dgvOrder_CellClick;
             // 
             // panel2
             // 
@@ -673,6 +768,7 @@
             Name = "Form6";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form6";
+            Load += Form6_Load_1;
             tabControl1.ResumeLayout(false);
             tpItemAndCat.ResumeLayout(false);
             tpItemAndCat.PerformLayout();
@@ -687,6 +783,9 @@
             gbCategory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCategory).EndInit();
             tpUser.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            gbStatus.ResumeLayout(false);
+            gbStatus.PerformLayout();
             gbOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();
             panel2.ResumeLayout(false);
@@ -751,5 +850,13 @@
         private Label lbUserId;
         private Button btnClearUser;
         private TextBox txtUserId;
+        private Panel panel3;
+        private GroupBox gbStatus;
+        private Button btnClearStat;
+        private Button btnSaveStat;
+        private ComboBox cbStat;
+        private TextBox txtStatId;
+        private Label lbStatus;
+        private Label lbStatId;
     }
 }

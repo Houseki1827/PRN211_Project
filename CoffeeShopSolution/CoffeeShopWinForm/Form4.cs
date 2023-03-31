@@ -71,6 +71,14 @@ namespace CoffeeShopWinForm {
             txtName.Text = u.Username;
             txtEmail.Text = u.Email;
             txtPhone.Text = u.Phone;
+
+            // **** Regster *****
+            if (u.Email == "guest" && u.Phone == "0000000000" && u.Username.Length > 5) {
+                if (u.Username.Substring(0, 5) == "guest") {
+                    btnRegister.Enabled = true;
+                    btnRegister.Visible = true;
+                }
+            }
         }
 
         private void Fill_OrderTable() {
@@ -108,7 +116,6 @@ namespace CoffeeShopWinForm {
             else if (lStatus.Text.Equals("Waiting")) lStatus.ForeColor = Color.DarkViolet;
             else if (lStatus.Text.Equals("Shipping")) lStatus.ForeColor = Color.LightSkyBlue;
             else if (lStatus.Text.Equals("Processing")) lStatus.ForeColor = Color.DarkGray;
-            else if (lStatus.Text.Equals("Shipped")) lStatus.ForeColor = Color.Goldenrod;
             else if (lStatus.Text.Equals("Pick-up")) lStatus.ForeColor = Color.DodgerBlue;
             else if (lStatus.Text.Equals("Cancel")) lStatus.ForeColor = Color.Red;
             else if (lStatus.Text.Equals("Complete")) lStatus.ForeColor = Color.Orchid;
@@ -155,8 +162,11 @@ namespace CoffeeShopWinForm {
         }
 
         private void btnLogout_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Close();
+            DialogResult re = MessageBox.Show("Log out?", "Confirm", MessageBoxButtons.YesNo);
+            if (re == DialogResult.Yes) {
+                DialogResult = DialogResult.Abort;
+                Close();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
@@ -243,6 +253,24 @@ namespace CoffeeShopWinForm {
 
         private void btnView_Click_1(object sender, EventArgs e) {
             MessageBox.Show("Test");
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            Form2 frmRegister = new Form2();
+            frmRegister.ShowDialog();
+            if (frmRegister.DialogResult == DialogResult.OK && frmRegister.id != 0) {
+                foreach (var item in context.Orders.Where(c => c.UserId == u.UserId)) {
+                    item.UserId = frmRegister.id;
+                    context.Orders.Update(item);
+                }
+                context.SaveChanges();
+                MessageBox.Show("Please re-login to your new account.");
+                btnLogout_Click(sender, new EventArgs());
+            }
+        }
+
+        private void Form4_Load_1(object sender, EventArgs e) {
+
         }
     }
 }

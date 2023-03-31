@@ -22,12 +22,14 @@ namespace CoffeeShopWinForm {
             InitializeComponent();
             this.u = user;
             lbUsername.Text = user.Username;
+            var cate = from cat in db.Categories select cat.CategoryName;
+            cbCategory.DataSource = cate.ToList();
             dgvLoad();
         }
 
         private void dgvLoad() {
             List<Tuple<string, decimal, int, decimal, DateTime>> list = new List<Tuple<string, decimal, int, decimal, DateTime>>();
-            foreach (var item in db.Carts.Where(c => c.UserId == u.UserId)) {
+            foreach(var item in db.Carts.Where(c => c.UserId == u.UserId)) {
                 Tuple<string, decimal, int, decimal, DateTime> t = new Tuple<string, decimal, int, decimal, DateTime>(
                     item.ItemName, item.Price, item.Quantity, item.Price * item.Quantity, item.OrderDate);
                 list.Add(t);
@@ -43,25 +45,27 @@ namespace CoffeeShopWinForm {
         private void Form3_Load(object sender, EventArgs e) {
 
         }
-        private void rbCoffee_CheckedChanged(object sender, EventArgs e) {
-            var id = 1;
-            var coffee = from item in db.Items
-                         join category in db.Categories
-                         on item.CategoryId equals category.CategoryId
-                         where item.CategoryId == id
-                         select item.ItemName;
-            cbSelect.DataSource = coffee.ToList();
-        }
+        //private void rbCoffee_CheckedChanged(object sender, EventArgs e) {
+        //    var id = 1;
+        //    var coffee = from item in db.Items
+        //                 join category in db.Categories
+        //                 on item.CategoryId equals category.CategoryId
+        //                 where item.CategoryId == id
+        //                 select item.ItemName;
+        //    cbSelect.DataSource = coffee.ToList();
 
-        private void rbDessert_CheckedChanged(object sender, EventArgs e) {
-            var id = 2;
-            var dessert = from item in db.Items
-                          join category in db.Categories
-                          on item.CategoryId equals category.CategoryId
-                          where item.CategoryId == id
-                          select item.ItemName;
-            cbSelect.DataSource = dessert.ToList();
-        }
+        //    //tbItemId.Text = db.Items.Where(c => c.ItemName == cbSelect.Text).FirstOrDefault().ItemId;
+        //}
+
+        //private void rbDessert_CheckedChanged(object sender, EventArgs e) {
+        //    var id = 2;
+        //    var dessert = from item in db.Items
+        //                  join category in db.Categories
+        //                  on item.CategoryId equals category.CategoryId
+        //                  where item.CategoryId == id
+        //                  select item.ItemName;
+        //    cbSelect.DataSource = dessert.ToList();
+        //}
 
         private void cbSelect_SelectedIndexChanged(object sender, EventArgs e) {
             String name = cbSelect.Text.Trim();
@@ -76,21 +80,27 @@ namespace CoffeeShopWinForm {
                 var amount = decimal.Parse(tbAmount.Text);
                 tbPrice.Text = price.ToString();
                 tbItemId.Text = itemId;
+                numericQuantity.Value = 0;
                 tbItemId.Hide();
                 tbTotal.Text = "";
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            } catch(Exception ex) { MessageBox.Show(ex.Message); }
+            //tbItemId.Text = db.Items.Where(c => c.ItemName == cbSelect.Text).FirstOrDefault().ItemId;
         }
 
         private void numericQuantity_ValueChanged(object sender, EventArgs e) {
-            if (numericQuantity.Value > 120) {
+            if(cbSelect.Text.Length == 0 && numericQuantity.Value != 0) {
+                numericQuantity.Value = 0;
+                MessageBox.Show("Please select an item.");
+                return;
+            }
+            if(numericQuantity.Value > 120) {
                 MessageBox.Show("Quantity must be less than 120");
             }
             else {
                 try {
-                    if (numericQuantity.Value > 0) {
+                    if(numericQuantity.Value > 0) {
                         decimal d = decimal.Parse(tbPrice.Text);
-                        if (d > 0) {
+                        if(d > 0) {
                             tbTotal.Text = (d * numericQuantity.Value).ToString();
                         }
                     }
@@ -98,14 +108,14 @@ namespace CoffeeShopWinForm {
                         tbTotal.Text = "";
                     }
 
-                }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                } catch(Exception ex) { MessageBox.Show(ex.Message); }
             }
+            //tbItemId.Text = db.Items.Where(c => c.ItemName == cbSelect.Text).FirstOrDefault().ItemId;
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
             try {
-                if (tbPrice.Text.Length > 0 && tbTotal.Text.Length > 0) {
+                if(tbPrice.Text.Length > 0 && tbTotal.Text.Length > 0) {
                     decimal price = decimal.Parse(tbPrice.Text);
                     decimal total = decimal.Parse(tbTotal.Text);
                     int userId = u.UserId;
@@ -125,13 +135,13 @@ namespace CoffeeShopWinForm {
                     tbAmount.Text = amount.ToString();
                 }
                 else { MessageBox.Show("Please select Item and Amount."); }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            } catch(Exception ex) { MessageBox.Show(ex.Message); }
+            //tbItemId.Text = db.Items.Where(c => c.ItemName == cbSelect.Text).FirstOrDefault().ItemId;
             dgvLoad();
         }
 
         private void btnDelete_Click(object sender, EventArgs e) {
-            if (dgvCart.SelectedRows.Count > 0) {
+            if(dgvCart.SelectedRows.Count > 0) {
                 string name = dgvCart.SelectedRows[0].Cells[0].Value.ToString();
                 //String itemid = db.Carts.SingleOrDefault(c => c.ItemName == name);
 
@@ -139,20 +149,21 @@ namespace CoffeeShopWinForm {
                            where c.ItemName == name
                            select c;
 
-                foreach (Cart c in cart) {
+                foreach(Cart c in cart) {
                     db.Carts.Remove(c);
-                    tbAmount.Text = (decimal.Parse(tbAmount.Text) - c.Price * c.Quantity).ToString();
+                    tbAmount.Text = (decimal.Parse(tbAmount.Text) - c.Price * c.Quantity) == 0? "0" : (decimal.Parse(tbAmount.Text) - c.Price * c.Quantity).ToString();
                     db.SaveChanges();
                     dgvLoad();
                 }
             }
             else { MessageBox.Show("Item not selected."); }
+            //tbItemId.Text = db.Items.Where(c => c.ItemName == cbSelect.Text).FirstOrDefault().ItemId;
 
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
             try {
-                if (db.Carts.Where(c => c.UserId == u.UserId).Count() > 0) {
+                if(db.Carts.Where(c => c.UserId == u.UserId).Count() > 0) {
                     var order = new Order {
                         UserId = u.UserId,
                         Phone = u.Phone,
@@ -162,7 +173,7 @@ namespace CoffeeShopWinForm {
                     db.Orders.Add(order);
                     db.SaveChanges();
 
-                    foreach (var item in db.Carts.Where(c => c.UserId == u.UserId)) {
+                    foreach(var item in db.Carts.Where(c => c.UserId == u.UserId)) {
                         OrderDetail o = new OrderDetail {
                             OrderId = order.OrderId,
                             ItemId = item.ItemId,
@@ -175,102 +186,66 @@ namespace CoffeeShopWinForm {
 
                     MessageBox.Show("Order successfull!");
 
-                    cbSelect.Text = string.Empty;
-                    tbPrice.Text = string.Empty;
-                    numericQuantity.Text = string.Empty;
-                    tbTotal.Text = string.Empty;
+                    //rbCoffee.Checked = true;
+                    //rbDessert.Checked = false;
+                    cbCategory.SelectedIndex = 0;
+                    cbSelect.SelectedIndex = 0;
+                    numericQuantity.Value = 0;
+                    decimal price = db.Items.Where(i => i.ItemName == cbSelect.Text).FirstOrDefault().Price;
+                    tbPrice.Text = price.ToString();
+                    tbTotal.Text = "";
                     tbAmount.Text = "0";
 
 
                     int userid = u.UserId;
                     var cart = db.Carts.Where(c => c.UserId == userid);
-                    foreach (var item in cart) {
+                    foreach(var item in cart) {
                         db.Carts.Remove(item);
                     }
                     db.SaveChanges();
                 }
                 else { MessageBox.Show("Your cart is empty."); }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            } catch(Exception ex) { MessageBox.Show(ex.Message); }
+            //tbItemId.Text = db.Items.Where(c => c.ItemName == cbSelect.Text).FirstOrDefault().ItemId;
             dgvLoad();
 
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
             try {
-                if (db.Carts.Where(c => c.UserId == u.UserId).Count() == 0) { MessageBox.Show("Your cart is empty."); return; }
+                if(db.Carts.Where(c => c.UserId == u.UserId).Count() == 0) { MessageBox.Show("Your cart is empty."); return; }
                 int userid = u.UserId;
                 var cart = db.Carts.Where(c => c.UserId == userid);
                 DialogResult re = MessageBox.Show("Do you want to clear your cart?", "Confirm", MessageBoxButtons.YesNo);
-                if (re == DialogResult.Yes) {
-                    foreach (var item in cart) { db.Carts.Remove(item); }
+                if(re == DialogResult.Yes) {
+                    foreach(var item in cart) { db.Carts.Remove(item); }
                     db.SaveChanges();
+                    cbCategory.SelectedIndex = 0;
                     cbSelect.Text = string.Empty;
                     tbPrice.Text = string.Empty;
                     numericQuantity.Text = string.Empty;
                     tbTotal.Text = string.Empty;
                     tbAmount.Text = "0";
                 }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            } catch(Exception ex) { MessageBox.Show(ex.Message); }
+            //tbItemId.Text = db.Items.Where(c => c.ItemName == cbSelect.Text).FirstOrDefault().ItemId;
             dgvLoad();
         }
-
-        private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-            try {
-                string name = dgvCart.CurrentRow.Cells[0].Value.ToString();
-                if (name != null) {
-                    if (db.Items.Where(c => c.ItemName == name).Any()) {
-                        var carts = db.Carts.Where(
-                            c => c.UserId == u.UserId
-                            && c.ItemId == db.Items.Where(i => i.ItemName == name).FirstOrDefault().ItemId
-                            && c.Quantity == int.Parse(dgvCart.CurrentRow.Cells[2].Value.ToString())
-                            //&& c.OrderDate.ToString().Trim() == dgvCart.CurrentRow.Cells[3].Value.ToString().Trim()
-                            );
-                        Cart cart = null;
-                        foreach (var item in carts)
-                            if (item.OrderDate.ToString().Trim() == dgvCart.CurrentRow.Cells[4].Value.ToString().Trim()) {
-                                //MessageBox.Show(item.OrderDate.ToString().Trim() +" " + dgvCart.CurrentRow.Cells[4].Value.ToString().Trim());
-                                cart = item;
-                            }
-                        if (cart == null) { throw new Exception("Cannot find cart."); }
-                        //MessageBox.Show(dgvCart.CurrentRow.Cells[3].Value.ToString().Trim());
-                        var cat = db.Items.Where(c => c.ItemName == name).FirstOrDefault().CategoryId;
-                        if (db.Categories.Where(c => c.CategoryId == cat).FirstOrDefault().CategoryName.ToLower() == rbCoffee.Text.ToLower()) {
-                            rbCoffee.Checked = true;
-                        }
-                        else if (db.Items.Where(c => c.ItemName == name).FirstOrDefault().Category.CategoryName.ToLower() == rbDessert.Text.ToLower()) {
-                            rbDessert.Checked = true;
-                        }
-                        else { MessageBox.Show("Cannot find item."); }
-                        cbSelect.Text = cart.ItemName;
-                        tbPrice.Text = cart.Price.ToString();
-                        tbItemId.Text = cart.ItemId.ToString();
-                        numericQuantity.Value = cart.Quantity;
-                        tbTotal.Text = (cart.Price * cart.Quantity).ToString();
-                    }
-                    else { MessageBox.Show("Deleted item."); }
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
 
         private void btnForm4_Click(object sender, EventArgs e) {
             try {
                 Form4 frmCart = new Form4(u);
                 frmCart.FormClosed += new FormClosedEventHandler(isLogout);
                 frmCart.ShowDialog();
-            }
-            catch (Exception ex) {
+            } catch(Exception ex) {
                 MessageBox.Show(ex.Message);
             }
         }
 
         private void isLogout(object? sender, FormClosedEventArgs e) {
             var frm = sender as Form4;
-            if (frm != null) {
-                if (frm.DialogResult == DialogResult.Abort) {
+            if(frm != null) {
+                if(frm.DialogResult == DialogResult.Abort) {
                     DialogResult = DialogResult.Abort;
                     Close();
                 }
@@ -279,6 +254,80 @@ namespace CoffeeShopWinForm {
 
         private void tbAmount_TextChanged(object sender, EventArgs e) {
 
+        }
+
+        private void dgvCart_CellClick(object sender, DataGridViewCellEventArgs e) {
+            try {
+                string name = "";
+                if (dgvCart.CurrentRow != null) name = dgvCart.CurrentRow.Cells[0].Value.ToString();
+                else return;
+                if(name != null) {
+                    if(db.Items.Where(c => c.ItemName == name).Any()) {
+                        var carts = db.Carts.Where(
+                            c => c.UserId == u.UserId
+                            && c.ItemId == db.Items.Where(i => i.ItemName == name).FirstOrDefault().ItemId
+                            && c.Quantity == int.Parse(dgvCart.CurrentRow.Cells[2].Value.ToString())
+                            //&& c.OrderDate.ToString().Trim() == dgvCart.CurrentRow.Cells[3].Value.ToString().Trim()
+                            );
+                        Cart cart = null;
+                        foreach(var item in carts)
+                            if(item.OrderDate.ToString().Trim() == dgvCart.CurrentRow.Cells[4].Value.ToString().Trim()) {
+                                //MessageBox.Show(item.OrderDate.ToString().Trim() +" " + dgvCart.CurrentRow.Cells[4].Value.ToString().Trim());
+                                cart = item;
+                            }
+                        if(cart == null) { throw new Exception("Cannot find cart."); }
+                        //MessageBox.Show(dgvCart.CurrentRow.Cells[3].Value.ToString().Trim());
+
+                        //var cat = db.Items.Where(c => c.ItemName == name).FirstOrDefault().CategoryId;
+                        //if (db.Categories.Where(c => c.CategoryId == cat).FirstOrDefault().CategoryName.ToLower() == rbCoffee.Text.ToLower())
+                        //{
+                        //    rbCoffee.Checked = true;
+                        //}
+                        //if (db.Categories.Where(c => c.CategoryId == cat).FirstOrDefault().CategoryName.ToLower() == rbCoffee.Text.ToLower())
+                        //{
+                        //    rbCoffee.Checked = true;
+                        //}
+                        //else if (db.Items.Where(c => c.ItemName == name).FirstOrDefault().Category.CategoryName.ToLower() == rbDessert.Text.ToLower())
+                        //{
+                        //    rbDessert.Checked = true;
+                        //}
+                        //else { MessageBox.Show("Cannot find item."); }
+                        int cateId = db.Items.Where(c => c.ItemName == name).FirstOrDefault().CategoryId;
+                        string cateName = db.Categories.Where(c => c.CategoryId == cateId).FirstOrDefault().CategoryName;
+                        
+                        cbCategory.Text = cateName;
+                        cbSelect.Text = cart.ItemName;
+                        tbPrice.Text = cart.Price.ToString();
+                        tbItemId.Text = cart.ItemId.ToString();
+                        numericQuantity.Value = cart.Quantity;
+                        tbTotal.Text = (cart.Price * cart.Quantity).ToString();
+                    }
+                    else { MessageBox.Show("Deleted item."); }
+                }
+            } catch(Exception ex) { MessageBox.Show(ex.Message); }
+
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cateName = cbCategory.Text.Trim();
+            var item = from i in db.Items
+                           join c in db.Categories
+                           on i.CategoryId equals c.CategoryId
+                           where c.CategoryName == cateName
+                           select i.ItemName;
+            if (item.Count() > 0)
+            {
+                cbSelect.DataSource = item.ToList();
+            }
+            else
+            {
+                cbSelect.DataSource = null;
+                cbSelect.Text = string.Empty;
+                tbPrice.Text = string.Empty;
+                numericQuantity.Value = 0;
+                tbTotal.Text = string.Empty;
+            }
         }
     }
 

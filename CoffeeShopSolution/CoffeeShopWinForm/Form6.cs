@@ -55,6 +55,26 @@ namespace CoffeeShopWinForm {
             dgvUserList.DataSource = userList;
             dgvUserList.Columns[0].HeaderText = "UserId"; dgvUserList.Columns[1].HeaderText = "Username"; dgvUserList.Columns[2].HeaderText = "Password"; dgvUserList.Columns[3].HeaderText = "Email"; dgvUserList.Columns[4].HeaderText = "Phone";
 
+            if (txtUserId.Text.Length == 0) dgvOrder.DataSource = null;
+            else {
+                try {
+                    int id = int.Parse(txtUserId.Text);
+                    if (context.Users.Find(id) != null) {
+
+                        List<Tuple<int, string, decimal, string>> orderList = new List<Tuple<int, string, decimal, string>>();
+                        foreach (var item in context.Orders.Where(o => o.UserId == id)) {
+                            Tuple<int, string, decimal, string> t = new Tuple<int, string, decimal, string>(item.OrderId, item.Phone, item.Total, item.Status);
+                            orderList.Add(t);
+                        }
+
+                        dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        dgvOrder.DataSource = orderList;
+                        dgvOrder.Columns[0].HeaderText = "OrderId"; dgvOrder.Columns[1].HeaderText = "Phone"; dgvOrder.Columns[2].HeaderText = "Total"; dgvOrder.Columns[3].HeaderText = "Status";
+
+                    }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
         }
 
         private void Form6_Load(object sender, EventArgs e) {
@@ -190,6 +210,9 @@ namespace CoffeeShopWinForm {
                         Category c = new Category { CategoryName = txtCatName.Text };
                         context.Categories.Add(c);
                         context.SaveChanges();
+                        var itemCat = from ic in context.Categories
+                                      select ic.CategoryName;
+                        cbItemCat.DataSource = itemCat.ToList();
                         txtCatName.Clear();
                         txtCatId.Clear();
                         MessageBox.Show("New category added.");
@@ -332,6 +355,7 @@ namespace CoffeeShopWinForm {
                     dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dgvOrder.DataSource = orderList;
                     dgvOrder.Columns[0].HeaderText = "OrderId"; dgvOrder.Columns[1].HeaderText = "Phone"; dgvOrder.Columns[2].HeaderText = "Total"; dgvOrder.Columns[3].HeaderText = "Status";
+
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -342,7 +366,7 @@ namespace CoffeeShopWinForm {
                 string id = dgvCategory.CurrentRow.Cells[0].Value.ToString();
                 if (id != null) {
                     tabControl2.SelectedIndex = 0;
-                    cbItemCat.SelectedIndex = int.Parse(id) - 1;
+                    cbItemCat.SelectedItem = context.Categories.Where(c => c.CategoryId.ToString() == id).FirstOrDefault().CategoryName;
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -369,7 +393,8 @@ namespace CoffeeShopWinForm {
                     txtItemId.Text = i.ItemId;
                     txtItemName.Text = i.ItemName;
                     txtItemPrice.Text = i.Price.ToString();
-                    cbItemCat.SelectedIndex = i.CategoryId - 1;
+                    cbItemCat.Text = i.Category.CategoryName;
+                    //cbItemCat.SelectedIndex = i.CategoryId - 1;
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -400,9 +425,56 @@ namespace CoffeeShopWinForm {
             dgvOrder.Columns.Clear();
         }
 
-        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+        private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e) {
+            try {
+                string id = dgvOrder.CurrentRow.Cells[0].Value.ToString();
+                if (id != null) {
+                    txtStatId.Text = id;
+                    bool check = false;
+                    foreach (var item in cbStat.Items) if (item.ToString() == context.Orders.Where(o => o.OrderId == int.Parse(id)).FirstOrDefault().Status) check = true;
+                    if (check) cbStat.Text = context.Orders.Where(o => o.OrderId == int.Parse(id)).FirstOrDefault().Status;
+                    else cbStat.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void btnClearStat_Click(object sender, EventArgs e) {
+            cbStat.Text = string.Empty;
+            txtStatId.Clear();
+        }
+
+        private void btnSaveStat_Click(object sender, EventArgs e) {
+            try {
+                bool check = false;
+                foreach (var item in cbStat.Items) { if (cbStat.Text == item.ToString()) { check = true; } }
+                if (!check) throw new Exception("Please choose order status from the dropdown list instead of typing it in yourself.");
+                if (txtStatId.Text.Length > 0) {
+                    if (context.Orders.Where(o => o.OrderId == int.Parse(txtStatId.Text)).FirstOrDefault() != null) {
+                        DialogResult re = MessageBox.Show("Save changes?", "Confirm", MessageBoxButtons.YesNo);
+                        if (re == DialogResult.Yes) {
+                            Order o = context.Orders.Where(o => o.OrderId == int.Parse(txtStatId.Text)).FirstOrDefault();
+                            o.Status = cbStat.Text;
+                            context.Orders.Update(o);
+                            context.SaveChanges();
+                            cbStat.Text = "";
+                            txtStatId.Text = "";
+
+                        }
+                    }
+                }
+                else MessageBox.Show("Please select an order.");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            DGVLoad();
+        }
+
+        private void cbStat_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
 
+        private void Form6_Load_1(object sender, EventArgs e) {
+
+        }
     }
 }

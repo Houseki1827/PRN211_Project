@@ -156,7 +156,7 @@
             txtPhone.Mask = "(999) 000-0000";
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(239, 24);
-            txtPhone.TabIndex = 12;
+            txtPhone.TabIndex = 4;
             // 
             // Form2
             // 
@@ -181,6 +181,7 @@
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
+            Load += Form2_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

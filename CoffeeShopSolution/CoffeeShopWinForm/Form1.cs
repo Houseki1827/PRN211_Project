@@ -19,6 +19,10 @@ namespace CoffeeShopWinForm {
 
         private void btnLogin_Click(object sender, EventArgs e) {
             bool checkUser = false, checkPass = false, checkLogin = false;
+            try {
+                deleteGuest();
+            }
+            catch { }
             if (txtUser.Text.Length == 0) {
                 txtUser.Focus();
                 errLogin.SetError(txtUser, "Username must not be blank!");
@@ -75,7 +79,14 @@ namespace CoffeeShopWinForm {
             Focus();
             txtUser.Select();
             frmCreate.ShowDialog();
-            txtUser.Focus();
+            if (frmCreate.DialogResult == DialogResult.OK) {
+                int id = frmCreate.id;
+                if (context.Users.Find(id) != null) {
+                    txtUser.Text = context.Users.Find(id).Username;
+                    txtPass.Focus();
+                }
+            }
+            else txtUser.Focus();
             return;
         }
 
@@ -104,6 +115,10 @@ namespace CoffeeShopWinForm {
         }
 
         private void btnGuest_Click(object sender, EventArgs e) {
+            try {
+                deleteGuest();
+            }
+            catch { }
             Random random = new Random();
             string guestName;
             do {
@@ -112,10 +127,11 @@ namespace CoffeeShopWinForm {
             while (context.Users.Where(c => c.Username == guestName).Count() > 0);
             BusinessObject.Models.User guest = new BusinessObject.Models.User {
                 Username = guestName,
-                Password = (random.Next(1000, 9999) * random.Next(10, 99)).ToString(),
+                Password = (random.Next(1000, 9999) * random.Next(100, 999)).ToString(),
                 Phone = "0000000000",
                 Email = "guest"
             };
+
 
             context.Users.Add(guest);
             context.SaveChanges();
@@ -125,6 +141,27 @@ namespace CoffeeShopWinForm {
             Hide();
             this.ShowInTaskbar = false;
             frmMenu.ShowDialog();
+        }
+
+        private void deleteGuest() {
+            var guests = context.Users.Where(u => u.Username.StartsWith("guest") && u.Email == "guest" && u.Phone == "0000000000" && u.CreatedDate.AddDays(1) < DateTime.Now).ToList();
+            var orders = context.Orders.Where(o => o.Status == "Complete" || o.Status == "Cancel").ToList();
+            foreach (var od in context.OrderDetails.Where(o => o.OrderDate.AddDays(1) > DateTime.Now)) {
+                orders.Remove(context.Orders.Where(o => o.OrderId == od.OrderId).FirstOrDefault());
+            }
+            foreach (var item in orders) {
+                foreach (var guest in guests.ToList()) {
+                    if (guest.UserId == item.UserId) {
+                        context.Users.Remove(guest);
+                    }
+                }
+            }
+            foreach (var guest in guests) { 
+                if(context.Orders.Where(c => c.UserId == guest.UserId).Count() == 0) {
+                    context.Users.Remove(guest);
+                }
+            }
+            context.SaveChanges();
         }
 
         private void MenuClosed(object? sender, FormClosedEventArgs e) {
